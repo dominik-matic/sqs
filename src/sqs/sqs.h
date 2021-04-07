@@ -1,6 +1,8 @@
 #pragma once
 
-#include "QCircuit.hpp"
-#include "QComponent.hpp"
 #include "QOperator.hpp"
+#include "QComponent.hpp"
+#include "QCircuit.hpp"
+
+
 #include "consts.hpp"

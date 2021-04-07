@@ -6,30 +6,31 @@ namespace sqs{
 
 	class QOperator {
 		private:
-		unsigned int dim;
 		MX matrix;
+		std::string type;
 
-
-		inline void checkDimension(const QOperator& qop) {
-			if(qop.dimension() != dim) {
+		inline void checkDimension(const QOperator& qop) const {
+			if(qop.dimension() != dimension()) {
 				throw "Dimensions don't match srry";
 			}
 		}
 
-		void checkDimension(const MX& m) {
-			if(m.rows() != dim) {
+		void checkDimension(const MX& m) const {
+			if(m.rows() != dimension()) {
 				throw "Dimensions don't match srry";
 			}
 		}
+
 
 		public:
-		QOperator(): matrix(ZeroMatrix), dim(2) {}
-		QOperator(MX matrix): matrix(matrix), dim(matrix.rows()) {}
+		QOperator(): matrix(EyeMatrix), type("I") {}
+		QOperator(MX matrix): matrix(matrix), type("?") {}
+		QOperator(MX matrix, std::string type): matrix(matrix), type(type) {}
 		
 
 		inline MX getMatrix() const { return matrix; }
-		inline unsigned int dimension() const { return dim; }
-
+		inline unsigned int dimension() const { return matrix.rows(); }
+		inline std::string getType() const { return type; }
 
 		inline void operator=(const QOperator& qop) {
 			matrix = qop.matrix;
@@ -39,28 +40,28 @@ namespace sqs{
 			matrix = m;
 		}
 
-		inline QOperator operator+(const QOperator& qop) {
+		inline QOperator operator+(const QOperator& qop) const {
 			checkDimension(qop);
 			QOperator temp;
 			temp.matrix = matrix + qop.matrix;
 			return temp;
 		}
 
-		inline QOperator operator+(const MX& m) {
+		inline QOperator operator+(const MX& m) const {
 			checkDimension(m);
 			QOperator temp;
 			temp.matrix = matrix + m;
 			return temp;
 		}
 
-		inline QOperator operator-(const QOperator& qop) {
+		inline QOperator operator-(const QOperator& qop) const {
 			checkDimension(qop);
 			QOperator temp;
 			temp.matrix = matrix - qop.matrix;
 			return temp;
 		}
 
-		inline QOperator operator-(const MX& m) {
+		inline QOperator operator-(const MX& m) const {
 			checkDimension(m);
 			QOperator temp;
 			temp.matrix = matrix - m;
@@ -91,14 +92,14 @@ namespace sqs{
 			return *this;
 		}
 
-		inline QOperator operator*(const QOperator& qop) {
+		inline QOperator operator*(const QOperator& qop) const {
 			// TODO: check dimensions
 			QOperator temp;
 			temp.matrix = matrix * qop.matrix;
 			return temp;
 		}
 
-		inline QOperator operator*(std::complex<double> i) {
+		inline QOperator operator*(std::complex<double> i) const {
 			QOperator temp;
 			temp.matrix = i * matrix;
 			return temp;
