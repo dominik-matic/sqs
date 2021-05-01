@@ -1,0 +1,13 @@
+\babel@toc {croatian}{}
+\contentsline {chapter}{\numberline {1}Uvod}{1}{}%
+\contentsline {chapter}{\numberline {2}Kvantno računalo}{3}{}%
+\contentsline {section}{\numberline {2.1}Polarizacija svjetlosti}{3}{}%
+\contentsline {section}{\numberline {2.2}Kvantni bit i Diracova notacija}{3}{}%
+\contentsline {chapter}{\numberline {3}Simulacija kvantnog računala}{4}{}%
+\contentsline {section}{\numberline {3.1}Postojeći simulatori kvantnog računala}{4}{}%
+\contentsline {chapter}{\numberline {4}Kvantni algoritmi}{5}{}%
+\contentsline {section}{\numberline {4.1}Groverov algoritam}{5}{}%
+\contentsline {section}{\numberline {4.2}Deutschov algoritam}{5}{}%
+\contentsline {section}{\numberline {4.3}Shorov algoritam}{5}{}%
+\contentsline {chapter}{\numberline {5}Zaključak}{6}{}%
+\contentsline {chapter}{Literatura}{7}{}%
