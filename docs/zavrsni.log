@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  1 MAY 2021 03:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  2 MAY 2021 01:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -262,8 +262,8 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count276
 \l__pdf_internal_box=\box50
 )
-(./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
-(./SimulacijaKvantnogRacunala.aux) (./KvantniAlgoritmi.aux) (./Zakljucak.aux))
+(./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux) (./KvantniAlgoritmi.aux)
+(./SimulacijaKvantnogRacunala.aux) (./Zakljucak.aux))
 \openout1 = `zavrsni.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -379,7 +379,27 @@ Poglavlje 1.
 
  (./KvantnoRacunalo.tex
 Poglavlje 2.
-) [3
+[3
+
+
+
+
+]
+<img/dvolomac_detektor.png, id=31, 760.34062pt x 190.46156pt>
+File: img/dvolomac_detektor.png Graphic file (type png)
+<use img/dvolomac_detektor.png>
+Package pdftex.def Info: img/dvolomac_detektor.png  used on input line 49.
+(pdftex.def)             Requested size: 380.16937pt x 95.23053pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4]) [5 <./img/dvolomac_detektor.png (PNG copy)>]
+\openout2 = `KvantniAlgoritmi.aux'.
+
+ (./KvantniAlgoritmi.tex
+Poglavlje 3.
+) [6
 
 
 
@@ -388,18 +408,8 @@ Poglavlje 2.
 \openout2 = `SimulacijaKvantnogRacunala.aux'.
 
  (./SimulacijaKvantnogRacunala.tex
-Poglavlje 3.
-) [4
-
-
-
-
-]
-\openout2 = `KvantniAlgoritmi.aux'.
-
- (./KvantniAlgoritmi.tex
 Poglavlje 4.
-) [5
+) [7
 
 
 
@@ -409,7 +419,7 @@ Poglavlje 4.
 
  (./Zakljucak.tex
 Poglavlje 5.
-) [6
+) [8
 
 
 
@@ -440,31 +450,38 @@ Overfull \hbox (9.80171pt too wide) in paragraph at lines 9--14
 ]2023$\T1/ptm/m/n/12 . 
  []
 
-) [7
+) [9
 
 
 
-] [8] (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
-(./SimulacijaKvantnogRacunala.aux) (./KvantniAlgoritmi.aux) (./Zakljucak.aux)) 
+] [10] (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
+(./KvantniAlgoritmi.aux) (./SimulacijaKvantnogRacunala.aux) (./Zakljucak.aux)) 
 ) 
 Here is how much of TeX's memory you used:
- 6262 strings out of 479917
- 91313 string characters out of 5856971
+ 6281 strings out of 479917
+ 91646 string characters out of 5856971
  389428 words of memory out of 5000000
- 22694 multiletter control sequences out of 15000+600000
- 580704 words of font info for 85 fonts, out of 8000000 for 9000
+ 22707 multiletter control sequences out of 15000+600000
+ 587336 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,6n,85p,942b,306s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 80i,7n,85p,942b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/2020/t
-exmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/texlive/2020/texmf-dist/font
-s/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/h
-elvetic/uhvr8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.p
-fb></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/texlive
-/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (11 pages, 72795 bytes).
+exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texlive/2020/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/texlive/2020/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi6.pfb></opt/texlive/2020/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr12.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr8.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></o
+pt/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/texlive/202
+0/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/2020/texmf-dist/
+fonts/type1/urw/helvetic/uhvr8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/u
+rw/times/utmb8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.
+pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on zavrsni.pdf (13 pages, 154186 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 105 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

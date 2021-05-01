@@ -3,8 +3,8 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: zavrsni.aux
 A level-1 auxiliary file: Uvod.aux
 A level-1 auxiliary file: KvantnoRacunalo.aux
-A level-1 auxiliary file: SimulacijaKvantnogRacunala.aux
 A level-1 auxiliary file: KvantniAlgoritmi.aux
+A level-1 auxiliary file: SimulacijaKvantnogRacunala.aux
 A level-1 auxiliary file: Zakljucak.aux
 The style file: fer.bst
 Database file #1: literatura.bib
