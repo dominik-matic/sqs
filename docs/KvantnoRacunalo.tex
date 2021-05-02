@@ -20,30 +20,30 @@ U kvantnoj mehanici, svjetlost je definirana drugačije --- kao niz fotona, nedj
 
 Prijelaze kvantnih sustava iz jednog stanja u drugo modeliramo takozvanom amplitudom vjerojatnosti:
 \begin{equation}
-a(\phi \rightarrow \psi)
+a(\Phi \rightarrow \Psi)
 \end{equation}
-koja je element skupa kompleksnih brojeva, a vjerojatnost da neki sustav koji je u stanju $\phi$ bude izmjeren u stanju $\psi$ dobivamo na način:
+koja je element skupa kompleksnih brojeva, a vjerojatnost da neki sustav koji je u stanju $\Phi$ bude izmjeren u stanju $\Psi$ dobivamo na način:
 \begin{equation}
-p(\phi \rightarrow \psi) = |a(\phi \rightarrow \psi)|^2
+p(\Phi \rightarrow \Psi) = |a(\Phi \rightarrow \Psi)|^2
 \end{equation}
 
 U slučaju polarizatora, vjerojatnost smo mogli izračunati pomoću Malusovog zakona što nam daje vjerojatnost prolaska fotona kroz polarizator jednaku
 \begin{equation}
-p(\phi \rightarrow \psi) = \cos^2 \alpha
+p(\Phi \rightarrow \Psi) = \cos^2 \alpha
 \end{equation}
 iz čega je vidljiva amplituda vjerojatnosti:
 \begin{equation}
-|a(\phi \rightarrow \psi)|^2 = \cos^2 \alpha \Rightarrow a(\phi \rightarrow \psi) = \cos \alpha
+|a(\Phi \rightarrow \Psi)|^2 = \cos^2 \alpha \Rightarrow a(\Phi \rightarrow \Psi) = \cos \alpha
 \end{equation}
-gdje je $\alpha$ kut koji zatvaraju vektori polarizacije fotona i polarizatora, $\phi$ stanje fotona prije prolaska kroz polarizator, a $\psi$ stanje u kojemu foton nije apsorbiran.
+gdje je $\alpha$ kut koji zatvaraju vektori polarizacije fotona i polarizatora, $\Phi$ stanje fotona prije prolaska kroz polarizator, a $\Psi$ stanje u kojemu foton nije apsorbiran.
 
 %Sličan primjer polarizatoru je dvolomac koji također funkcionira kao polarizator, samo što ne apsorbira svjetlost, nego dijeli svjetlost na dva ortogonalno polarizirana snopa. Koristeći dvolomac moguće je pomoću dva detektora izmjeriti u kojem je točno stanju foton završio. Nakon mjerenja, tj. detekcije, foton je apsorbiran.
 
 
 \section{Kvantni bit}
 
-\subsection{Svojstva}
-Dvolomac je vrsta polarizatora koji dijeli svjetlost na dva ortagonalno polarizirana snopa. Kombinirajući dvolomac sa dva detektora fotona uvijek je moguće odrediti u koje je stanje prešao foton.
+\subsection{Definicija}
+Dvolomac je vrsta polarizatora koji dijeli svjetlost na dva ortagonalno polarizirana snopa. Kombinirajući dvolomac sa dva detektora uvijek je moguće odrediti u koje je stanje prešao foton pušten kroz dvolomac.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{img/dvolomac_detektor.png}
@@ -51,7 +51,7 @@ Dvolomac je vrsta polarizatora koji dijeli svjetlost na dva ortagonalno polarizi
 \end{figure}
 
 Nakon detekcije, foton je apsorbiran i ne može se više mjeriti. Takav kvantnomehanički sustav, koji je moguće samo jednom izmjeriti u samo jednom od dva moguća stanja nazivamo \textbf{kvantnim bitom} ili \textbf{qubitom}.
-Kvantni bit prije mjerenja može biti u beskonačno mnogo različitih stanja te općenito jedno takvo stanje zovemo \textbf{superpozicijom} dvaju stanja. Ta dva stanja se odnose na stanja baze koja mogu biti proizvoljna, ali su uvijek međusobno ortogonalna. Pojam superpozicije se može primijeniti i u klasičnom smislu. U slučaju svjetlosti, uzimajući dva linearno polarizirana vala s okomitim smjerovima polarizacije kao bazu sustava, općenito stanje polarizacije vala možemo prikazati kao:
+Kvantni bit prije mjerenja može biti u beskonačno mnogo različitih stanja te općenito jedno takvo stanje zovemo \textbf{superpozicijom} dvaju stanja. Ta dva stanja se odnose na stanja baze mjerenja koja mogu biti proizvoljna, ali su uvijek međusobno ortogonalna. Pojam superpozicije se može primijeniti i u klasičnom smislu. U slučaju svjetlosti, uzimajući dva linearno polarizirana vala s okomitim smjerovima polarizacije kao bazu sustava, općenito stanje polarizacije vala možemo prikazati kao:
 \begin{equation}
 E = E_x \hat{x}e^{i(\omega t + \phi_x)} + E_y \hat{y}e^{i(\omega t + \phi_y)} = E_0(\lambda \hat{x} + \mu \hat{y})e^{i\omega t}
 \end{equation}
@@ -68,12 +68,134 @@ E_0 = \sqrt{(E_x^2 + E_y^2)}
 Bitno je uočiti da su $\lambda$ i $\mu$ kompleksni brojevi kao i da dio izraza $\lambda\hat{x}+\mu\hat{y}$ sadrži informaciju o stanju polarizacije vala te da takvih stanja ima beskonačno mnogo.
 
 \subsection{Diracova notacija}
+Stanja kvantnih bitova u praksi se prikazuje ket simbolima koji su dio Diracove ili bra-ket notacije:
+%\begin{equation} 
+\[
+\text{bra:}
+\qquad
+\bra{\Phi}
+\]
+%\end{equation}
+%\begin{equation}
+\[
+\text{ket:}
+\qquad
+\ket{\Phi}
+\]
+%\end{equation}
+%\begin{equation}
+\[
+\text{braket:}
+\qquad
+\braket{\Phi|\Phi}
+\]
+%\end{equation}
+S pretpostavkom da su $\ket{x}$ i $\ket{y}$ dva stanja baze mjerenja sustava, kao npr. stanje fotona polariziranog u smjeru $x$ i stanje fotona polariziranog u smjeru $y$, općenito stanje polarizacije fotona možemo prikazati superpozicijom ta dva stanja:
+%\begin{equation}
+\[
+\ket{\Phi} = \lambda\ket{x} + \mu\ket{y}
+\]
+%\end{equation}
+gdje su $\lambda$ i $\mu$ kompleksni brojevi te vrijedi $|\lambda|^2 + |\mu|^2 = 1$.
+
+\subsection{Svojstva Hilbertovog prostora}
+U matematičkom smislu, stanja kvantnih bitova prikazanih ketovima su zapravo vektori dvodimenzionalnog kompleksnog Hilbertovog prostora. Za takav prostor vrijede sljedeća svojstva.
+
+Skalarni umnožak:
+%\begin{equation}
+\[
+\braket{\Phi|\Psi} = \braket{\Psi|\Phi}^* \in \mathbb{C}
+\]
+%\end{equation}
+%\begin{equation}
+\[
+\braket{\Phi|\Phi} \geq 0
+\]
+%\end{equation}
+
+Norma vektora $\ket{\Phi}:$
+%\begin{equation}
+\[
+||\Phi|| = \sqrt{\braket{\Phi|\Phi}}
+\]
+%\end{equation}
+
+Vektori stanja baze moraju biti ortonormirani što znači da mora vrijediti:
+%\begin{equation}
+\[
+\braket{x|y} = 0
+\qquad
+\braket{x|x} = \braket{y|y} = 1
+\]
+%\end{equation}
+
+Za računanje skalarnog umnoška potrebno je izračunati bra nekog stanja koji se dobiva kompleksnom konjugacijom keta. Općenito, izračun $\braket{\Psi|\Phi}$ dobiva se:
+\[\ket{\Phi} = \lambda\ket{x} + \mu\ket{y}\]
+\[\ket{\Psi} = \nu\ket{x} + \sigma\ket{y} \Rightarrow \bra{\Psi} = \nu^*\bra{x} + \sigma^*\bra{y}\]
+\[
+\braket{\Psi|\Phi} = \nu^*\lambda\braket{x|x} + \nu^*\mu\braket{x|y} + \sigma^*\lambda\braket{y|x} + \sigma^*\mu\braket{y|y} = \nu^*\lambda + \sigma^*\mu = \braket{\Phi|\Psi}^*
+\]
+Norma vektora se računa na analogan način.
+
+\subsection{Amplituda vjerojatnosti i vjerojatnost}
+
+Amplituda vjerojatnosti modelira prijelaz jednog kvantnog stanja u drugo kojeg računamo skalarnim umnoškom vektora stanja.
+\[
+a(\Phi \rightarrow \Psi) = \braket{\Psi|\Phi}
+\]
+Odgovarajuća vjerojatnost mjerenja kvantnog bita u stanju $\Psi$ ako se prethodno nalazio u stanju $\Phi$ računa se:
+\[
+p(\Phi \rightarrow \Psi) = |a(\Phi \rightarrow \Psi)|^2 = |\braket{\Psi|\Phi}|^2
+\]
+
+\subsection{Vektorski prikaz}
+
+Za lakšu implementaciju kvantnog bita na klasičnom računalu, korisno je prikazati kvantne bitove vektorski. Klasična nula i jedinica bi imale vektorski oblik:
+\[
+0 = \begin{bmatrix}
+1 \\ 0
+\end{bmatrix}
+\qquad
+1 = \begin{bmatrix}
+0 \\ 1
+\end{bmatrix}
+\]
+Ti vektori odgovaraju ujedno i vektorima stanja baze mjerenja nekog sustava koji se mogu označiti kao $\ket{0}$ i $\ket{1}$. Sva ostala stanja mogu se dobiti superpozicijom tih vektora:
+\[
+\ket{\Phi} = \lambda\ket{0} + \mu\ket{1} = \lambda\begin{bmatrix}
+1 \\ 0
+\end{bmatrix} + \mu\begin{bmatrix}
+0 \\ 1
+\end{bmatrix} = \begin{bmatrix}
+\lambda \\ \mu
+\end{bmatrix}
+\]
+Bra dobivamo kompleksnim konjugiranjem i transponiranjem keta:
+\[
+\bra{\Psi} = \begin{bmatrix}
+\nu \\ \sigma
+\end{bmatrix}^\dagger
+= \begin{bmatrix}
+\nu^* & \sigma^*
+\end{bmatrix}
+\]
+Računanje amplitude vjerojatnosti se tada svodi na jednostavno matrično množenje:
+\[
+\braket{\Psi|\Phi} = \begin{bmatrix}
+\nu^* & \sigma^*
+\end{bmatrix}
+\begin{bmatrix}
+\lambda \\ \mu
+\end{bmatrix} = \nu^*\lambda + \sigma^*\mu
+\]
+
 
 % DIRACOVA NOTACIJA i sva pravila - Hilbertov prostor itd
 % izracunati vjerojatnost
 % vektorski prikaz
 
-\subsection{Prikaz na klasičnom računalu}
+
+
 
 
 
