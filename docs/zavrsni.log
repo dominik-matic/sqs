@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  2 MAY 2021 01:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  2 MAY 2021 01:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -248,8 +248,13 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count275
 \@thisrulewidth=\dimen180
 )
-(/opt/texlive/2020/texmf-dist/tex/latex/notoccite/notoccite.sty
-Package: notoccite 2000/07/20
+(/opt/texlive/2020/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count276
+\float@exts=\toks26
+\float@box=\box50
+\@float@everytoks=\toks27
+\@floatcapt=\box51
 )
 LaTeX Font Info:    Trying to load font information for T1+ptm on input line 6.
 
@@ -259,8 +264,8 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 (/opt/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count276
-\l__pdf_internal_box=\box50
+\l__kernel_color_stack_int=\count277
+\l__pdf_internal_box=\box52
 )
 (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux) (./KvantniAlgoritmi.aux)
 (./SimulacijaKvantnogRacunala.aux) (./Zakljucak.aux))
@@ -317,17 +322,17 @@ LaTeX Font Info:    ... okay on input line 6.
 
 (/opt/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count277
+\scratchcounter=\count278
 \scratchdimen=\dimen181
-\scratchbox=\box51
-\nofMPsegments=\count278
-\nofMParguments=\count279
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count280
+\scratchbox=\box53
+\nofMPsegments=\count279
+\nofMParguments=\count280
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count281
 \MPscratchDim=\dimen182
-\MPnumerator=\count281
-\makeMPintoPDFobject=\count282
-\everyMPtoPDFconversion=\toks27
+\MPnumerator=\count282
+\makeMPintoPDFobject=\count283
+\everyMPtoPDFconversion=\toks29
 ) (/opt/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -338,6 +343,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 17
 .
@@ -390,11 +396,7 @@ File: img/dvolomac_detektor.png Graphic file (type png)
 <use img/dvolomac_detektor.png>
 Package pdftex.def Info: img/dvolomac_detektor.png  used on input line 49.
 (pdftex.def)             Requested size: 380.16937pt x 95.23053pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[4]) [5 <./img/dvolomac_detektor.png (PNG copy)>]
+ [4 <./img/dvolomac_detektor.png (PNG copy)>]) [5]
 \openout2 = `KvantniAlgoritmi.aux'.
 
  (./KvantniAlgoritmi.tex
@@ -458,13 +460,13 @@ Overfull \hbox (9.80171pt too wide) in paragraph at lines 9--14
 (./KvantniAlgoritmi.aux) (./SimulacijaKvantnogRacunala.aux) (./Zakljucak.aux)) 
 ) 
 Here is how much of TeX's memory you used:
- 6281 strings out of 479917
- 91646 string characters out of 5856971
- 389428 words of memory out of 5000000
- 22707 multiletter control sequences out of 15000+600000
+ 6322 strings out of 479917
+ 92041 string characters out of 5856971
+ 390847 words of memory out of 5000000
+ 22748 multiletter control sequences out of 15000+600000
  587336 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,7n,85p,942b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 80i,7n,85p,942b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/2020/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texlive/2020/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/texlive/2020/texmf-dist/font
@@ -478,7 +480,7 @@ pt/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/texlive/202
 fonts/type1/urw/helvetic/uhvr8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/u
 rw/times/utmb8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.
 pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (13 pages, 154186 bytes).
+Output written on zavrsni.pdf (13 pages, 154153 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  74 compressed objects within 1 object stream
