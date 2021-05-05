@@ -190,26 +190,254 @@ Računanje amplitude vjerojatnosti se tada svodi na jednostavno matrično množe
 \]
 
 
-% DIRACOVA NOTACIJA i sva pravila - Hilbertov prostor itd
-% izracunati vjerojatnost
-% vektorski prikaz
+
+\section{Sustav kvantnih bitova}
+
+\subsection{Dva ili više kvantnih bitova}
+Kao što se jedan kvantni bit prikazuje kao vektor u dvodimenzionalnom kompleksnom Hilbertovom prostoru, sustav od $n$ kvantnih bitova može se prikazati kao vektor u $2^n$-dimenzionalnom kompleksnom Hilbertovom prostoru.
+
+Za $n$ stanja oblika $\ket{\Phi_i},i \in \{1, 2, \ldots, n\}$, njihov zajednički vektor stanja $\ket{\Psi}$ dobiva se \textbf{tenzorskim produktom} svih stanja:
+\[
+\ket{\Psi} = \ket{\Phi_1} \otimes \ket{\Phi_2} \otimes \ldots \otimes \ket{\Phi_n}
+\]
+
+Za dva kvantna bita, tenzorski produkti vektora stanja baze mjerenja sustava označavaju se kao:
+\[
+\ket{0} \otimes \ket{0} = \ket{00} \qquad  \ket{0} \otimes \ket{1} = \ket{01} \qquad \ket{1} \otimes \ket{0} = \ket{10} \qquad \ket{1} \otimes \ket{1} = \ket{11}
+\]
+U vektorskom obliku te baze se prikazuju kao:
+\[
+\ket{00} = \begin{bmatrix}
+1 \\ 0 \\ 0 \\ 0
+\end{bmatrix}
+\qquad
+\ket{01} = \begin{bmatrix}
+0 \\ 1 \\ 0 \\ 0
+\end{bmatrix}
+\qquad
+\ket{10} = \begin{bmatrix}
+0 \\ 0 \\ 1 \\ 0
+\end{bmatrix}
+\qquad
+\ket{11} = \begin{bmatrix}
+0 \\ 0 \\ 0 \\ 1
+\end{bmatrix}
+\]
+Općenito, za dva kvantna bita dana u obliku $\ket{\Phi_i} = \lambda_i\ket{0} + \mu_i\ket{1}, i \in \{1, 2\}$, tenzorski produkt jednak je:
+\begin{align}
+\begin{split}
+\ket{\Phi_1} \otimes \ket{\Phi_2} &= (\lambda_1\ket{0} + \mu_1\ket{1}) \otimes (\lambda_2\ket{0} + \mu_2\ket{1})
+\\
+&= \lambda_1\lambda_2\ket{00} + \lambda_1\mu_2\ket{01} + \mu_1\lambda_2\ket{10} + \mu_1\mu_2\ket{11}
+\label{eq:tensor2qubits}
+\end{split}
+\end{align}
+U vektorskom obliku:
+\[
+\ket{\Phi_1} \otimes \ket{\Phi_2} =
+\begin{bmatrix}
+\lambda_1 \\ \mu_1
+\end{bmatrix}
+\otimes
+\begin{bmatrix}
+\lambda_2 \\ \mu_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+\lambda_1
+	\begin{bmatrix}
+	\lambda_2 \\ \mu_2
+	\end{bmatrix} \\
+\mu_1
+	\begin{bmatrix}
+	\lambda_2 \\ \mu_2
+	\end{bmatrix}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\lambda_1\lambda_2 \\
+\lambda_1\mu_2 \\
+\mu_1\lambda_2 \\
+\mu_1\mu_2 \\
+\end{bmatrix}
+\]
+Analogno se dobiju vektori 3 ili više kvantnih bitova.
+
+Naravno, za svaki vektor koji opisuje sustav od $n$ kvantnih bitova oblika
+\[\lambda_1\ket{00 \ldots 00} + \lambda_2\ket{00 \ldots 01} + \ldots + \lambda_{2^n}\ket{11 \ldots 11}
+\]
+vrijedi:
+\begin{equation}
+|\lambda_1|^2 + |\lambda_2|^2 + \ldots + |\lambda_{2^n}|^2 = 1
+\label{eq:sumofcoefs}
+\end{equation}
+
+\subsection{Spregnutost}
+
+Spregnutost \engl{entaglement} opisuje sustav kvantnih bitova koji se ne može prikazati tenzorskim produktom vektora stanja pojedinih kvantnih bitova. Bitno je uočiti da iz jednadžbe \ref{eq:tensor2qubits} vrijedi da je umnožak koeficijenata uz $\ket{00}$ i $\ket{11}$ jednak umnošku koeficijenata uz $\ket{01}$ i $\ket{10}$.
+\[
+\lambda_1\lambda_2 \cdot \mu_1\mu_2 = \lambda_1\mu_2 \cdot \mu_1\lambda_2
+\]
+Stanja u kojima vrijedi prethodna jednadžba nazivaju se separabilnima, te zauzimaju samo podskup Hilbertovog prostora u kojemu se nalaze. Vektori stanja koji ne zadovoljavaju takvu jednakost, uz nužan uvjet da zadovoljavaju jednadžbu \ref{eq:sumofcoefs} nazivaju se spregnutim stanjima. Jedno takvo stanje jest:
+\[
+\ket{\Phi} = \frac{1}{\sqrt{2}}(\ket{00} + \ket{11})
+\]
+Mjerenje takvog sustava rezultiralo bi detekcijom stanja $\ket{00}$ ili $\ket{11}$, ali nikada  stanja $\ket{01}$ ili $\ket{10}$. Drugim riječima, mjerenjem samo jednog kvantnog bita u sustavu, odmah je poznata i vrijednost drugoga.
+
+Spregnutost se ne odnosi samo na sustave s dva kvantna bita, analogno se ista logika može primijeniti i na sustave s 3 ili više kvantnih bitova. Primjer jednog spregnutog stanja s tri kvantnih bitova:
+\[
+\ket{\Phi} = \frac{1}{\sqrt{2}}(\ket{000} + \ket{111})
+\]
 
 
 
-
-
-
-
-
-
-
-
-
-
-\section{Sustav kvantnih bitova i spregnutost}
 
 \section{Kvantni operatori}
 
-\section{Kvantni paralelizam}
+\subsection{Svojstva}
+
+Kako bi bilo kakav izračun s kvantnim bitovima bio moguć, potrebno je moći manipulirati s njima. S klasičnim bitovima to rade operatori kao što su AND, OR, XOR i sl. Kvantni operatori su nešto drugačiji. Naime, pošto je jedna od glavnih značajki kvantne mehanike reverzibilnost sustava, kvantni operatori moraju biti \textbf{reverzibilni}, što je od klasičnih operatora samo NOT. Pošto stanja kvantnih bitova moraju uvijek ostati normirana, operatori su također \textbf{unitarni}. Uz unitarnost, kvantni operatori su i \textbf{hermitski}.
+
+\subsection{Blochova sfera}
+
+Radi lakše interpretacije nekih od operatora, korisno je poznavati reprezentaciju kvantnog bita na Blochovoj sferi. Svako stanje\footnote{Odnosi se na čista stanja \engl{pure states}, ali postoje i takozvana mješovita stanja\engl{mixed states} koja se mogu prikazati kao točkama unutar sfere, ali takva stanja nisu bitna u sklopu ovog rada} kvantnog bita može se prikazati točkom na površini Blochove sfere.
+
+Ta činjenica se čini zbunjujućom jer svaki kvantni bit u potpunosti određuju dva kompleksna broja što rezultira s četiri stupnja slobode, no uzimajući u obzir da kvantni bit mora biti normiran i da množenje kvantnog bita s faznim faktorom nema nikakvog fizičkog utjecaja na njegovo stanje, dobiju se samo dva stupnja slobode. Na temelju toga, općenito stanje kvantnog bita se može izraziti kao:
+\[
+\ket{\Psi} = e^{-i\frac{\varphi}{2}}\cos\frac{\theta}{2}\ket{0} + e^{i\frac{\varphi}{2}}\sin\frac{\theta}{2}\ket{1}
+\]
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{img/bloch.png}
+\caption{Blochova sfera} 
+\end{figure}
+
+Bitno je primjetiti da vektori koji su u Hilbertovom prostoru ortogonalni su na Blochovoj sferi suprotni. U točki gdje os $x$ probada sferu nalazi se stanje $\frac{1}{\sqrt{2}}(\ket{0} + \ket{1})$, a suprotno njemu $\frac{1}{\sqrt{2}}(\ket{0} - \ket{1})$. Na isti način u smjeru osi $y$ nalazi se stanje $\frac{1}{\sqrt{2}}(\ket{0} + i\ket{1})$ te suprotno njemu $\frac{1}{\sqrt{2}}(\ket{0} - i\ket{1})$. Navedeni vektori na $x$ osi označavaju se kao $\ket{x}$ i $\ket{y}$, a vektori na $y$ osi kao $\ket{R}$ i $\ket{L}$.
+
+\subsection{Operator projekcije}
+
+Skalarnim umnoškom dva vektora stanja kvantnih bitova dobije se skalar koji se može interpretirati kao koliko prvi vektor 'ide' u smjeru drugoga. Ako se taj skalar pomnoži drugim vektorom, dobije se vektor projekcije prvoga na drugi.
+\[
+\ket{\Omega} = \ket{\Psi}\braket{\Psi|\Phi}
+\]
+Dio izraza $\ket{\Psi}\bra{\Psi}$ možemo shvatiti kao operator projekcije na stanje $\ket{\Psi}$ te se takav operator naziva projektorom. Također, vektori dobiveni projekcijom općenito nisu normirani te kao takvi ne predstavljaju neko stanje kvantnog bita. Projektori se koriste kako bi se konstruirali drugi operatori.
+
+Matrični prikaz projektora na vektore stanja $\ket{0}$ i $\ket{1}$
+\[
+\ket{0}\bra{0} =
+\begin{bmatrix}
+1 \\ 0
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 \\ 0 & 0
+\end{bmatrix}
+\qquad
+\ket{1}\bra{1} = 
+\begin{bmatrix}
+0 & 0 \\ 0 & 1
+\end{bmatrix}
+\]
+
+\subsection{Hermitski operator}
+
+Svaki operator u Hilbertovom prostoru koji je jednak sebi kada se kompleksno konjugira i transponira naziva se Hermitskim operatorom.
+\[
+A^\dagger = A
+\]
+Hermitski operator se može prikazati kao linearna kombinacija projektora ortonormirane baze $N$-dimenzionalnog prostora pomnoženih \emph{realnim} koeficijentima:
+\[
+A = \sum_{i = 1}^N a_i\ket{i}\bra{i}
+\qquad
+a_i \in \mathbb{R}
+\]
+Vektori $\ket{i}$ su svojstveni vektori Hermitskog operatora sa odgovarajućim svojstvenim vrijednostima $a_i$.
+
+Hermitski operatori se mogu koristiti za izračune vezane uz fizikalne veličine pripisane baznim stanjima nekog kvantnog sustava, no u sklopu kvantnog računarstva koriste se za manipulaciju stanjima.
+
+\subsection{Paulijeve matrice}
+
+Paulijeve matrice su Hermitske i unitarne matrice koje su često korišteni operatori u kvantnim logičkim krugovima, označavaju se kao X, Y i Z, odnosno $\sigma_x$, $\sigma_y$ i $\sigma_z$. Svojstvene vrijednosti svake Paulijeve matrice su $\pm 1$, dok su svojstveni vektori:
+\begin{align*}
+\sigma_x:&
+\qquad
+\ket{x} = \frac{1}{\sqrt{2}}(\ket{0} + \ket{1})
+\qquad
+\ket{y} = \frac{1}{\sqrt{2}}(\ket{0} - \ket{1})
+\\
+\sigma_y:&
+\qquad
+\ket{R} = \frac{1}{\sqrt{2}}(\ket{0} + i\ket{1})
+\qquad
+\ket{L} = \frac{1}{\sqrt{2}}(\ket{0} - i\ket{1})
+\\
+\sigma_z:&
+\qquad
+\ket{x}
+\qquad
+\ket{y}
+\end{align*}
+Njihove vrijednosti iznosee:
+\[
+\sigma_x = \begin{bmatrix}
+0 & 1 \\ 1 & 0
+\end{bmatrix}
+\qquad
+\sigma_y = \begin{bmatrix}
+0 & -i \\ i & 0
+\end{bmatrix}
+\qquad
+\sigma_x = \begin{bmatrix}
+1 & 0 \\ 0 & -1
+\end{bmatrix}
+\]
+Svaka Paulijeva matrica vrši operaciju rotacije vektora stanja kvantnog bita za $\pi$ radijana na Blochovoj sferi oko osi po kojoj je nazvana.
+
+Paulijeve matrice su također važne jer linearnom kombinacijom njih i jedinične matrice moguće je konstruirati bilo koji Hermitski operator:
+\[
+A = \lambda_0I + \sum_{i = 1}^3\lambda_i\sigma_i
+\]
+gdje su svi $\lambda$ koeficijenti realni.
+
+
+\subsection{Hadamardov operator}
+
+Hadamardov operator vrši operaciju rotacije od $\pi$ radijana oko osi $\frac{\hat{x} + \hat{z}}{\sqrt{2}}$. Primarno se koristi kako bi se kvantni bit postavio u stanje superpozicije. Njegova vrijednost je:
+\[
+H = \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 & 1 \\ 1 & -1
+\end{bmatrix}
+\]
+Primjer Hadamardovog operatora nad kvantnim bitom $\ket{1}$:
+\[
+H\ket{1} = \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 & 1 \\ 1 & -1
+\end{bmatrix}
+\begin{bmatrix}
+0 \\ 1
+\end{bmatrix}
+= \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ -1
+\end{bmatrix}
+= \begin{bmatrix}
+\frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\]
+Naravno, zbog reverzibilnosti operatora, ponovnom primjenom Hadamardovog operatora kvantni bit bi se vratio u stanje $\ket{1}$.
+
+\subsection{control-U operatori}
+
+Zbog reverzibilnosti, 
+
+
+\subsection{Toffolijeva vrata}
+
+
 
 \section{Kvantni logički kurg}
+
+\subsection{Kvantni paralelizam}
+-easy

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  2 MAY 2021 23:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  5 MAY 2021 04:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -366,13 +366,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/opt/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [3] (./zavrsn
-i.toc)
+i.toc [4
+
+])
 \tf@toc=\write3
 \openout3 = `zavrsni.toc'.
 
- [4
-
-]
+ [5]
 \openout2 = `Uvod.aux'.
 
 
@@ -392,18 +392,23 @@ Poglavlje 2.
 
 
 ]
-<img/dvolomac_detektor.png, id=31, 760.34062pt x 190.46156pt>
+<img/dvolomac_detektor.png, id=35, 760.34062pt x 190.46156pt>
 File: img/dvolomac_detektor.png Graphic file (type png)
 <use img/dvolomac_detektor.png>
 Package pdftex.def Info: img/dvolomac_detektor.png  used on input line 49.
 (pdftex.def)             Requested size: 380.16937pt x 95.23053pt.
- [4 <./img/dvolomac_detektor.png (PNG copy)>] [5] [6]) [7]
+ [4 <./img/dvolomac_detektor.png (PNG copy)>] [5] [6] [7] [8]
+<img/bloch.png, id=55, 803.0pt x 854.19125pt>
+File: img/bloch.png Graphic file (type png)
+<use img/bloch.png>
+Package pdftex.def Info: img/bloch.png  used on input line 312.
+(pdftex.def)             Requested size: 160.59715pt x 170.83522pt.
+ [9 <./img/bloch.png>] [10]) [11] [12]
 \openout2 = `KvantniAlgoritmi.aux'.
 
-
-(./KvantniAlgoritmi.tex
+ (./KvantniAlgoritmi.tex
 Poglavlje 3.
-) [8
+) [13
 
 
 
@@ -413,7 +418,7 @@ Poglavlje 3.
 
  (./SimulacijaKvantnogRacunala.tex
 Poglavlje 4.
-) [9
+) [14
 
 
 
@@ -423,7 +428,7 @@ Poglavlje 4.
 
  (./Zakljucak.tex
 Poglavlje 5.
-) [10
+) [15
 
 
 
@@ -454,39 +459,40 @@ Overfull \hbox (9.80171pt too wide) in paragraph at lines 9--14
 ]2023$\T1/ptm/m/n/12 . 
  []
 
-) [11
+) [16
 
 
 
-] [12] (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
+] [17] (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
 (./KvantniAlgoritmi.aux) (./SimulacijaKvantnogRacunala.aux) (./Zakljucak.aux)) 
 ) 
 Here is how much of TeX's memory you used:
- 6352 strings out of 479917
- 92445 string characters out of 5856971
- 392172 words of memory out of 5000000
- 22774 multiletter control sequences out of 15000+600000
- 590624 words of font info for 92 fonts, out of 8000000 for 9000
+ 6372 strings out of 479917
+ 92681 string characters out of 5856971
+ 402197 words of memory out of 5000000
+ 22787 multiletter control sequences out of 15000+600000
+ 600639 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,7n,85p,942b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 80i,15n,85p,942b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/2020/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texlive/2020/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/texlive/2020/texmf-dist/font
 s/type1/public/amsfonts/cm/cmmi6.pfb></opt/texlive/2020/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmmi8.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmr12.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr8.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></o
-pt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt
-/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/texlive/2020/
-texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/2020/texmf-dist/fo
-nts/type1/urw/helvetic/uhvr8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw
-/times/utmb8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pf
-b></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (15 pages, 163989 bytes).
+cm/cmr6.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
+fb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></op
+t/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/texliv
+e/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/texlive/
+2020/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/texlive/2020/texmf-dis
+t/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1
+/urw/helvetic/uhvr8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/ut
+mb8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/t
+exlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on zavrsni.pdf (21 pages, 217939 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 141 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

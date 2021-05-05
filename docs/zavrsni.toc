@@ -8,18 +8,28 @@
 \contentsline {subsection}{\numberline {2.2.3}Svojstva Hilbertovog prostora}{5}{}%
 \contentsline {subsection}{\numberline {2.2.4}Amplituda vjerojatnosti i vjerojatnost}{6}{}%
 \contentsline {subsection}{\numberline {2.2.5}Vektorski prikaz}{6}{}%
-\contentsline {section}{\numberline {2.3}Sustav kvantnih bitova i spregnutost}{7}{}%
-\contentsline {section}{\numberline {2.4}Kvantni operatori}{7}{}%
-\contentsline {section}{\numberline {2.5}Kvantni paralelizam}{7}{}%
-\contentsline {section}{\numberline {2.6}Kvantni logički kurg}{7}{}%
-\contentsline {chapter}{\numberline {3}Kvantni algoritmi}{8}{}%
-\contentsline {section}{\numberline {3.1}Groverov algoritam}{8}{}%
-\contentsline {section}{\numberline {3.2}Deutschov algoritam}{8}{}%
-\contentsline {section}{\numberline {3.3}Shorov algoritam}{8}{}%
-\contentsline {chapter}{\numberline {4}Simulacija kvantnog računala}{9}{}%
-\contentsline {section}{\numberline {4.1}Postojeći simulatori kvantnog računala}{9}{}%
-\contentsline {section}{\numberline {4.2}Izrada simulatora kvantnog računala}{9}{}%
-\contentsline {section}{\numberline {4.3}Primjeri simulacije kvantnih logičkih krugova}{9}{}%
-\contentsline {section}{\numberline {4.4}Prednosti i mane simulatora kvantnog računala}{9}{}%
-\contentsline {chapter}{\numberline {5}Zaključak}{10}{}%
-\contentsline {chapter}{Literatura}{11}{}%
+\contentsline {section}{\numberline {2.3}Sustav kvantnih bitova}{7}{}%
+\contentsline {subsection}{\numberline {2.3.1}Dva ili više kvantnih bitova}{7}{}%
+\contentsline {subsection}{\numberline {2.3.2}Spregnutost}{8}{}%
+\contentsline {section}{\numberline {2.4}Kvantni operatori}{9}{}%
+\contentsline {subsection}{\numberline {2.4.1}Svojstva}{9}{}%
+\contentsline {subsection}{\numberline {2.4.2}Blochova sfera}{9}{}%
+\contentsline {subsection}{\numberline {2.4.3}Operator projekcije}{10}{}%
+\contentsline {subsection}{\numberline {2.4.4}Hermitski operator}{10}{}%
+\contentsline {subsection}{\numberline {2.4.5}Paulijeve matrice}{11}{}%
+\contentsline {subsection}{\numberline {2.4.6}Hadamardov operator}{11}{}%
+\contentsline {subsection}{\numberline {2.4.7}control-U operatori}{12}{}%
+\contentsline {subsection}{\numberline {2.4.8}Toffolijeva vrata}{12}{}%
+\contentsline {section}{\numberline {2.5}Kvantni logički kurg}{12}{}%
+\contentsline {subsection}{\numberline {2.5.1}Kvantni paralelizam}{12}{}%
+\contentsline {chapter}{\numberline {3}Kvantni algoritmi}{13}{}%
+\contentsline {section}{\numberline {3.1}Groverov algoritam}{13}{}%
+\contentsline {section}{\numberline {3.2}Deutschov algoritam}{13}{}%
+\contentsline {section}{\numberline {3.3}Shorov algoritam}{13}{}%
+\contentsline {chapter}{\numberline {4}Simulacija kvantnog računala}{14}{}%
+\contentsline {section}{\numberline {4.1}Postojeći simulatori kvantnog računala}{14}{}%
+\contentsline {section}{\numberline {4.2}Izrada simulatora kvantnog računala}{14}{}%
+\contentsline {section}{\numberline {4.3}Primjeri simulacije kvantnih logičkih krugova}{14}{}%
+\contentsline {section}{\numberline {4.4}Prednosti i mane simulatora kvantnog računala}{14}{}%
+\contentsline {chapter}{\numberline {5}Zaključak}{15}{}%
+\contentsline {chapter}{Literatura}{16}{}%
