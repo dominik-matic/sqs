@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  5 MAY 2021 04:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  7 MAY 2021 04:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -257,35 +257,500 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@floatcapt=\box51
 )
 (/opt/texlive/2020/texmf-dist/tex/latex/braket/braket.sty)
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 7.
+(/opt/texlive/2020/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/opt/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/opt/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks28
+\pgfutil@tempdima=\dimen181
+\pgfutil@tempdimb=\dimen182
+
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.te
+x)) (/opt/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box52
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2020/10/01 v3.1.6a (3.1.6a)
+))
+Package: pgf 2020/10/01 v3.1.6a (3.1.6a)
+
+(/opt/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/opt/texlive/2020/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2020/10/01 v3.1.6a (3.1.6a)
+
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks29
+\pgfkeys@temptoks=\toks30
+
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.te
+x
+\pgfkeys@tmptoks=\toks31
+))
+\pgf@x=\dimen183
+\pgf@y=\dimen184
+\pgf@xa=\dimen185
+\pgf@ya=\dimen186
+\pgf@xb=\dimen187
+\pgf@yb=\dimen188
+\pgf@xc=\dimen189
+\pgf@yc=\dimen190
+\pgf@xd=\dimen191
+\pgf@yd=\dimen192
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count277
+\c@pgf@countb=\count278
+\c@pgf@countc=\count279
+\c@pgf@countd=\count280
+\t@pgf@toka=\toks32
+\t@pgf@tokb=\toks33
+\t@pgf@tokc=\toks34
+\pgf@sys@id@count=\count281
+ (/opt/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2020/10/01 v3.1.6a (3.1.6a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2020/10/01 v3.1.6a (3.1.6a)
+
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2020/10/01 v3.1.6a (3.1.6a)
+)))
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.t
+ex
+File: pgfsyssoftpath.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfsyssoftpath@smallbuffer@items=\count282
+\pgfsyssoftpath@bigbuffer@items=\count283
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.t
+ex
+File: pgfsysprotocol.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)) (/opt/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/opt/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2020/10/01 v3.1.6a (3.1.6a)
+
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen193
+\pgfmath@count=\count284
+\pgfmath@box=\box53
+\pgfmath@toks=\toks35
+\pgfmath@stack@operand=\toks36
+\pgfmath@stack@operation=\toks37
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.
+tex)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometr
+ic.code.tex)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code
+.tex)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.
+code.tex)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.t
+ex)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.
+tex)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.t
+ex)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarit
+hmetics.code.tex)))
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count285
+))
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@picminx=\dimen194
+\pgf@picmaxx=\dimen195
+\pgf@picminy=\dimen196
+\pgf@picmaxy=\dimen197
+\pgf@pathminx=\dimen198
+\pgf@pathmaxx=\dimen199
+\pgf@pathminy=\dimen256
+\pgf@pathmaxy=\dimen257
+\pgf@xx=\dimen258
+\pgf@xy=\dimen259
+\pgf@yx=\dimen260
+\pgf@yy=\dimen261
+\pgf@zx=\dimen262
+\pgf@zy=\dimen263
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.c
+ode.tex
+File: pgfcorepathconstruct.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@path@lastx=\dimen264
+\pgf@path@lasty=\dimen265
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.
+tex
+File: pgfcorepathusage.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@shorten@end@additional=\dimen266
+\pgf@shorten@start@additional=\dimen267
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfpic=\box54
+\pgf@hbox=\box55
+\pgf@layerbox@main=\box56
+\pgf@picture@serial@count=\count286
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.co
+de.tex
+File: pgfcoregraphicstate.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgflinewidth=\dimen268
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations
+.code.tex
+File: pgfcoretransformations.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@pt@x=\dimen269
+\pgf@pt@y=\dimen270
+\pgf@pt@temp=\dimen271
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.te
+x
+File: pgfcoreobjects.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.
+code.tex
+File: pgfcorepathprocessing.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfarrowsep=\dimen272
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@max=\dimen273
+\pgf@sys@shading@range@num=\count287
+\pgf@shadingcount=\count288
+) (/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.te
+x
+File: pgfcoreimage.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.t
+ex
+File: pgfcoreexternal.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfexternal@startupbox=\box57
+))
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.co
+de.tex
+File: pgfcoretransparency.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.t
+ex
+File: pgfcorepatterns.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+))) (/opt/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.
+tex
+File: pgfmoduleshapes.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfnodeparttextbox=\box58
+) (/opt/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/opt/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.
+sty
+Package: pgfcomp-version-0-65 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@nodesepstart=\dimen274
+\pgf@nodesepend=\dimen275
+)
+(/opt/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.
+sty
+Package: pgfcomp-version-1-18 2020/10/01 v3.1.6a (3.1.6a)
+)) (/opt/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/opt/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/opt/texlive/2020/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2020/10/01 v3.1.6a (3.1.6a)
+
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen276
+\pgffor@skip=\dimen277
+\pgffor@stack=\toks38
+\pgffor@toks=\toks39
+))
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2020/10/01 v3.1.6a (3.1.6a)
+
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.
+code.tex
+File: pgflibraryplothandlers.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@plot@mark@count=\count289
+\pgfplotmarksize=\dimen278
+)
+\tikz@lastx=\dimen279
+\tikz@lasty=\dimen280
+\tikz@lastxsaved=\dimen281
+\tikz@lastysaved=\dimen282
+\tikz@lastmovetox=\dimen283
+\tikz@lastmovetoy=\dimen284
+\tikzleveldistance=\dimen285
+\tikzsiblingdistance=\dimen286
+\tikz@figbox=\box59
+\tikz@figbox@bg=\box60
+\tikz@tempbox=\box61
+\tikz@tempbox@bg=\box62
+\tikztreelevel=\count290
+\tikznumberofchildren=\count291
+\tikznumberofcurrentchild=\count292
+\tikz@fig@count=\count293
+
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfmatrixcurrentrow=\count294
+\pgfmatrixcurrentcolumn=\count295
+\pgf@matrix@numberofcolumns=\count296
+)
+\tikz@expandcount=\count297
+
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)))
+(/opt/texlive/2020/texmf-dist/tex/latex/quantikz/quantikz.sty
+Package: quantikz 2020/04/27 typeset quantum circuit diagrams
+
+(/opt/texlive/2020/texmf-dist/tex/latex/quantikz/tikzlibraryquantikz.code.tex
+(/opt/texlive/2020/texmf-dist/tex/latex/xargs/xargs.sty
+Package: xargs 2008/03/22 v1.1  extended macro definitions  (mpg)
+
+(/opt/texlive/2020/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/opt/texlive/2020/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/opt/texlive/2020/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks40
+\XKV@tempa@toks=\toks41
+)
+\XKV@depth=\count298
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\xargs@max=\count299
+\xargs@toksa=\toks42
+\xargs@toksb=\toks43
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/xstring/xstring.sty
+(/opt/texlive/2020/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count300
+\decimalpart=\count301
+)
+Package: xstring 2019/02/06 v1.83 String manipulations (CT)
+)
+(/opt/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/opt/texlive/2020/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2020-10-05 L3 programming layer (loader) 
+
+(/opt/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count302
+\l__pdf_internal_box=\box63
+))
+Package: xparse 2020-10-05 L3 Experimental document command parser
+
+(/opt/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex))
+(/opt/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count303
+)
+(/opt/texlive/2020/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2020/03/24 v1.24 mathematical typesetting tools
+
+(/opt/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count304
+\calc@Bcount=\count305
+\calc@Adimen=\dimen287
+\calc@Bdimen=\dimen288
+\calc@Askip=\skip55
+\calc@Bskip=\skip56
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count306
+\calc@Cskip=\skip57
+)
+(/opt/texlive/2020/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
+\g_MT_multlinerow_int=\count307
+\l_MT_multwidth_dim=\dimen289
+\origjot=\skip58
+\l_MT_shortvdotswithinadjustabove_dim=\dimen290
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen291
+\l_MT_above_intertext_sep=\dimen292
+\l_MT_below_intertext_sep=\dimen293
+\l_MT_above_shortintertext_sep=\dimen294
+\l_MT_below_shortintertext_sep=\dimen295
+\xmathstrut@box=\box64
+\xmathstrut@dim=\dimen296
+)
+(/opt/texlive/2020/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/opt/texlive/2020/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+(/opt/texlive/2020/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+libraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.c
+ode.tex
+File: pgflibraryarrows.meta.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfarrowinset=\dimen297
+\pgfarrowlength=\dimen298
+\pgfarrowwidth=\dimen299
+\pgfarrowlinewidth=\dimen300
+))
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarydecorations.pathreplacing.code.tex
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarydecorations.code.tex
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code
+.tex
+\pgfdecoratedcompleteddistance=\dimen301
+\pgfdecoratedremainingdistance=\dimen302
+\pgfdecoratedinputsegmentcompleteddistance=\dimen303
+\pgfdecoratedinputsegmentremainingdistance=\dimen304
+\pgf@decorate@distancetomove=\dimen305
+\pgf@decorate@repeatstate=\count308
+\pgfdecorationsegmentamplitude=\dimen306
+\pgfdecorationsegmentlength=\dimen307
+)
+\tikz@lib@dec@box=\box65
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibraryd
+ecorations.pathreplacing.code.tex))
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+libraryfit.code.tex
+File: tikzlibraryfit.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+libraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes
+.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+))
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarydecorations.pathmorphing.code.tex
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibraryd
+ecorations.pathmorphing.code.tex))
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+libraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes
+.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+))
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@layerbox@background=\box66
+\pgf@layerboxsaved@background=\box67
+)
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarydecorations.markings.code.tex
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibraryd
+ecorations.markings.code.tex))
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarymath.code.tex
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+libraryfpu.code.tex
+(/opt/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
+)
+\tikz@math@for@depth=\count309
+\tikz@math@dimen=\dimen308
+\tikz@math@toks=\toks44
+)
+\myl=\skip59
+\myh=\skip60
+\myd=\skip61
+\c@aaa=\count310
+LaTeX Font Info:    Trying to load font information for U+msa on input line 142
+.
+ (/opt/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 142
+.
+
+(/opt/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)))
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 9.
 
 
 (/opt/texlive/2020/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-)
-(/opt/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count277
-\l__pdf_internal_box=\box52
-)
-(./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux) (./KvantniAlgoritmi.aux)
+) (./zavrsni.aux
+(./Uvod.aux) (./KvantnoRacunalo.aux) (./KvantniAlgoritmi.aux)
 (./SimulacijaKvantnogRacunala.aux) (./Zakljucak.aux))
 \openout1 = `zavrsni.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -323,17 +788,17 @@ LaTeX Font Info:    ... okay on input line 7.
 
 (/opt/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count278
-\scratchdimen=\dimen181
-\scratchbox=\box53
-\nofMPsegments=\count279
-\nofMParguments=\count280
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count281
-\MPscratchDim=\dimen182
-\MPnumerator=\count282
-\makeMPintoPDFobject=\count283
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count311
+\scratchdimen=\dimen309
+\scratchbox=\box68
+\nofMPsegments=\count312
+\nofMParguments=\count313
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count314
+\MPscratchDim=\dimen310
+\MPnumerator=\count315
+\makeMPintoPDFobject=\count316
+\everyMPtoPDFconversion=\toks46
 ) (/opt/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -346,31 +811,19 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 18
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 20
 .
 
 (/opt/texlive/2020/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
-)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
-
-
-(/opt/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
-
-
-(/opt/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/opt/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [3] (./zavrsn
 i.toc [4
 
 ])
-\tf@toc=\write3
-\openout3 = `zavrsni.toc'.
+\tf@toc=\write4
+\openout4 = `zavrsni.toc'.
 
  [5]
 \openout2 = `Uvod.aux'.
@@ -392,23 +845,68 @@ Poglavlje 2.
 
 
 ]
-<img/dvolomac_detektor.png, id=35, 760.34062pt x 190.46156pt>
+<img/dvolomac_detektor.png, id=38, 760.34062pt x 190.46156pt>
 File: img/dvolomac_detektor.png Graphic file (type png)
 <use img/dvolomac_detektor.png>
 Package pdftex.def Info: img/dvolomac_detektor.png  used on input line 49.
 (pdftex.def)             Requested size: 380.16937pt x 95.23053pt.
  [4 <./img/dvolomac_detektor.png (PNG copy)>] [5] [6] [7] [8]
-<img/bloch.png, id=55, 803.0pt x 854.19125pt>
+<img/bloch.png, id=58, 803.0pt x 854.19125pt>
 File: img/bloch.png Graphic file (type png)
 <use img/bloch.png>
 Package pdftex.def Info: img/bloch.png  used on input line 312.
 (pdftex.def)             Requested size: 160.59715pt x 170.83522pt.
- [9 <./img/bloch.png>] [10]) [11] [12]
+ [9 <./img/bloch.png>] [10] [11] [12] [13]
+<img/exampleqc.png, id=78, 1505.625pt x 903.375pt>
+File: img/exampleqc.png Graphic file (type png)
+<use img/exampleqc.png>
+Package pdftex.def Info: img/exampleqc.png  used on input line 528.
+(pdftex.def)             Requested size: 301.11966pt x 180.6718pt.
+<img/xyzh.png, id=79, 249.93375pt x 606.76688pt>
+File: img/xyzh.png Graphic file (type png)
+<use img/xyzh.png>
+Package pdftex.def Info: img/xyzh.png  used on input line 538.
+(pdftex.def)             Requested size: 74.9807pt x 182.03146pt.
+ [14 <./img/exampleqc.png>]
+<img/xop.png, id=84, 162.6075pt x 78.2925pt>
+File: img/xop.png Graphic file (type png)
+<use img/xop.png>
+Package pdftex.def Info: img/xop.png  used on input line 544.
+(pdftex.def)             Requested size: 65.04184pt x 31.31644pt.
+<img/CZ.png, id=85, 303.38344pt x 212.29312pt>
+File: img/CZ.png Graphic file (type png)
+<use img/CZ.png>
+Package pdftex.def Info: img/CZ.png  used on input line 550.
+(pdftex.def)             Requested size: 91.01573pt x 63.68842pt.
+<img/CNOT.png, id=86, 267.24844pt x 184.43906pt>
+File: img/CNOT.png Graphic file (type png)
+<use img/CNOT.png>
+Package pdftex.def Info: img/CNOT.png  used on input line 556.
+(pdftex.def)             Requested size: 80.17514pt x 55.33214pt.
+<img/SWAP.png, id=87, 541.27219pt x 155.83218pt>
+File: img/SWAP.png Graphic file (type png)
+<use img/SWAP.png>
+Package pdftex.def Info: img/SWAP.png  used on input line 562.
+(pdftex.def)             Requested size: 189.44809pt x 54.54207pt.
+ [15 <./img/xyzh.png (PNG copy)> <./img/xop.png (PNG copy)> <./img/CZ.png (PNG 
+copy)> <./img/CNOT.png (PNG copy)>]
+<img/CCNOT.png, id=93, 228.10219pt x 258.21469pt>
+File: img/CCNOT.png Graphic file (type png)
+<use img/CCNOT.png>
+Package pdftex.def Info: img/CCNOT.png  used on input line 568.
+(pdftex.def)             Requested size: 79.83694pt x 90.37648pt.
+<img/CSWAP.png, id=94, 1027.84pt x 1027.84pt>
+File: img/CSWAP.png Graphic file (type png)
+<use img/CSWAP.png>
+Package pdftex.def Info: img/CSWAP.png  used on input line 573.
+(pdftex.def)             Requested size: 92.5016pt x 92.5016pt.
+ [16 <./img/SWAP.png (PNG copy)> <./img/CCNOT.png (PNG copy)> <./img/CSWAP.png>
+]) [17]
 \openout2 = `KvantniAlgoritmi.aux'.
 
  (./KvantniAlgoritmi.tex
 Poglavlje 3.
-) [13
+) [18
 
 
 
@@ -418,7 +916,7 @@ Poglavlje 3.
 
  (./SimulacijaKvantnogRacunala.tex
 Poglavlje 4.
-) [14
+) [19
 
 
 
@@ -428,7 +926,7 @@ Poglavlje 4.
 
  (./Zakljucak.tex
 Poglavlje 5.
-) [15
+) [20
 
 
 
@@ -459,40 +957,41 @@ Overfull \hbox (9.80171pt too wide) in paragraph at lines 9--14
 ]2023$\T1/ptm/m/n/12 . 
  []
 
-) [16
+) [21
 
 
 
-] [17] (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
+] [22] (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
 (./KvantniAlgoritmi.aux) (./SimulacijaKvantnogRacunala.aux) (./Zakljucak.aux)) 
 ) 
 Here is how much of TeX's memory you used:
- 6372 strings out of 479917
- 92681 string characters out of 5856971
- 402197 words of memory out of 5000000
- 22787 multiletter control sequences out of 15000+600000
- 600639 words of font info for 102 fonts, out of 8000000 for 9000
+ 21913 strings out of 479917
+ 441694 string characters out of 5856971
+ 753239 words of memory out of 5000000
+ 37976 multiletter control sequences out of 15000+600000
+ 605611 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,15n,85p,942b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 85i,19n,126p,1176b,1222s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/2020/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texlive/2020/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/texlive/2020/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi6.pfb></opt/texlive/2020/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi8.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr12.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr6.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
-fb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></op
-t/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/texliv
-e/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/texlive/
-2020/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/texlive/2020/texmf-dis
-t/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1
-/urw/helvetic/uhvr8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/ut
-mb8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/t
-exlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (21 pages, 217939 bytes).
+st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/texlive/2020/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi12.pfb></opt/texlive/2020/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi6.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi8.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr12.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6
+.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></op
+t/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/texli
+ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/texlive/2020/
+texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/texlive/2020/te
+xmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/texlive/2020/texmf-dist/fonts
+/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/he
+lvetic/uhvr8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pf
+b></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/texlive/
+2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on zavrsni.pdf (26 pages, 345857 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
+ 175 PDF objects out of 1000 (max. 8388607)
+ 115 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 63 words of extra memory for PDF output out of 10000 (max. 10000000)
 

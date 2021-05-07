@@ -313,7 +313,7 @@ Ta činjenica se čini zbunjujućom jer svaki kvantni bit u potpunosti određuju
 \caption{Blochova sfera} 
 \end{figure}
 
-Bitno je primjetiti da vektori koji su u Hilbertovom prostoru ortogonalni su na Blochovoj sferi suprotni. U točki gdje os $x$ probada sferu nalazi se stanje $\frac{1}{\sqrt{2}}(\ket{0} + \ket{1})$, a suprotno njemu $\frac{1}{\sqrt{2}}(\ket{0} - \ket{1})$. Na isti način u smjeru osi $y$ nalazi se stanje $\frac{1}{\sqrt{2}}(\ket{0} + i\ket{1})$ te suprotno njemu $\frac{1}{\sqrt{2}}(\ket{0} - i\ket{1})$. Navedeni vektori na $x$ osi označavaju se kao $\ket{x}$ i $\ket{y}$, a vektori na $y$ osi kao $\ket{R}$ i $\ket{L}$.
+Bitno je primjetiti da vektori koji su u Hilbertovom prostoru ortogonalni su na Blochovoj sferi suprotni. U točki gdje os $x$ probada sferu nalazi se stanje $\frac{1}{\sqrt{2}}(\ket{0} + \ket{1})$, a suprotno njemu $\frac{1}{\sqrt{2}}(\ket{0} - \ket{1})$. Na isti način u smjeru osi $y$ nalazi se stanje $\frac{1}{\sqrt{2}}(\ket{0} + i\ket{1})$ te suprotno njemu $\frac{1}{\sqrt{2}}(\ket{0} - i\ket{1})$. Navedeni vektori označavaju se kao $\ket{x}$ i $\ket{y}$, odnosno $\ket{R}$ i $\ket{L}$.
 
 \subsection{Operator projekcije}
 
@@ -321,9 +321,9 @@ Skalarnim umnoškom dva vektora stanja kvantnih bitova dobije se skalar koji se 
 \[
 \ket{\Omega} = \ket{\Psi}\braket{\Psi|\Phi}
 \]
-Dio izraza $\ket{\Psi}\bra{\Psi}$ možemo shvatiti kao operator projekcije na stanje $\ket{\Psi}$ te se takav operator naziva projektorom. Također, vektori dobiveni projekcijom općenito nisu normirani te kao takvi ne predstavljaju neko stanje kvantnog bita. Projektori se koriste kako bi se konstruirali drugi operatori.
+Dio izraza $\ket{\Psi}\bra{\Psi}$ možemo shvatiti kao operator projekcije na stanje $\ket{\Psi}$ te se takav operator naziva projektorom. Vektori dobiveni projekcijom općenito nisu normirani te kao takvi ne predstavljaju neko stanje kvantnog bita. Projektori se koriste kako bi se konstruirali drugi operatori.
 
-Matrični prikaz projektora na vektore stanja $\ket{0}$ i $\ket{1}$
+Matrični prikaz projektora na vektore stanja $\ket{0}$ i $\ket{1}$:
 \[
 \ket{0}\bra{0} =
 \begin{bmatrix}
@@ -398,9 +398,10 @@ Njihove vrijednosti iznosee:
 Svaka Paulijeva matrica vrši operaciju rotacije vektora stanja kvantnog bita za $\pi$ radijana na Blochovoj sferi oko osi po kojoj je nazvana.
 
 Paulijeve matrice su također važne jer linearnom kombinacijom njih i jedinične matrice moguće je konstruirati bilo koji Hermitski operator:
-\[
+\begin{equation}
 A = \lambda_0I + \sum_{i = 1}^3\lambda_i\sigma_i
-\]
+\label{eq:hermop}
+\end{equation}
 gdje su svi $\lambda$ koeficijenti realni.
 
 
@@ -428,16 +429,224 @@ H\ket{1} = \frac{1}{\sqrt{2}}\begin{bmatrix}
 \]
 Naravno, zbog reverzibilnosti operatora, ponovnom primjenom Hadamardovog operatora kvantni bit bi se vratio u stanje $\ket{1}$.
 
-\subsection{control-U operatori}
+\subsection{Ostali unarni operatori}
 
-Zbog reverzibilnosti, 
+Svi do sada navedeni operatori djeluju nad samo jednim kvantnim bitom, pa se takvi operatori nazivaju unarnim. Postoje i drugi operatori kao što su $\sqrt{\text{NOT}}$ i operator faznog pomaka $R[\phi]$:
+\[
+\sqrt{\text{NOT}} = \sqrt{\sigma_x} = \frac{1}{1+i}\begin{bmatrix}
+1 & i \\ i & 1
+\end{bmatrix}
+\qquad
+R[\phi] = \begin{bmatrix}
+1 & 0 \\ 0 & e^{i\phi}
+\end{bmatrix}
+\]
+No, njih, kao i sve ostale unitarne Hermitske operatore koje je moguće dobiti na način dan jednadžbom \ref{eq:hermop}, nije toliko bitno razraditi u sklopu ovoga rada.
 
+\subsection{CU operatori}
 
-\subsection{Toffolijeva vrata}
+CU operatori ili control-U operatori djeluju na 2 kvantna bita od kojih je jedan bit \textbf{kontrolni}. Općeniti izgled CU operatora u \emph{blok-matričnom} prikazu je:
+\begin{equation}
+CU = \begin{bmatrix}
+I & 0 \\ 0 & U
+\end{bmatrix}
+\label{eq:cu}
+\end{equation}
+gdje je $U$ bilo koji unarni operator, a $I$ jedinična matrica. U načelu, operator provodi operaciju $U$ nad drugim kvantnim bitom ako je prvi u jedinici, inače ga ne mijenja.
 
+Najkorišteniji CU operator jest CX ili CNOT čija se funkcionalnost može opisati na način:
+\[CNOT\ket{00} = \ket{00}\]
+\[CNOT\ket{01} = \ket{01}\]
+\[CNOT\ket{10} = \ket{11}\]
+\[CNOT\ket{11} = \ket{10}\]
+s odgovarajućom matricom:
+\[
+CNOT = \begin{bmatrix}
+I & 0 \\ 0 & \sigma_x
+\end{bmatrix} =
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0
+\end{bmatrix}
+\]
+Na analogan način se dobiju matrice za CY, CZ i CH unarnih operatora $\sigma_y$, $\sigma_z$, odnosno $H$.
 
+Ovakva konstrukcija CU operatora uvijek pretpostavlja da će prvi kvantni bit biti kontrolni, a onaj nad kojim se vrši operacija drugi. Pošto je na kvantnom računalu moguće da bilo koja dva para kvantnih bitova budu operandi, korisno je, za svrhu izgradnje kvantnog simulatora, na drugačiji način prikazati konstrukciju CU operatora. Sljedeća jednadžba opisuje CU operator već spomenutog oblika \ref{eq:cu}, gdje je prvi bit kontrolni.
+\[
+CU_{1,2} = \ket{0}\bra{0} \otimes I_2 + \ket{1}\bra{1} \otimes U
+\]
+Ukoliko je potrebno izgraditi matricu CU operatora gdje je kontrolni bit drugi, a ne prvi, u prethodnoj jednadžbi potrebno je samo promijeniti redoslijed varijabli na način:
+\[
+CU_{2,1} = I_2  \otimes \ket{0}\bra{0} + U \otimes \ket{1}\bra{1}
+\]
+
+\subsection{SWAP operator}
+
+SWAP operator zamjenjuje stanja dvaju kvantnih bitova. Moguće ga je dobiti kombinacijom CNOT operatora:
+\[
+\textit{SWAP} = CNOT_{1,2}\cdot CNOT_{2,1}\cdot CNOT_{1,2} = \begin{bmatrix}
+1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1
+\end{bmatrix}
+\]
+
+\subsection{Toffolijeva i Fredkinova vrata}
+
+Toffolijeva vrata ili CCNOT operator jest operator koji djeluje na tri kvantna bita od kojih su dva kontrolna. Oba kontrolna bita moraju biti u jedinici kako bi se obavila operacija NOT nad trećim bitom. Matrična forma CCNOT operatora gdje su prvi i drugi bit kontrolni jest:
+\[
+\textit{CCNOT}= \begin{bmatrix}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+\end{bmatrix}
+\]
+
+Fredkinova vrata ili drugim imenom CSWAP operator radi točno što mu ime sugerira. Ako je kontrolni bit u jedinici, obavi operaciju SWAP nad ostala dva bita, inače ne radi ništa. Njegova matrica jest:
+\[
+\textit{CSWAP} = \begin{bmatrix}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\]
 
 \section{Kvantni logički kurg}
 
-\subsection{Kvantni paralelizam}
--easy
+\subsection{Topografija logičkog kruga}
+
+Kvantni logički krug sastoji se od kvantnih bitova i kvantnih logičkih vrata kroz koja prolaze određeni kvantni bitovi. Bitovi su reprezentirani kao paralelne linije na koje se s lijeva na desno primjenjuju odgovarajuća logička vrata. Na kraju logičkog kruga vrši se mjerenje\footnote{Po načelu odgođenog mjerenja \engl{Deferred Measurement Principle} odgađanje mjerenja do kraja logičkog kruga ne utječe na raspodjelu vjerojatnosti ishoda, pa se iz tog razloga mjerenje uvijek smješta na kraj, iako je sasvim moguće mjeriti pojedine kvantne bitove kada se zna da više neće prolaziti kroz neka logička vrata.}.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{img/exampleqc.png}
+\caption{Primjer kvantnog logičkog kruga} 
+\end{figure}
+Također, standardno je da su svi kvantni bitovi inicijalizirani u $\ket{0}$ te će u ovom radu prvi bit biti najmanje težine, iako to ne mora svugdje biti tako.
+
+\subsection{Reprezentacija logičkih operatora}
+
+Svaki do sada spomenuti logički operator ima svoju reprezentaciju u kvantnom logičkom krugu. Operatori $\sigma_x$, $\sigma_y$, $\sigma_z$ i Hadamard:
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{img/xyzh.png}
+\caption{Reprezentacija unarnih logičkih operatora} 
+\end{figure}
+Pošto je $\sigma_x$ često korišten ima i drugi oblik:
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{img/xop.png}
+\caption{Alternativni $\sigma_x$} 
+\end{figure}
+CU operatori imaju crnu točku na kontrolnom bitu spojenu vertikalnom crtom sa unarnim operatorom na drugom bitu:
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{img/CZ.png}
+\caption{CZ operator} 
+\end{figure}
+No, kao i $\sigma_x$, CNOT ima drugačiji prikaz koji se puno češće koristi:
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{img/CNOT.png}
+\caption{CNOT operator} 
+\end{figure}
+SWAP operator također ima dvije reprezentacije:
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{img/SWAP.png}
+\caption{SWAP operator} 
+\end{figure}
+Toffolijeva i Fredkinova vrata:
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{img/CCNOT.png}
+\caption{Toffolijeva vrata} 
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.09]{img/CSWAP.png}
+\caption{Fredkinova vrata} 
+\end{figure}
+
+\subsection{Matrični prikaz}
+Svaki kvantni logički krug može se prikazati jednom unitarnom transformacijom. U slučaju kvantnog logičkog kruga s jednim kvantnim bitom, matricu cijelog logičkog kruga dobivamo jednostavnim matričnim množenjem operatora.
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\lstick{$\ket{0}$} & \gate{H} & \gate{Z} & \gate{H} & \qw
+\end{quantikz}
+\end{figure}
+\[
+U =HZH = \frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}}
+\begin{bmatrix} 1 & 1 \\ 1 & -1  \end{bmatrix}
+\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
+\begin{bmatrix} 1 & 1 \\ 1 & -1  \end{bmatrix}
+= \frac{1}{2} \begin{bmatrix} 0 & 2 \\ 2 & 0 \end{bmatrix}
+= \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}
+\]
+Stanje vektora na kraju logičkog kruga:
+\[
+U\ket{0} = \begin{bmatrix}
+0 & 1 \\ 1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+1 \\ 0
+\end{bmatrix}
+= \begin{bmatrix}
+0 \\ 1
+\end{bmatrix}
+= \ket{1}
+\]
+
+Matrica nezavisnih paralelnih operatora dobiva se \emph{tenzorskim produktom} pojedinih operatora, odnosno matricom identiteta ako nema operatora.
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\lstick{$\ket{0}$} & \gate{H} & \qw \\
+\lstick{$\ket{0}$} & \qw & \qw \\
+\lstick{$\ket{0}$} & \gate{H} & \qw
+\end{quantikz}
+\end{figure}
+
+\begin{align*}
+U = H \otimes I \otimes H &= \frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}}
+\begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix} \otimes
+\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \otimes
+\begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix} \\
+&= \frac{1}{2}
+\begin{bmatrix} I & I \\ I & -I \end{bmatrix} \otimes
+\begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix} \\
+&= \frac{1}{\sqrt{2}} \begin{bmatrix} H & 0 & H & 0 \\ 0 & H & 0 & H \\ H & 0 & -H & 0 \\ 0 & H & 0 & -H \end{bmatrix}
+\end{align*}
+Stanje sustava na kraju logičkog kruga je:
+\[
+U\ket{000} = \frac{1}{2}
+\begin{bmatrix}
+1 & 1 & 0 & 0 & 1 & 1 & 0 & 0 \\
+1 & -1 & 0 & 0 & 1 & -1 & 0 & 0 \\
+0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+0 & 0 & 1 & -1 & 0 & 0 & 1 & -1 \\
+1 & 1 & 0 & 0 & -1 & -1 & 0 & 0 \\
+1 & -1 & 0 & 0 & -1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 1 & 0 & 0 & -1 & -1 \\
+0 & 0 & 1 & -1 & 0 & 0 & -1 & 1
+\end{bmatrix}
+\begin{bmatrix}
+1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 
+\end{bmatrix}
+= \begin{bmatrix}
+\frac{1}{2} \\ \frac{1}{2} \\ 0 \\ 0 \\ \frac{1}{2} \\ \frac{1}{2} \\ 0 \\ 0 
+\end{bmatrix}
+\]
+Bitovi 0 i 2 su postavljeni u stanje superpozicije dok je bit 1 ostao u stanju $\ket{0}$ rezultirajući da se mjerenjem sustava uvijek dobije stanje koje na drugom bitu ima nulu. Iz vektora se vidi da se mjerenjem mogu dobiti samo stanja $\ket{000}$, $\ket{001}$, $\ket{100}$ i $\ket{101}$ što odgovara očekivanjima.
+
+Kombinirajući tenzorski produkt i matrično množenje može se izračunati matrična reprezentacija svakog kvantnog logičkog kruga što je u suštini točno ono što simulator kvantnog računala i radi.
+
+
+
