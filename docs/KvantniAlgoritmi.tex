@@ -1,4 +1,121 @@
 \chapter{Kvantni algoritmi}
+
+\section{Kvantni paralelizam}
+
+Kvantni paralelizam je svojstvo kvantnih računala da izvrše neku operaciju nad više mogućih ulaza odjednom. To svojstvo proizlazi iz prirode kvantnih bitova koja im omogućava da se nalaze u superpoziciji stanja. Za višestruku evaluaciju neke funkcije $f$, klasično računalo mora evaluirati $f$ više puta za različite ulaze, no kvantno računalo može tu istu funkciju evaluirati samo jednom i dobiti vektor stanja koji je težinska superpozicija svih mogućih izlaza. Takvo svojstvo se možda na prvi pogled ne čini previše korisnim, ali postoje algoritmi i situacije gdje se takvo svojstvo pokazalo iznimno korisnim, ponajviše kada je bitno neko općenito svojstvo funkcije.
+
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\lstick{$\ket{0}$} & \gate{H} & \qw  \\
+\lstick{$\ket{0}$} & \gate{H} & \qw \\
+\ldots \\
+\lstick{$\ket{0}$} & \gate{H} & \qw \\
+\end{quantikz}
+\end{figure}
+
+Iz tog razloga, veliki broj kvantnih algoritama kao prvi korak ima postavljanje svih kvantnih bitova u stanje superpozicije korištenjem Hadamardovih operatora što se često označava operatorom $H^{\otimes N}$ gdje je $N$ broj kvantnih bitova.
+
+
+
+\section{Phase kickback}
+
+U načelu, operator CNOT mijenja drugi bit ako je upravljački postavljen u $\ket{1}$, no situacija se zakomplicira ako su bitovi u superpozicji. Kao podsjetnik, Hadamardov operator pretvara $\ket{0}$ u $\ket{+}$, a $\ket{1}$ u $\ket{-}$. Kada se na bitove u takvim stanjima, uz pretpostavku da je lijevi bit upravljački, primijeni operator CNOT dobiva se:
+\[CNOT\ket{++} = \ket{++}\]
+\[CNOT\ket{+-} = \ket{- -}\]
+\[CNOT\ket{-+} = \ket{-+}\]
+\[CNOT\ket{- -} = \ket{+-}\]
+
+Vidi se da je u drugom i četvrtom slučaju, kada je drugi bit bio u stanju, $\ket{-}$ on promijenio upravljački. Taj se fenomen naziva \emph{phase kickback}\footnote{Ne znam ovo prevesti}. Ovo je također jedno svojstvo koje se često koristi u kvantnim algoritmima zbog kojeg se neki bitovi inicijaliziraju u $\ket{1}$ prije primjene Hadamardovog operatora.
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\lstick{$\ket{0}$} & \qw & \gate{H} & \qw  \\
+\lstick{$\ket{0}$} & \qw & \gate{H} & \qw \\
+\ldots \\
+\lstick{$\ket{0}$} & \qw & \gate{H} & \qw \\
+\lstick{$\ket{0}$} & \gate{X} &\gate{H} & \qw \\
+\end{quantikz}
+\end{figure}
+No, u praksi stanje kvantnog sustava na početku kvantnog logičkog kruga uvijek bude inicijalizirano u $\ket{00\ldots 00}$, pa je potrebno samo primijeniti operator $\sigma_x$ na kvantni bit koji treba biti u jedinici.
+
+\section{Deutschev algoritam}
+
+Deutschev algoritam jedan je od najjednostavnijih primjera kvantnog paralelizma koji demonstrira kvantnu nadmoć nad klasičnim računalom. Problem koji Deutschev algoritam rješava jest određivanje je li neka funkcija crne kutije oblika $f : \{0, 1\} \rightarrow \{0, 1\}$ \emph{uravnotežena} ili \emph{konstantna}. Postoje četiri takve funkcije:
+\[
+f(x) = 0
+\qquad
+f(x) = 1
+\qquad
+f(x) = x
+\qquad
+f(x) = \lnot x
+\]
+gdje su prve dvije konstantne, a druge dvije uravnotežene. Za rješavanje ovog problema, klasično računalo treba evaluirati funkciju barem dva puta, dok na kvantnom računalu funkciju je dovoljno evaluirati samo jednom.
+
+Kvantni logički krug Deutschevog algoritma izgleda ovako:
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\lstick{$\ket{0}$} & \qw\slice{$\ket{\Phi_0}$}
+& \gate{H}\slice{$\ket{\Phi_1}$} & \gate[wires=2][2cm]{U_f}\gateinput{$x$} \gateoutput{$x$}\slice{$\ket{\Phi_2}$} & \gate{H}\slice{$\ket{\Phi_3}$} & \meter{} \\
+\lstick{$\ket{0}$} & \gate{X} & \gate{H} & \gateinput{$y$}\gateoutput{$y\oplus f(x)$} & \qw & \qw
+\end{quantikz}
+\end{figure}
+$U_f$ je kvantna implementacija funkcije $f$ za koju vrijedi:
+\[
+U_f\ket{x\otimes y} = \ket{x\otimes (y \oplus f(x))}
+\qquad
+x, y \in \{0, 1\}
+\]
+Na kraju logičkog kruga, izmjerena vrijednost prvog kvantnog bita bila bi 0 za konstantne funkcije, a 1 za uravnotežene. Razlog tome se može pronaći analizirajući tok algoritma. Prije primjene Hadamardovih vrata sustav se nalazi u stanju:
+\[
+\ket{\Phi_0} = \ket{0\otimes 1}
+\]
+Nakon Hadamardovih vrata:
+\[
+\ket{\Phi_1} = \ket{+-} = \frac{1}{\sqrt{2}}(\ket{0} + \ket{1})\otimes\ket{-}
+= \frac{1}{\sqrt{2}}(\ket{0-} + \ket{1-})
+\]
+Primjenom $U_f$ na stanje $\ket{x-}$ gdje je $x = \{0, 1\}$ dobiva se:
+\begin{align*}
+U_f\ket{x-} &= \frac{1}{\sqrt{2}}(U_f\ket{x0} - U_f\ket{x1}) \\
+&= \frac{1}{\sqrt{2}}(\ket{x}\otimes\ket{f(x)} - \ket{x}\otimes\ket{f(x)\oplus 1})
+\end{align*}
+Uvrštavanjem 0 i 1 umjesto $f(x)$ dobiva se:
+\[
+U_f\ket{x-} =
+\begin{cases}
+\frac{1}{\sqrt{2}}(\ket{x0} - \ket{x1}) = \ket{x-} & \text{za} f(x) = 0 \\
+\frac{1}{\sqrt{2}}(\ket{x1} - \ket{x0}) = -\ket{x-} & \text{za} f(x) = 1
+\end{cases}
+\]
+odnosno:
+\[
+U_f\ket{x-} = (-1)^{f(x)}\ket{x-}
+\]
+Sada, primjenom $U_f$ na stanje $\ket{\Phi_1}$ dobije se $\ket{\Phi_2}$:
+\begin{align*}
+\ket{\Phi_2} &= U_f\ket{\Phi_1} = \frac{1}{\sqrt{2}}(U_f\ket{0-}+U_f\ket{1-}) \\
+&= \frac{1}{\sqrt{2}}((-1)^{f(0)}\ket{0-} + (-1)^{f(1)}\ket{1-}) \\
+&= \frac{(-1)^{f(0)}\ket{0} + (-1)^{f(1)}\ket{1}}{\sqrt{2}}\otimes\ket{-}
+\end{align*}
+Očigledno je da su stanja separabilna, stoga se prvi bit može promatrati samostalno. Primjenom Hadamardovih vrata na prvi kvantni bit dobiva se konačno stanje:
+\begin{align*}
+\ket{\Phi_3} &= H\cdot \frac{(-1)^{f(0)}\ket{0} + (-1)^{f(1)}\ket{1}}{\sqrt{2}} \\
+&= \frac{(-1)^{f(0)}+(-1)^{f(1)}}{2}\ket{0} + \frac{(-1)^{f(0)}-(-1)^{f(1)}}{2}\ket{1}
+\end{align*}
+Iz jednadžbe se vidi da za konstantne funkcije vrijedi,
+\[
+\ket{\Phi_3} = \pm\ket{0}
+\]
+a za uravnotežene
+\[
+\ket{\Phi_3} = \pm\ket{1}
+\]
+Pošto faza nema utjecaja ne rezultate mjerenja, za konstantne funkcije rezultat mjerenja uvijek bude 0, a za uravnotežene 1.
+
+Postoji generalizacija ovoga algoritma pod nazivom Deutsch-Jozsin algoritam koji rješava isti problem, ali sa ulazom proizvoljnog broja bitova. U njemu također je potrebno evaluirati funkciju samo jednom gdje će izlazni registar biti u nulama ako je funkcija konstantna, a bilo što drugo ako je uravnotežena. U njega ovaj rad neće ulaziti, ali je sličan i može se pogledati u \citep{nielsen2010quantum}
+
 \section{Groverov algoritam}
-\section{Deutschov algoritam}
 \section{Shorov algoritam}

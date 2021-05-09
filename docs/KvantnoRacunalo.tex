@@ -454,7 +454,11 @@ I & 0 \\ 0 & U
 \end{equation}
 gdje je $U$ bilo koji unarni operator, a $I$ jedinična matrica. U načelu, operator provodi operaciju $U$ nad drugim kvantnim bitom ako je prvi u jedinici, inače ga ne mijenja.
 
-Najkorišteniji CU operator jest CX ili CNOT čija se funkcionalnost može opisati na način:
+Najkorišteniji CU operator jest CX ili CNOT čija se funkcionalnost može opisati kao:
+\[
+CNOT\ket{xy} = \ket{x, y\oplus x}
+\]
+gdje je $x$ upravljački bit, a $\oplus$ operator zbrajanja modulo 2. Vrijedi:
 \[CNOT\ket{00} = \ket{00}\]
 \[CNOT\ket{01} = \ket{01}\]
 \[CNOT\ket{10} = \ket{11}\]
@@ -590,7 +594,7 @@ U =HZH = \frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}}
 = \frac{1}{2} \begin{bmatrix} 0 & 2 \\ 2 & 0 \end{bmatrix}
 = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}
 \]
-Stanje vektora na kraju logičkog kruga:
+Vektor stanja na kraju logičkog kruga:
 \[
 U\ket{0} = \begin{bmatrix}
 0 & 1 \\ 1 & 0

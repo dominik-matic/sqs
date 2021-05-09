@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  7 MAY 2021 04:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  9 MAY 2021 03:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -860,63 +860,63 @@ Package pdftex.def Info: img/bloch.png  used on input line 312.
 <img/exampleqc.png, id=78, 1505.625pt x 903.375pt>
 File: img/exampleqc.png Graphic file (type png)
 <use img/exampleqc.png>
-Package pdftex.def Info: img/exampleqc.png  used on input line 528.
+Package pdftex.def Info: img/exampleqc.png  used on input line 532.
 (pdftex.def)             Requested size: 301.11966pt x 180.6718pt.
-<img/xyzh.png, id=79, 249.93375pt x 606.76688pt>
+ [14 <./img/exampleqc.png>]
+<img/xyzh.png, id=83, 249.93375pt x 606.76688pt>
 File: img/xyzh.png Graphic file (type png)
 <use img/xyzh.png>
-Package pdftex.def Info: img/xyzh.png  used on input line 538.
+Package pdftex.def Info: img/xyzh.png  used on input line 542.
 (pdftex.def)             Requested size: 74.9807pt x 182.03146pt.
- [14 <./img/exampleqc.png>]
 <img/xop.png, id=84, 162.6075pt x 78.2925pt>
 File: img/xop.png Graphic file (type png)
 <use img/xop.png>
-Package pdftex.def Info: img/xop.png  used on input line 544.
+Package pdftex.def Info: img/xop.png  used on input line 548.
 (pdftex.def)             Requested size: 65.04184pt x 31.31644pt.
 <img/CZ.png, id=85, 303.38344pt x 212.29312pt>
 File: img/CZ.png Graphic file (type png)
 <use img/CZ.png>
-Package pdftex.def Info: img/CZ.png  used on input line 550.
+Package pdftex.def Info: img/CZ.png  used on input line 554.
 (pdftex.def)             Requested size: 91.01573pt x 63.68842pt.
 <img/CNOT.png, id=86, 267.24844pt x 184.43906pt>
 File: img/CNOT.png Graphic file (type png)
 <use img/CNOT.png>
-Package pdftex.def Info: img/CNOT.png  used on input line 556.
+Package pdftex.def Info: img/CNOT.png  used on input line 560.
 (pdftex.def)             Requested size: 80.17514pt x 55.33214pt.
-<img/SWAP.png, id=87, 541.27219pt x 155.83218pt>
+ [15 <./img/xyzh.png (PNG copy)> <./img/xop.png (PNG copy)> <./img/CZ.png (PNG 
+copy)>]
+<img/SWAP.png, id=92, 541.27219pt x 155.83218pt>
 File: img/SWAP.png Graphic file (type png)
 <use img/SWAP.png>
-Package pdftex.def Info: img/SWAP.png  used on input line 562.
+Package pdftex.def Info: img/SWAP.png  used on input line 566.
 (pdftex.def)             Requested size: 189.44809pt x 54.54207pt.
- [15 <./img/xyzh.png (PNG copy)> <./img/xop.png (PNG copy)> <./img/CZ.png (PNG 
-copy)> <./img/CNOT.png (PNG copy)>]
 <img/CCNOT.png, id=93, 228.10219pt x 258.21469pt>
 File: img/CCNOT.png Graphic file (type png)
 <use img/CCNOT.png>
-Package pdftex.def Info: img/CCNOT.png  used on input line 568.
+Package pdftex.def Info: img/CCNOT.png  used on input line 572.
 (pdftex.def)             Requested size: 79.83694pt x 90.37648pt.
 <img/CSWAP.png, id=94, 1027.84pt x 1027.84pt>
 File: img/CSWAP.png Graphic file (type png)
 <use img/CSWAP.png>
-Package pdftex.def Info: img/CSWAP.png  used on input line 573.
+Package pdftex.def Info: img/CSWAP.png  used on input line 577.
 (pdftex.def)             Requested size: 92.5016pt x 92.5016pt.
- [16 <./img/SWAP.png (PNG copy)> <./img/CCNOT.png (PNG copy)> <./img/CSWAP.png>
-]) [17]
+ [16 <./img/CNOT.png (PNG copy)> <./img/SWAP.png (PNG copy)> <./img/CCNOT.png (
+PNG copy)> <./img/CSWAP.png>] [17]) [18]
 \openout2 = `KvantniAlgoritmi.aux'.
 
  (./KvantniAlgoritmi.tex
 Poglavlje 3.
-) [18
+[19
 
 
 
 
-]
+] [20] [21]) [22]
 \openout2 = `SimulacijaKvantnogRacunala.aux'.
 
  (./SimulacijaKvantnogRacunala.tex
 Poglavlje 4.
-) [19
+) [23
 
 
 
@@ -926,7 +926,7 @@ Poglavlje 4.
 
  (./Zakljucak.tex
 Poglavlje 5.
-) [20
+) [24
 
 
 
@@ -957,21 +957,21 @@ Overfull \hbox (9.80171pt too wide) in paragraph at lines 9--14
 ]2023$\T1/ptm/m/n/12 . 
  []
 
-) [21
+) [25
 
 
 
-] [22] (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
+] [26] (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
 (./KvantniAlgoritmi.aux) (./SimulacijaKvantnogRacunala.aux) (./Zakljucak.aux)) 
 ) 
 Here is how much of TeX's memory you used:
- 21913 strings out of 479917
- 441694 string characters out of 5856971
- 753239 words of memory out of 5000000
- 37976 multiletter control sequences out of 15000+600000
+ 22659 strings out of 479917
+ 460243 string characters out of 5856971
+ 772637 words of memory out of 5000000
+ 38722 multiletter control sequences out of 15000+600000
  605611 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,19n,126p,1176b,1222s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 85i,19n,126p,1176b,1606s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/2020/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texlive/2020/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/texlive/2020/texmf-dist/font
@@ -988,10 +988,10 @@ xmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/texlive/2020/texmf-dist/fonts
 lvetic/uhvr8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pf
 b></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/texlive/
 2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (26 pages, 345857 bytes).
+Output written on zavrsni.pdf (30 pages, 360670 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
+ 187 PDF objects out of 1000 (max. 8388607)
+ 123 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  63 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -110,8 +110,7 @@ namespace sqs {
 			MX resultingMatrix;
 			unsigned int dimension = int(std::pow(2, qubits));
 			resultingMatrix.setIdentity(dimension, dimension);
-			
-			for(auto stageIt = stages.begin(); stageIt != stages.end(); ++stageIt) {
+			for(auto stageIt = stages.begin(); stageIt != stages.end(); ++stageIt) {				
 				auto stageRange = getStageRange(*stageIt);
 				unsigned int stageLowestQubit = stageRange.front();
 				unsigned int stageHighestQubit = stageRange.back();
