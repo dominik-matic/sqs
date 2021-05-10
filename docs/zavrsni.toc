@@ -30,12 +30,18 @@
 \contentsline {section}{\numberline {3.1}Kvantni paralelizam}{19}{}%
 \contentsline {section}{\numberline {3.2}Phase kickback}{19}{}%
 \contentsline {section}{\numberline {3.3}Deutschev algoritam}{20}{}%
-\contentsline {section}{\numberline {3.4}Groverov algoritam}{22}{}%
-\contentsline {section}{\numberline {3.5}Shorov algoritam}{22}{}%
-\contentsline {chapter}{\numberline {4}Simulacija kvantnog računala}{23}{}%
-\contentsline {section}{\numberline {4.1}Postojeći simulatori kvantnog računala}{23}{}%
-\contentsline {section}{\numberline {4.2}Izrada simulatora kvantnog računala}{23}{}%
-\contentsline {section}{\numberline {4.3}Primjeri simulacije kvantnih logičkih krugova}{23}{}%
-\contentsline {section}{\numberline {4.4}Prednosti i mane simulatora kvantnog računala}{23}{}%
-\contentsline {chapter}{\numberline {5}Zaključak}{24}{}%
-\contentsline {chapter}{Literatura}{25}{}%
+\contentsline {subsection}{\numberline {3.3.1}Opis}{20}{}%
+\contentsline {subsection}{\numberline {3.3.2}Analiza toka algoritma}{21}{}%
+\contentsline {subsection}{\numberline {3.3.3}Deutsch-Joszin algoritam}{22}{}%
+\contentsline {section}{\numberline {3.4}Groverov algoritam}{23}{}%
+\contentsline {subsection}{\numberline {3.4.1}Opis}{23}{}%
+\contentsline {subsection}{\numberline {3.4.2}Analiza toka algoritma}{23}{}%
+\contentsline {subsection}{\numberline {3.4.3}Kvantni prorok}{25}{}%
+\contentsline {section}{\numberline {3.5}Shorov algoritam}{27}{}%
+\contentsline {chapter}{\numberline {4}Simulacija kvantnog računala}{28}{}%
+\contentsline {section}{\numberline {4.1}Postojeći simulatori kvantnog računala}{28}{}%
+\contentsline {section}{\numberline {4.2}Izrada simulatora kvantnog računala}{28}{}%
+\contentsline {section}{\numberline {4.3}Primjeri simulacije kvantnih logičkih krugova}{28}{}%
+\contentsline {section}{\numberline {4.4}Prednosti i mane simulatora kvantnog računala}{28}{}%
+\contentsline {chapter}{\numberline {5}Zaključak}{29}{}%
+\contentsline {chapter}{Literatura}{30}{}%

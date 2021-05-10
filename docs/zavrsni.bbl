@@ -1,4 +1,4 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{4}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -11,6 +11,16 @@ Adrian Cho.
   September 2020.
 \newblock URL
   \url{https://www.sciencemag.org/news/2020/09/ibm-promises-1000-qubit-quantum-computer-milestone-2023}.
+
+\bibitem[Grover(1996)]{grover}
+Lov~K. Grover.
+\newblock A fast quantum mechanical algorithm for database search.
+\newblock U \emph{Proceedings of the Twenty-Eighth Annual ACM Symposium on
+  Theory of Computing}, STOC '96, stranica 212–219, New York, NY, USA, 1996.
+  Association for Computing Machinery.
+\newblock ISBN 0897917855.
+\newblock \doi{10.1145/237814.237866}.
+\newblock URL \url{https://doi.org/10.1145/237814.237866}.
 
 \bibitem[Nielsen i Chuang(2010)]{nielsen2010quantum}
 M.A. Nielsen i I.L. Chuang.

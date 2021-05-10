@@ -217,7 +217,7 @@ int main3() {
 	return 0;
 }
 
-int main() {
+int main7() {
 	QCircuit qc1(2);
 	QCircuit qc2(2);
 	QCircuit qc3(2);
@@ -259,5 +259,20 @@ int main() {
 
 	return 0;
 	
+
+}
+
+
+int main() {
+	QCircuit qc(2);
+	QComponent qcomp;
+
+	qcomp.add(PauliX, 0, 1);
+	qcomp.add(Hadamard, 1);
+	//qcomp.add(CX, 0, 1);
+
+	qc.add(qcomp);
+	qc.execute();
+	std::cout << qc.getStateVector() << std::endl;
 
 }

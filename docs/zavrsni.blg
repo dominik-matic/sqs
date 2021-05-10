@@ -8,44 +8,44 @@ A level-1 auxiliary file: SimulacijaKvantnogRacunala.aux
 A level-1 auxiliary file: Zakljucak.aux
 The style file: fer.bst
 Database file #1: literatura.bib
-You've used 3 entries,
+You've used 4 entries,
             2773 wiz_defined-function locations,
-            620 strings with 5522 characters,
-and the built_in function-call counts, 1062 in all, are:
-= -- 91
-> -- 41
-< -- 3
-+ -- 15
-- -- 12
-* -- 67
-:= -- 173
-add.period$ -- 11
-call.type$ -- 3
-change.case$ -- 12
-chr.to.int$ -- 3
-cite$ -- 6
-duplicate$ -- 55
-empty$ -- 101
-format.name$ -- 17
-if$ -- 219
+            632 strings with 5814 characters,
+and the built_in function-call counts, 1648 in all, are:
+= -- 161
+> -- 51
+< -- 5
++ -- 19
+- -- 15
+* -- 94
+:= -- 248
+add.period$ -- 18
+call.type$ -- 4
+change.case$ -- 16
+chr.to.int$ -- 4
+cite$ -- 8
+duplicate$ -- 97
+empty$ -- 149
+format.name$ -- 21
+if$ -- 365
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 3
-newline$ -- 25
-num.names$ -- 12
-pop$ -- 30
+missing$ -- 4
+newline$ -- 33
+num.names$ -- 16
+pop$ -- 37
 preamble$ -- 1
-purify$ -- 10
+purify$ -- 13
 quote$ -- 0
-skip$ -- 42
+skip$ -- 81
 stack$ -- 0
-substring$ -- 18
-swap$ -- 4
-text.length$ -- 0
+substring$ -- 38
+swap$ -- 24
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 28
+type$ -- 39
 warning$ -- 0
-while$ -- 10
+while$ -- 14
 width$ -- 0
-write$ -- 48
+write$ -- 70
