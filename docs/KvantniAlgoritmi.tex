@@ -18,15 +18,33 @@ Iz tog razloga, veliki broj kvantnih algoritama kao prvi korak ima postavljanje 
 
 
 
-\section{Phase kickback}
+\section{Prevrtanje faze}
 
-U načelu, operator CNOT mijenja drugi bit ako je upravljački postavljen u $\ket{1}$, no situacija se zakomplicira ako su bitovi u superpozicji. Kao podsjetnik, Hadamardov operator pretvara $\ket{0}$ u $\ket{+}$, a $\ket{1}$ u $\ket{-}$. Kada se na bitove u takvim stanjima, uz pretpostavku da je lijevi bit upravljački, primijeni operator CNOT dobiva se:
-\[CNOT\ket{++} = \ket{++}\]
-\[CNOT\ket{+-} = \ket{- -}\]
-\[CNOT\ket{-+} = \ket{-+}\]
-\[CNOT\ket{- -} = \ket{+-}\]
+Prevrtanje faze je pojava kada ciljni bit CU operatora utječe na upravljački bit mijenjajući mu fazu. Javlja se kada je ciljni bit postavljen u svojstveno stanje unarnog operatora i kada je upravljački bit u jedinici.
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\lstick{$\ket{x}$} & \ctrl{1} & \qw \\
+\lstick{$\ket{+}$ ili $\ket{-}$} & \targ{} & \qw
+\end{quantikz}
+\caption{Prevrtanje faze}
+\end{figure}
+Na primjeru operatora CX, svojstvena stanja operatora X su $\ket{+}$ i $\ket{-}$ uz svojstvene vrijednosti $\pm 1$. Jednostavnim izračunom se dobije:
+\[
+CNOT\ket{0+} = \ket{0+} \qquad
+CNOT\ket{0-} = \ket{0-} \]
+\[
+CNOT\ket{1+} = 1 \cdot \ket{1+} \qquad
+CNOT\ket{1-}= -1\cdot \ket{1-}\]
+\[
+CNOT\ket{++} = \ket{++} \qquad
+CNOT\ket{+-} = \ket{- -} \]
+\[
+CNOT\ket{-+} = \ket{-+} \qquad
+CNOT\ket{--} = \ket{+-}
+\]
 
-Vidi se da je u drugom i četvrtom slučaju, kada je drugi bit bio u stanju, $\ket{-}$ on promijenio upravljački. Taj se fenomen naziva \emph{phase kickback}\footnote{Ne znam ovo prevesti}. Ovo je također jedno svojstvo koje se često koristi u kvantnim algoritmima zbog kojeg se neki bitovi inicijaliziraju u $\ket{1}$ prije primjene Hadamardovog operatora.
+Prevrtanje faze je svojstvo koje se često koristi u kvantnim algoritmima zbog kojeg se neki bitovi inicijaliziraju u $\ket{1}$ prije primjene Hadamardovog operatora.
 \begin{figure}[H]
 \centering
 \begin{quantikz}
@@ -36,8 +54,9 @@ Vidi se da je u drugom i četvrtom slučaju, kada je drugi bit bio u stanju, $\k
 \lstick{$\ket{0}$} & \qw & \gate{H} & \qw \\
 \lstick{$\ket{0}$} & \gate{X} &\gate{H} & \qw \\
 \end{quantikz}
+\caption{Česta inicijalizacija kvantnog logičkog kruga}
 \end{figure}
-No, u praksi stanje kvantnog sustava na početku kvantnog logičkog kruga uvijek bude inicijalizirano u $\ket{00\ldots 00}$, pa je potrebno samo primijeniti operator $\sigma_x$ na kvantni bit koji treba biti u jedinici.
+No, u praksi stanje kvantnog sustava na početku kvantnog logičkog kruga uvijek bude inicijalizirano u $\ket{00\ldots 00}$, pa je potrebno samo primijeniti operator X na kvantni bit koji treba biti u jedinici.
 
 \section{Deutschev algoritam}
 
@@ -218,7 +237,47 @@ Za implementaciju kvantnog proroka potrebno je $n + m + 1$ kvantnih bitova od ko
 \[CNOT\ket{0-} = \ket{0-}\]
 \[CNOT\ket{1-} = -\ket{1-}\]
 Pošto se prorok koristi iterativno u algoritmu, potrebno je vratiti svih $m$ izlaznih kvantnih bitova u stanje nule. Zbog reverzibilnosti svih operatora, potrebno je samo ponovno primijeniti funkciju $f$.
+
 \section{Shorov algoritam}
+
+\subsection{Opis problema}
+
+Shorov algoritam rješava problem faktorizacije velikih brojeva. To je problem na čiju se tešku izračunljivost oslanja veliki dio modernih kriptografskih mehanizama. Dobar primjer toga jest RSA kriptosustav čija se tajnost privatnog ključa temelji na težini računanja Eulerove funkcije koja se može svesti na problem faktorizacije brojeva. Iz algoritma generiranja ključeva i funkcija enkripcije i dekripcije može se vidjeti zašto je to tako.
+
+Algoritam generiranja ključeva:
+\begin{enumerate}
+\item Generiranje broja $N = p\cdot q$, gdje su $p$ i $q$ veliki slučajno odabrani prosti brojevi
+\item Računanje Eulerove funkcije\footnote{Eulerova funkcija računa broj koji opisuje koliko relativno prostih faktora ima neki broj, tj. veličinu raduciranog sustava ostataka, no ovdje važnije svojstvo Eulerove funkcije jest da ako vrijedi $nzd(a, N) = 1$ onda isto vrijedi $a^{\varphi(N)} \equiv 1\mod N$ } $\varphi(N) = (p-1)(q-1)$
+\item Odabir proizvoljnog broja $e$ iz reduciranog sustava ostataka modulo $\varphi(N)$
+\item Računanje $d = e^{-1}$ u reduciranom sustavu ostataka modulo $\varphi(N)$
+\item Javni ključ: pk = (e, N)
+\item Privatni ključ: sk = (d, N)
+\end{enumerate}
+
+Funkcija enkripcije:
+\[
+E(m, (e,N)) = m^e \mod N
+\]
+
+Funkcija dekripcije:
+\[
+D(c,(d,N)) = c^d \mod N
+\]
+
+Ovo funkcionira jer vrijedi $e\cdot d = 1\mod \varphi(N)$, tj.
+\[
+D(m^e,(d,N)) = m^{e\cdot d} \mod N = m \mod N
+\]
+
+Dakle, kako bi se narušila sigurnost ovakvog sustava potrebno je moći efikasno izračunati proste faktore, odnosno $\varphi(N)$.
+
+\subsection{Kvantna Fourierova transformacija}
+
+Kvantna Fourierova transformacija transformira bazu računanja iz tzv. Z baze (nazvane po osima Blochove sfere) u tzv. X bazu, odnosno iz $\ket{0}$ i $\ket{1}$ u $\ket{+}$ i $\ket{-}$.
+
+\subsection{Kvantna procjena faze}
+
+\subsection{Opis algoritma}
 
 
 

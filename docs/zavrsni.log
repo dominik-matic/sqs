@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  10 MAY 2021 04:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  11 MAY 2021 03:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -912,7 +912,7 @@ Poglavlje 3.
 
 
 ] [20] [21]
-Overfull \hbox (1.59561pt too wide) in paragraph at lines 128--129
+Overfull \hbox (1.59561pt too wide) in paragraph at lines 147--148
 []\T1/ptm/m/n/12 Deutschev i Deutsch-Joszin al-go-ri-tam do-bro de-mons-tri-raj
 u si-tu-aciju gdje je kvantno
  []
@@ -921,25 +921,25 @@ u si-tu-aciju gdje je kvantno
 <img/grover1.png, id=121, 586.44093pt x 574.39594pt>
 File: img/grover1.png Graphic file (type png)
 <use img/grover1.png>
-Package pdftex.def Info: img/grover1.png  used on input line 158.
+Package pdftex.def Info: img/grover1.png  used on input line 177.
 (pdftex.def)             Requested size: 234.5722pt x 229.75429pt.
 <img/grover2.png, id=122, 700.6175pt x 642.4pt>
 File: img/grover2.png Graphic file (type png)
 <use img/grover2.png>
-Package pdftex.def Info: img/grover2.png  used on input line 169.
+Package pdftex.def Info: img/grover2.png  used on input line 188.
 (pdftex.def)             Requested size: 280.24203pt x 256.95544pt.
 <img/grover3.png, id=123, 636.3775pt x 628.3475pt>
 File: img/grover3.png Graphic file (type png)
 <use img/grover3.png>
-Package pdftex.def Info: img/grover3.png  used on input line 176.
+Package pdftex.def Info: img/grover3.png  used on input line 195.
 (pdftex.def)             Requested size: 254.5465pt x 251.33455pt.
  [24 <./img/grover1.png (PNG copy)> <./img/grover2.png>] [25 <./img/grover3.png
->]) [26] [27]
+>] [26]) [27] [28]
 \openout2 = `SimulacijaKvantnogRacunala.aux'.
 
  (./SimulacijaKvantnogRacunala.tex
 Poglavlje 4.
-) [28
+) [29
 
 
 
@@ -949,7 +949,7 @@ Poglavlje 4.
 
  (./Zakljucak.tex
 Poglavlje 5.
-) [29
+) [30
 
 
 
@@ -980,42 +980,44 @@ Overfull \hbox (9.80171pt too wide) in paragraph at lines 9--14
 ]2023$\T1/ptm/m/n/12 . 
  []
 
-) [30
+) [31
 
 
 
-] [31] (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
+] [32] (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
 (./KvantniAlgoritmi.aux) (./SimulacijaKvantnogRacunala.aux) (./Zakljucak.aux)) 
 ) 
 Here is how much of TeX's memory you used:
- 23403 strings out of 479917
- 479027 string characters out of 5856971
- 795055 words of memory out of 5000000
- 39463 multiletter control sequences out of 15000+600000
+ 23503 strings out of 479917
+ 481469 string characters out of 5856971
+ 796559 words of memory out of 5000000
+ 39563 multiletter control sequences out of 15000+600000
  605611 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,20n,126p,1176b,1606s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 85i,20n,126p,1176b,1607s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/2020/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texlive/2020/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/texlive/2020/texmf-dist/font
 s/type1/public/amsfonts/cm/cmmi12.pfb></opt/texlive/2020/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmmi6.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi8.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr10.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-2.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></o
-pt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/texliv
-e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/texlive/2020/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/texlive/2020/texmf-di
-st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/texlive/2020/texmf-dist
-/fonts/type1/urw/courier/ucrr8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/u
-rw/helvetic/uhvb8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/u
-hvr8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/
-texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/texlive/2020/tex
-mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (35 pages, 538658 bytes).
+amsfonts/cm/cmmi7.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi8.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/texli
+ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/texlive/2020/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/texlive/2020/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/texlive/2020/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy8.pfb></opt/texlive/2020/texmf-dist/fonts/type1/pu
+blic/amsfonts/symbols/msbm10.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/
+courier/ucrr8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8
+a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></opt/t
+exlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/2020/texm
+f-dist/fonts/type1/urw/times/utmr8a.pfb></opt/texlive/2020/texmf-dist/fonts/typ
+e1/urw/times/utmri8a.pfb>
+Output written on zavrsni.pdf (36 pages, 563020 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
- 137 compressed objects within 2 object streams
+ 223 PDF objects out of 1000 (max. 8388607)
+ 145 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  78 words of extra memory for PDF output out of 10000 (max. 10000000)
 

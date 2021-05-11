@@ -28,7 +28,7 @@
 \contentsline {subsection}{\numberline {2.5.3}Matrični prikaz}{16}{}%
 \contentsline {chapter}{\numberline {3}Kvantni algoritmi}{19}{}%
 \contentsline {section}{\numberline {3.1}Kvantni paralelizam}{19}{}%
-\contentsline {section}{\numberline {3.2}Phase kickback}{19}{}%
+\contentsline {section}{\numberline {3.2}Prevrtanje faze}{19}{}%
 \contentsline {section}{\numberline {3.3}Deutschev algoritam}{20}{}%
 \contentsline {subsection}{\numberline {3.3.1}Opis}{20}{}%
 \contentsline {subsection}{\numberline {3.3.2}Analiza toka algoritma}{21}{}%
@@ -38,10 +38,14 @@
 \contentsline {subsection}{\numberline {3.4.2}Analiza toka algoritma}{23}{}%
 \contentsline {subsection}{\numberline {3.4.3}Kvantni prorok}{25}{}%
 \contentsline {section}{\numberline {3.5}Shorov algoritam}{27}{}%
-\contentsline {chapter}{\numberline {4}Simulacija kvantnog računala}{28}{}%
-\contentsline {section}{\numberline {4.1}Postojeći simulatori kvantnog računala}{28}{}%
-\contentsline {section}{\numberline {4.2}Izrada simulatora kvantnog računala}{28}{}%
-\contentsline {section}{\numberline {4.3}Primjeri simulacije kvantnih logičkih krugova}{28}{}%
-\contentsline {section}{\numberline {4.4}Prednosti i mane simulatora kvantnog računala}{28}{}%
-\contentsline {chapter}{\numberline {5}Zaključak}{29}{}%
-\contentsline {chapter}{Literatura}{30}{}%
+\contentsline {subsection}{\numberline {3.5.1}Opis problema}{27}{}%
+\contentsline {subsection}{\numberline {3.5.2}Kvantna Fourierova transformacija}{28}{}%
+\contentsline {subsection}{\numberline {3.5.3}Kvantna procjena faze}{28}{}%
+\contentsline {subsection}{\numberline {3.5.4}Opis algoritma}{28}{}%
+\contentsline {chapter}{\numberline {4}Simulacija kvantnog računala}{29}{}%
+\contentsline {section}{\numberline {4.1}Postojeći simulatori kvantnog računala}{29}{}%
+\contentsline {section}{\numberline {4.2}Izrada simulatora kvantnog računala}{29}{}%
+\contentsline {section}{\numberline {4.3}Primjeri simulacije kvantnih logičkih krugova}{29}{}%
+\contentsline {section}{\numberline {4.4}Prednosti i mane simulatora kvantnog računala}{29}{}%
+\contentsline {chapter}{\numberline {5}Zaključak}{30}{}%
+\contentsline {chapter}{Literatura}{31}{}%
