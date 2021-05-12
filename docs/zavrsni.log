@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  12 MAY 2021 05:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  12 MAY 2021 18:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -961,13 +961,13 @@ Overfull \hbox (34.20203pt too wide) detected at line 310
 /cmr/m/n/12 = [] []
  []
 
-[28 <./img/Fourier9.png (PNG copy)> <./img/Zbase9.png (PNG copy)>] [29])
-[30]
+[28 <./img/Fourier9.png (PNG copy)> <./img/Zbase9.png (PNG copy)>] [29]
+[30]) [31]
 \openout2 = `SimulacijaKvantnogRacunala.aux'.
 
  (./SimulacijaKvantnogRacunala.tex
 Poglavlje 4.
-) [31
+) [32
 
 
 
@@ -977,7 +977,7 @@ Poglavlje 4.
 
  (./Zakljucak.tex
 Poglavlje 5.
-) [32
+) [33
 
 
 
@@ -1008,17 +1008,17 @@ Overfull \hbox (9.80171pt too wide) in paragraph at lines 9--14
 ]2023$\T1/ptm/m/n/12 . 
  []
 
-) [33
+) [34
 
 
 
-] [34] (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
+] [35] (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
 (./KvantniAlgoritmi.aux) (./SimulacijaKvantnogRacunala.aux) (./Zakljucak.aux)) 
 ) 
 Here is how much of TeX's memory you used:
  24095 strings out of 479917
  496423 string characters out of 5856971
- 806401 words of memory out of 5000000
+ 810402 words of memory out of 5000000
  40153 multiletter control sequences out of 15000+600000
  605611 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1043,10 +1043,10 @@ opt/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></opt/texlive/2
 020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/2020/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on zavrsni.pdf (38 pages, 813695 bytes).
+Output written on zavrsni.pdf (39 pages, 819412 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
- 155 compressed objects within 2 object streams
+ 241 PDF objects out of 1000 (max. 8388607)
+ 157 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  88 words of extra memory for PDF output out of 10000 (max. 10000000)
 

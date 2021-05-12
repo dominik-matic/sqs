@@ -366,7 +366,42 @@ Ovaj algoritam samo procjenjuje fazu jer će dobiveni rezultat $x$ označavati f
 
 \subsection{Opis algoritma}
 
-Shorov algoritam procjenjuje fazu
+Shorov algoritam se temelji na činjenici da ako je moguće efikasno pronaći period od
+\[
+f(x) = a^x \mod N
+\]
+onda je moguće efikasno faktorizirati $N$. Iz tog razloga Shorov algoritam procjenjuje period unitarnog operatora $U$ koji vrši operaciju:
+\[
+U\ket{y} = \ket{ay\mod N}
+\]
+Svaki svojstveni vektor operatora $U$ može se zapisati kao:
+\[
+\ket{\Phi_s} = \frac{1}{\sqrt{r}}\sum_{k=0}^{r-1}e^{-\frac{2\pi i s k}{r}}\ket{a^k\mod N}
+\]
+Primjenom operatora $U$ na jedno takvo svojstveno stanje dobije se:
+\[
+U\ket{\Phi_s} = e^{\frac{2\pi i s}{r}}\ket{\Phi_s}
+\]
+Koristeći algoritam procjene faze sa svojstvenim stanjem $\ket{\Phi_s}$ dobije se procjena faze $\frac{s}{r}$. No, konstrukcija svojstvenog stanja $\ket{\Phi_s}$ zahtjeva poznavanje $r$. Srećom, superpozicijom svih svojstvenih stanja $\ket{\Phi_s}$ dobiva se stanje $\ket{1}$.
+\[
+\frac{1}{\sqrt{r}}\sum_{s=1}^{r-1}\ket{\Phi_s} = \ket{1}
+\]
+Primjenjujući algoritam procjene faze sa svojstvenim stanjem $\ket{1}$, zapisana faza biti će superpozicija svih faza oblika $\frac{s}{r}$ te će se mjerenjem izmjeriti samo jedna od njih. Ovo je odlično svojstvo jer ono što je zapravo bitno jest $r$ za koji vrijedi:
+\[
+a^r \mod N = 1 \qquad
+r \mid \varphi(N)
+\]
+
+Algoritam se sastoji od dijela gdje se operacije mogu izvoditi na klasičnom računalu, i kvantnog dijela koji je samo opisana kvantna procjena faze funkcije. Algoritam je kako slijedi:
+\begin{enumerate}
+\item Odabire se nasumičan broj $1 < a < N$
+\item Provjerava se je li $a$ relativno prost s $N$, ako nije, pronađen je faktor, algoritam završava
+\item Koristi se kvantna procjena faze unitarnog operatora za kojega vrijedi $U\ket{y} = \ket{ay\mod N}$
+\item Dobivena faza $\frac{x}{2^t}$ se reducira (aproksimira) na $\frac{s}{r}$ gdje je $r < N$ i cijeli broj. Ako se odmah ne dobije $r$ za koji vrijedi $a^r \mod N = 1$, ovaj korak treba ponoviti nekoliko puta. Ako se i dalje ne dobije zadovoljavajući $r$, onda treba ponovno početi od koraka 1
+\item Ako je $r$ neparan ili $a^{r/2} \equiv -1 (\mod N)$, povratak na korak 1
+\item Inače, $nzd(a^{\frac{r}{2}} + 1, N)$ i $nzd(a^{\frac{r}{2}} - 1, N)$ su netrivijalni faktori od $N$
+\end{enumerate}
+Funkcija $nzd(a, b)$ označava najmanjeg zajedničkog djelitelja od $a$ i $b$.
 
 
 
