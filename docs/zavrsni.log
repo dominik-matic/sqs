@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  11 MAY 2021 03:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  12 MAY 2021 05:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -860,45 +860,45 @@ Package pdftex.def Info: img/bloch.png  used on input line 312.
 <img/exampleqc.png, id=78, 1505.625pt x 903.375pt>
 File: img/exampleqc.png Graphic file (type png)
 <use img/exampleqc.png>
-Package pdftex.def Info: img/exampleqc.png  used on input line 532.
+Package pdftex.def Info: img/exampleqc.png  used on input line 534.
 (pdftex.def)             Requested size: 301.11966pt x 180.6718pt.
  [14 <./img/exampleqc.png>]
 <img/xyzh.png, id=83, 249.93375pt x 606.76688pt>
 File: img/xyzh.png Graphic file (type png)
 <use img/xyzh.png>
-Package pdftex.def Info: img/xyzh.png  used on input line 542.
+Package pdftex.def Info: img/xyzh.png  used on input line 544.
 (pdftex.def)             Requested size: 74.9807pt x 182.03146pt.
 <img/xop.png, id=84, 162.6075pt x 78.2925pt>
 File: img/xop.png Graphic file (type png)
 <use img/xop.png>
-Package pdftex.def Info: img/xop.png  used on input line 548.
+Package pdftex.def Info: img/xop.png  used on input line 550.
 (pdftex.def)             Requested size: 65.04184pt x 31.31644pt.
 <img/CZ.png, id=85, 303.38344pt x 212.29312pt>
 File: img/CZ.png Graphic file (type png)
 <use img/CZ.png>
-Package pdftex.def Info: img/CZ.png  used on input line 554.
+Package pdftex.def Info: img/CZ.png  used on input line 556.
 (pdftex.def)             Requested size: 91.01573pt x 63.68842pt.
 <img/CNOT.png, id=86, 267.24844pt x 184.43906pt>
 File: img/CNOT.png Graphic file (type png)
 <use img/CNOT.png>
-Package pdftex.def Info: img/CNOT.png  used on input line 560.
+Package pdftex.def Info: img/CNOT.png  used on input line 562.
 (pdftex.def)             Requested size: 80.17514pt x 55.33214pt.
  [15 <./img/xyzh.png (PNG copy)> <./img/xop.png (PNG copy)> <./img/CZ.png (PNG 
 copy)>]
 <img/SWAP.png, id=92, 541.27219pt x 155.83218pt>
 File: img/SWAP.png Graphic file (type png)
 <use img/SWAP.png>
-Package pdftex.def Info: img/SWAP.png  used on input line 566.
+Package pdftex.def Info: img/SWAP.png  used on input line 568.
 (pdftex.def)             Requested size: 189.44809pt x 54.54207pt.
 <img/CCNOT.png, id=93, 228.10219pt x 258.21469pt>
 File: img/CCNOT.png Graphic file (type png)
 <use img/CCNOT.png>
-Package pdftex.def Info: img/CCNOT.png  used on input line 572.
+Package pdftex.def Info: img/CCNOT.png  used on input line 574.
 (pdftex.def)             Requested size: 79.83694pt x 90.37648pt.
 <img/CSWAP.png, id=94, 1027.84pt x 1027.84pt>
 File: img/CSWAP.png Graphic file (type png)
 <use img/CSWAP.png>
-Package pdftex.def Info: img/CSWAP.png  used on input line 577.
+Package pdftex.def Info: img/CSWAP.png  used on input line 579.
 (pdftex.def)             Requested size: 92.5016pt x 92.5016pt.
  [16 <./img/CNOT.png (PNG copy)> <./img/SWAP.png (PNG copy)> <./img/CCNOT.png (
 PNG copy)> <./img/CSWAP.png>] [17]) [18]
@@ -912,7 +912,7 @@ Poglavlje 3.
 
 
 ] [20] [21]
-Overfull \hbox (1.59561pt too wide) in paragraph at lines 147--148
+Overfull \hbox (1.59561pt too wide) in paragraph at lines 148--149
 []\T1/ptm/m/n/12 Deutschev i Deutsch-Joszin al-go-ri-tam do-bro de-mons-tri-raj
 u si-tu-aciju gdje je kvantno
  []
@@ -921,25 +921,53 @@ u si-tu-aciju gdje je kvantno
 <img/grover1.png, id=121, 586.44093pt x 574.39594pt>
 File: img/grover1.png Graphic file (type png)
 <use img/grover1.png>
-Package pdftex.def Info: img/grover1.png  used on input line 177.
+Package pdftex.def Info: img/grover1.png  used on input line 178.
 (pdftex.def)             Requested size: 234.5722pt x 229.75429pt.
 <img/grover2.png, id=122, 700.6175pt x 642.4pt>
 File: img/grover2.png Graphic file (type png)
 <use img/grover2.png>
-Package pdftex.def Info: img/grover2.png  used on input line 188.
+Package pdftex.def Info: img/grover2.png  used on input line 189.
 (pdftex.def)             Requested size: 280.24203pt x 256.95544pt.
 <img/grover3.png, id=123, 636.3775pt x 628.3475pt>
 File: img/grover3.png Graphic file (type png)
 <use img/grover3.png>
-Package pdftex.def Info: img/grover3.png  used on input line 195.
+Package pdftex.def Info: img/grover3.png  used on input line 196.
 (pdftex.def)             Requested size: 254.5465pt x 251.33455pt.
  [24 <./img/grover1.png (PNG copy)> <./img/grover2.png>] [25 <./img/grover3.png
->] [26]) [27] [28]
+>] [26] [27]
+<img/Fourier9.png, id=142, 657.2053pt x 192.72pt>
+File: img/Fourier9.png Graphic file (type png)
+<use img/Fourier9.png>
+Package pdftex.def Info: img/Fourier9.png  used on input line 282.
+(pdftex.def)             Requested size: 427.17838pt x 125.2665pt.
+
+Overfull \hbox (14.6134pt too wide) in paragraph at lines 282--283
+ [][] 
+ []
+
+<img/Zbase9.png, id=143, 657.2053pt x 192.72pt>
+File: img/Zbase9.png Graphic file (type png)
+<use img/Zbase9.png>
+Package pdftex.def Info: img/Zbase9.png  used on input line 288.
+(pdftex.def)             Requested size: 427.17838pt x 125.2665pt.
+
+Overfull \hbox (14.6134pt too wide) in paragraph at lines 288--289
+ [][] 
+ []
+
+
+Overfull \hbox (34.20203pt too wide) detected at line 310
+\OML/cmm/m/it/12 U[] \OT1/cmr/m/n/12 = [] [] [] \OML/cmm/m/it/12 ![] [] [] \OT1
+/cmr/m/n/12 = [] []
+ []
+
+[28 <./img/Fourier9.png (PNG copy)> <./img/Zbase9.png (PNG copy)>] [29])
+[30]
 \openout2 = `SimulacijaKvantnogRacunala.aux'.
 
  (./SimulacijaKvantnogRacunala.tex
 Poglavlje 4.
-) [29
+) [31
 
 
 
@@ -949,7 +977,7 @@ Poglavlje 4.
 
  (./Zakljucak.tex
 Poglavlje 5.
-) [30
+) [32
 
 
 
@@ -980,21 +1008,21 @@ Overfull \hbox (9.80171pt too wide) in paragraph at lines 9--14
 ]2023$\T1/ptm/m/n/12 . 
  []
 
-) [31
+) [33
 
 
 
-] [32] (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
+] [34] (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
 (./KvantniAlgoritmi.aux) (./SimulacijaKvantnogRacunala.aux) (./Zakljucak.aux)) 
 ) 
 Here is how much of TeX's memory you used:
- 23503 strings out of 479917
- 481469 string characters out of 5856971
- 796559 words of memory out of 5000000
- 39563 multiletter control sequences out of 15000+600000
+ 24095 strings out of 479917
+ 496423 string characters out of 5856971
+ 806401 words of memory out of 5000000
+ 40153 multiletter control sequences out of 15000+600000
  605611 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,20n,126p,1176b,1607s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 85i,21n,126p,1176b,1607s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/2020/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texlive/2020/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/texlive/2020/texmf-dist/font
@@ -1007,17 +1035,18 @@ opt/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/texli
 ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/texlive/2020/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/texlive/2020/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/texlive/2020/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy8.pfb></opt/texlive/2020/texmf-dist/fonts/type1/pu
-blic/amsfonts/symbols/msbm10.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/
-courier/ucrr8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8
-a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></opt/t
-exlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/2020/texm
-f-dist/fonts/type1/urw/times/utmr8a.pfb></opt/texlive/2020/texmf-dist/fonts/typ
-e1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (36 pages, 563020 bytes).
+type1/public/amsfonts/cm/cmsy6.pfb></opt/texlive/2020/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb></opt/texlive/2020/texmf-dist/fonts/type1/public/ams
+fonts/symbols/msbm10.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/courier/
+ucrr8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></
+opt/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></opt/texlive/2
+020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/2020/texmf-dist/f
+onts/type1/urw/times/utmr8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/t
+imes/utmri8a.pfb>
+Output written on zavrsni.pdf (38 pages, 813695 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 145 compressed objects within 2 object streams
+ 238 PDF objects out of 1000 (max. 8388607)
+ 155 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 

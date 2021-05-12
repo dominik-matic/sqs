@@ -40,12 +40,12 @@
 \contentsline {section}{\numberline {3.5}Shorov algoritam}{27}{}%
 \contentsline {subsection}{\numberline {3.5.1}Opis problema}{27}{}%
 \contentsline {subsection}{\numberline {3.5.2}Kvantna Fourierova transformacija}{28}{}%
-\contentsline {subsection}{\numberline {3.5.3}Kvantna procjena faze}{28}{}%
-\contentsline {subsection}{\numberline {3.5.4}Opis algoritma}{28}{}%
-\contentsline {chapter}{\numberline {4}Simulacija kvantnog računala}{29}{}%
-\contentsline {section}{\numberline {4.1}Postojeći simulatori kvantnog računala}{29}{}%
-\contentsline {section}{\numberline {4.2}Izrada simulatora kvantnog računala}{29}{}%
-\contentsline {section}{\numberline {4.3}Primjeri simulacije kvantnih logičkih krugova}{29}{}%
-\contentsline {section}{\numberline {4.4}Prednosti i mane simulatora kvantnog računala}{29}{}%
-\contentsline {chapter}{\numberline {5}Zaključak}{30}{}%
-\contentsline {chapter}{Literatura}{31}{}%
+\contentsline {subsection}{\numberline {3.5.3}Kvantna procjena faze}{29}{}%
+\contentsline {subsection}{\numberline {3.5.4}Opis algoritma}{30}{}%
+\contentsline {chapter}{\numberline {4}Simulacija kvantnog računala}{31}{}%
+\contentsline {section}{\numberline {4.1}Postojeći simulatori kvantnog računala}{31}{}%
+\contentsline {section}{\numberline {4.2}Izrada simulatora kvantnog računala}{31}{}%
+\contentsline {section}{\numberline {4.3}Primjeri simulacije kvantnih logičkih krugova}{31}{}%
+\contentsline {section}{\numberline {4.4}Prednosti i mane simulatora kvantnog računala}{31}{}%
+\contentsline {chapter}{\numberline {5}Zaključak}{32}{}%
+\contentsline {chapter}{Literatura}{33}{}%

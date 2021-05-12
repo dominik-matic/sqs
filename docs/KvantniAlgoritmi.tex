@@ -20,7 +20,8 @@ Iz tog razloga, veliki broj kvantnih algoritama kao prvi korak ima postavljanje 
 
 \section{Prevrtanje faze}
 
-Prevrtanje faze je pojava kada ciljni bit CU operatora utječe na upravljački bit mijenjajući mu fazu. Javlja se kada je ciljni bit postavljen u svojstveno stanje unarnog operatora i kada je upravljački bit u jedinici.
+Prevrtanje faze je pojava kada ciljni bit CU operatora utječe na upravljački bit mijenjajući mu fazu. Javlja se kada je ciljni bit postavljen u svojstveno stanje unarnog operatora i kada je upravljački bit u jedinici. U takvoj situaciji, upravljački bit će primiti fazu od ciljnog bita, tj. pomnožiti će se svojstvenom vrijednosti unarnog operatora koja odgovara svojstvenom stanju ciljnog bita. Pošto je unarni operator unitaran, njegove svojstvene vrijednosti će uvijek biti oblika $e^{i\phi}$ što utječe samo na fazu.
+
 \begin{figure}[H]
 \centering
 \begin{quantikz}
@@ -273,11 +274,99 @@ Dakle, kako bi se narušila sigurnost ovakvog sustava potrebno je moći efikasno
 
 \subsection{Kvantna Fourierova transformacija}
 
-Kvantna Fourierova transformacija transformira bazu računanja iz tzv. Z baze (nazvane po osima Blochove sfere) u tzv. X bazu, odnosno iz $\ket{0}$ i $\ket{1}$ u $\ket{+}$ i $\ket{-}$.
+Kvantna Fourierova transformacija vrši transformaciju baze računanja iz Z-baze (nazvane po osima Blochove sfere) u X-bazu koja se često zove Fourierovom bazom. Svaki broj koji se može prikazati stanjima $\ket{0}$ i $\ket{1}$ ima svoju reprezentaciju u Fourierovoj bazi zapisanu pomoću različitih rotacija oko osi Z. 
+
+Broj 0 u Fourierovoj bazi ima sve kvantne bitove postavljene u $\ket{+}$. Za svaki idući broj, najniži bit se rotira oko osi Z za $\frac{1}{2^n}\cdot 2\pi$ radijana, drugi najniži za $\frac{2}{2^n}\cdot 2\pi$ radijana, treći za $\frac{4}{2^n}\cdot 2\pi$ radijana itd. Na primjer, broj 9 ($\ket{1001}$ u Z-bazi) u Fourierovoj bazi izgleda:
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.65]{img/Fourier9.png}
+\caption{Broj 9 u Fourierovoj bazi s 4 kvantna bita}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.65]{img/Zbase9.png}
+\caption{Broj 9 u Z-bazi s 4 kvantna bita}
+\end{figure}
+
+Vidi se da je najniži kvantni bit (qubit 0) zaokrenut oko osi Z za $\frac{9}{16}\cdot 2\pi$ radijana, drugi najniži (qubit 1) za $\frac{18}{16}\cdot 2\pi = \frac{2}{16}\cdot 2\pi$ radijana, treći za $\frac{36}{16}\cdot 2\pi = \frac{4}{16}\cdot 2\pi$ radijana i poslijednji za $\frac{72}{16}\cdot 2\pi = \frac{8}{16}\cdot 2\pi$ radijana.
+
+
+U matematičkom smislu, kvantna Fourierova transformacija vrši transformaciju vektora stanja $\sum_{i=0}^{N-1}x_i\ket{i}$ u vektor stanja $\sum_{i=0}^{N-1}y_i\ket{i}$ gdje vrijedi:
+\[
+y_k = \frac{1}{\sqrt{N}}\sum_{j=0}^{N-1}x_j e^{\frac{2\pi i}{N}\cdot jk}
+\]
+Unitarna matrica kvantne Fourierove transformacije može se prikazati kao:
+\[
+U_{QFT} = \frac{1}{\sqrt{N}}\sum_{x=0}^{N-1}\sum_{y=0}^{N-1}\omega_N^{xy}\ket{y}\bra{x} 
+= \frac{1}{\sqrt{N}}\begin{bmatrix}
+1 & 1 & 1 & 1 & \dots & 1 \\
+1 & \omega & \omega^2 & \omega^3 & \dots & \omega^{N-1} \\
+1 & \omega^2 & \omega^4 & \omega^6 & \dots & \omega^{2(N-1)} \\
+1 & \omega^3 & \omega^6 & \omega^9 & \dots & \omega^{3(N-1)} \\
+\vdots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & \omega^{N-1} & \omega^{2(N-1)} & \omega^{3(N-1)} & \dots & \omega^{(N-1)(N-1)} \\
+\end{bmatrix}
+\]
+gdje je $\omega_N^{jk} = e^{\frac{2\pi i}{n}\cdot jk}$. Hadamardov operator je najmanji $U_{QFT}$.
+
+Općenito, može se izračunati:
+\begin{align*}
+U_{QFT}\ket{x} &= \frac{1}{\sqrt{N}}\sum_{y=0}^{N-1}\omega_N^{xy}\ket{y} \\
+&= \ldots =
+\frac{1}{\sqrt{N}}(\ket{0}+e^{\frac{2\pi i}{2}x}\ket{1})\otimes
+(\ket{0}+e^{\frac{2\pi i}{2^2}x}\ket{1})\otimes
+\ldots \otimes
+(\ket{0}+e^{\frac{2\pi i}{2^n}x}\ket{1})
+\end{align*}
+
+Zbog unitarnosti operatora $U_{QFT}$, za transformaciju iz Fourierove baze u Z-bazu, potrebno je samo primijeniti operator $U_{QFT}^{\dagger}$. 
+
+
+Postoji točno određen način kako se konstruira kvantni logički krug kvantne Fourierove transformacije, ali u sklopu izgradnje simulatora, dovoljno je poznavati samo njezin matrični oblik.
 
 \subsection{Kvantna procjena faze}
 
+Kvantna procjena faze je algoritam sam za sebe, ali je samo dio Shorovog algoritma. Neka je $U$ unitarni operator sa svojstvenim vektorom $\ket{\Phi}$ i odgovarajućom svojstvenom vrijednosti $e^{2\pi i\theta}$.
+\[
+U\ket{\Phi} = e^{2\pi i\theta}\ket{\Phi}
+\]
+Algoritam procjene faze procjenjuje $\theta$ za dani $U$.
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\lstick[wires=4]{$\ket{0}^{\otimes t}$} & \gate{H} & \qw & \qw & \qw & \ \ldots \ & \ctrl{4} & \gate[wires=4]{QFT^{\dagger}} & \qw \\
+& \vdots & & & & \ \ldots \ &\qw & \qw & \qw \\
+& \gate{H} & \qw & \ctrl{2} & \qw & \ldots \ & \qw & & \qw \\
+& \gate{H} & \ctrl{1} & \qw & \qw & \ \ldots \ & \qw & & \qw \\
+\lstick{$\ket{\Phi}$} & \qw & \gate{U^{2^0}} & \gate{U^{2^1}} & \qw & \ \ldots \ & \gate{U^{2^{t-1}}} & \qw & \qw 
+\end{quantikz}
+\caption{Kvantni logički krug kvantne procjene faze}
+\label{krug:faza}
+\end{figure}
+
+Princip algoritma je zapisati fazu operatora $U$ na prvih $t$ bitova u Fourierovoj bazi koja se onda transformira u Z-bazu korištenjem inverza kvantne Fourierove transformacije što omogućuje njeno mjerenje. To se postiže prevrtanjem faze, tj. korištenjem upravljačkih $U$ vrata i inicijalizacijom stanja $\ket{\Phi}$ u svojstveno stanje operatora $U$.
+
+Pošto je zapis vrijednosti $a$ u Fourierovoj bazi takav da $k$-ti bit napravi $\frac{a\cdot 2^k}{2^t}$ rotacija oko osi Z, potrebno je primijeniti točno $t$ control-$U^{2^k}$ operacija gdje $k \in \{0, 1,\ldots t - 1\}$ kao što je prikazano na slici \ref{krug:faza}.
+\[
+U^{2^k}\ket{\Phi} = U^{2k-1}U\ket{\Phi} = U^{2k-1}e^{2\pi i\theta} = \ldots = e^{2\pi i 2^k\theta}\ket{\Phi}
+\]
+Nakon primjene svih $k$ control-$U$ operatora, stanje sustava jest:
+\[
+\ket{\Phi_2} = \frac{1}{\sqrt{2}}
+(\ket{0}+e^{2\pi i\theta 2^0}\ket{1})\otimes
+(\ket{0}+e^{2\pi i\theta 2^1}\ket{1})\otimes
+\ldots \otimes
+(\ket{0}+e^{2\pi i\theta 2^{t-1}}\ket{1}) \otimes
+\ket{\Phi}
+\]
+koje odgovara procjeni $\theta$ u Fourierovoj bazi tenzorski pomnoženo s $\ket{\Phi}$. Nakon toga se primjenjuje $QFT^{\dagger}$ i izvršava se mjerenje.
+
+Ovaj algoritam samo procjenjuje fazu jer će dobiveni rezultat $x$ označavati fazu $\frac{x}{2^t}$ što znači da će u pravilu procjena biti točnija što je $t$ veći, ali je, naravno, za neke faze moguće dobiti potpuno precizan rezultat.
+
 \subsection{Opis algoritma}
+
+Shorov algoritam procjenjuje fazu
 
 
 

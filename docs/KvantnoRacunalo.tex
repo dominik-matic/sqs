@@ -296,7 +296,7 @@ Spregnutost se ne odnosi samo na sustave s dva kvantna bita, analogno se ista lo
 
 \subsection{Svojstva}
 
-Kako bi bilo kakav izračun s kvantnim bitovima bio moguć, potrebno je moći manipulirati s njima. S klasičnim bitovima to rade operatori kao što su AND, OR, XOR i sl. Kvantni operatori su nešto drugačiji. Naime, pošto je jedna od glavnih značajki kvantne mehanike reverzibilnost sustava, kvantni operatori moraju biti \textbf{reverzibilni}, što je od klasičnih operatora samo NOT. Pošto stanja kvantnih bitova moraju uvijek ostati normirana, operatori su također \textbf{unitarni}. Uz unitarnost, kvantni operatori su i \textbf{hermitski}.
+Kako bi bilo kakav izračun s kvantnim bitovima bio moguć, potrebno je moći manipulirati s njima. S klasičnim bitovima to rade operatori kao što su AND, OR, XOR i sl. Kvantni operatori su nešto drugačiji. Naime, pošto je jedna od glavnih značajki kvantne mehanike reverzibilnost sustava, kvantni operatori moraju biti \textbf{reverzibilni}, što je od klasičnih operatora samo NOT. Pošto stanja kvantnih bitova moraju uvijek ostati normirana, operatori su također \textbf{unitarni}. Uz unitarnost, kvantni operatori su često i \textbf{hermitski}.
 
 \subsection{Blochova sfera}
 
@@ -445,14 +445,14 @@ No, njih, kao i sve ostale unitarne Hermitske operatore koje je moguće dobiti n
 
 \subsection{CU operatori}
 
-CU operatori ili control-U operatori djeluju na 2 kvantna bita od kojih je jedan bit \textbf{kontrolni}. Općeniti izgled CU operatora u \emph{blok-matričnom} prikazu je:
+CU operatori ili control-U operatori djeluju na 2 ili više kvantnih bitova od kojih je barem jedan bit \textbf{upravljački}. Općeniti izgled CU operatora za dva kvantna bita u \emph{blok-matričnom} prikazu je:
 \begin{equation}
 CU = \begin{bmatrix}
 I & 0 \\ 0 & U
 \end{bmatrix}
 \label{eq:cu}
 \end{equation}
-gdje je $U$ bilo koji unarni operator, a $I$ jedinična matrica. U načelu, operator provodi operaciju $U$ nad drugim kvantnim bitom ako je prvi u jedinici, inače ga ne mijenja.
+gdje je $U$ bilo koji unitarni operator, a $I$ jedinična matrica. U načelu, operator provodi operaciju $U$ nad drugim kvantnim bitom ako je prvi u jedinici, inače ga ne mijenja.
 
 Najkorišteniji CU operator jest CX ili CNOT čija se funkcionalnost može opisati kao:
 \[
@@ -482,6 +482,8 @@ Ukoliko je potrebno izgraditi matricu CU operatora gdje je kontrolni bit drugi, 
 \[
 CU_{2,1} = I_2  \otimes \ket{0}\bra{0} + U \otimes \ket{1}\bra{1}
 \]
+
+%Bez objašnjenja, moguće je simulirati svaki klasični logički krug s ovim operatorima
 
 \subsection{SWAP operator}
 
