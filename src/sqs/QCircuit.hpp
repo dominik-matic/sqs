@@ -100,6 +100,14 @@ namespace sqs {
 			
 		}
 
+		inline void add(QOperator qop, std::vector<unsigned int> qubitPos) {
+			add(QComponent(qop, qubitPos));
+		}
+
+		inline void add(QOperator qop, unsigned int qPos1) { add(qop, std::vector<unsigned int>{qPos1}); }
+		inline void add(QOperator qop, unsigned int qPos1, unsigned int qPos2) { add(qop, std::vector<unsigned int>{qPos1, qPos2}); }
+		inline void add(QOperator qop, unsigned int qPos1, unsigned int qPos2, unsigned int qPos3) { add(qop, std::vector<unsigned int>{qPos1, qPos2, qPos3}); }
+
 		inline void reverse() {
 			stages.reverse();
 			for(auto stage : stages) {

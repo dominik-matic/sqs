@@ -29,7 +29,7 @@ namespace sqs {
 		const M2 Projector11Matrix = ((M2() << 	0, 0,
 												0, 1).finished());
 
-		const M2 Hadamard_Matrix = (1.0/sqrt(2.0) * (M2() <<	1, 1,
+		const M2 HadamardMatrix = (1.0/sqrt(2.0) * (M2() <<	1, 1,
 																1, -1).finished());
 		
 		const M2 PauliXMatrix = ((M2() << 	0, 1,
@@ -54,6 +54,11 @@ namespace sqs {
 		const M4 CZMatrix = ((M4() << 	1, 0, 0, 0,
 										0, 1, 0, 0,
 										0, 0, 1, 0,
+										0, 0, 0, -1).finished());
+
+		const M4 SWAPMatrix = ((M4() << 1, 0, 0, 0,
+										0, 0, 1, 0,
+										0, 1, 0, 0,
 										0, 0, 0, -1).finished());
 
 		const M8 ToffoliMatrix = ((M8() << 	1, 0, 0, 0, 0, 0, 0, 0,

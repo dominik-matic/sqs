@@ -125,16 +125,4 @@ namespace sqs{
 
 	};
 
-
-	QOperator CU(size_t controls, QOperator unitary) {
-		unsigned int unitary_qbits = std::log2(unitary.dimension());
-		unsigned int nqubits = controls + unitary_qbits;
-		unsigned int dim = std::pow(2, nqubits);
-		MX matrix;
-		matrix.setIdentity(dim, dim);
-		matrix.bottomRightCorner(unitary.dimension(), unitary.dimension()) = unitary.getMatrix();
-		QOperator qop(matrix, "CU");
-		return qop;
-	}
-
 }

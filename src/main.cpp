@@ -135,19 +135,43 @@ int main() {
 */
 
 int main() {
-	auto qop = CU(3, Hadamard);
-	//std::cout << qop.getMatrix() << std::endl;
-	QComponent qcomp;
-	qcomp.add(PauliX, 0, 3);
-	qcomp.add(qop, {2, 3, 0, 1});
-	//std::cout << qcomp.calculateMatrix() << std::endl;
-	
-	QCircuit qc(4);
+	QCircuit qc(9);
+	qc.add(Hadamard, {0, 1, 2, 3});
+	qc.add(PauliX, 8);
+	qc.add(Hadamard, 8);
 
-	qc.add(qcomp);
+	QComponent oracle;
+	QComponent function;
+	function.add(CX, 0, 4);
+	function.add(CX, 1, 4);
+	function.add(CX, 0, 5);
+	function.add(CX, 2, 5);
+	function.add(CX, 1, 6);
+	function.add(CX, 3, 6);
+	function.add(CX, 2, 7);
+	function.add(CX, 3, 7);
+
+	oracle.add(function);
+	oracle.add(CU(4, PauliX), {4, 5, 6, 7, 8});
+	oracle.add(function);
+
+	QComponent diffuser;
+	diffuser.add(Hadamard, {0, 1, 2, 3});
+	diffuser.add(PauliX, {0, 1, 2, 3});
+	diffuser.add(CU(3, PauliZ), {1, 2, 3, 0});
+	diffuser.add(PauliX, {0, 1, 2, 3});
+	diffuser.add(Hadamard, {0, 1, 2, 3});
+	
+	QComponent groverOperator;
+	groverOperator.add(oracle);
+	groverOperator.add(diffuser);
+	groverOperator.setIterations(2);
+
+	qc.add(groverOperator);
 	qc.execute();
-	std::cout << qc.getStateVector() << std::endl;
+
 	qc.measureAndDisplay(1000);
+		
 
 	return 0;
 }
