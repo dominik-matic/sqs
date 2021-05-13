@@ -37,13 +37,14 @@ namespace sqs {
 			}
 			stage.qcomps.push_back(std::make_pair(qcomp, qubitRange));
 		}
-
 		inline MX EyeToCrossedPower(unsigned int power) {
-			MX returnMatrix = EyeMatrix;
-			MX tempMatrix = EyeMatrix;
-			for(size_t i = 1; i < power; ++i) {
-				returnMatrix = kroneckerProduct(returnMatrix, tempMatrix).eval();
-			}
+			MX returnMatrix;
+			unsigned int dimension = std::pow(2, power);
+			returnMatrix.setIdentity(dimension, dimension);
+			//MX tempMatrix = EyeMatrix;
+			//for(size_t i = 1; i < power; ++i) {
+			//	returnMatrix = kroneckerProduct(returnMatrix, tempMatrix).eval();
+			//}
 			return returnMatrix;
 		}
 

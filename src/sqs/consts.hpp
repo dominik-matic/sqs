@@ -5,13 +5,13 @@
 
 namespace sqs {
 
-	const QOperator Eye(EyeMatrix, "I");
-	const QOperator Hadamard(Hadamard_Matrix, "H");
-	const QOperator PauliX(PauliXMatrix, "X");
-	const QOperator PauliY(PauliYMatrix, "Y");
-	const QOperator PauliZ(PauliZMatrix, "Z");
-	const QOperator CX(CXMatrix, "CX");
-	const QOperator CY(CYMatrix, "CY");
-	const QOperator CZ(CZMatrix, "CZ");
-	const QOperator Toffoli(ToffoliMatrix, "T");
+	const QOperator Eye(Private::EyeMatrix, "I");
+	const QOperator Hadamard(Private::Hadamard_Matrix, "H");
+	const QOperator PauliX(Private::PauliXMatrix, "X");
+	const QOperator PauliY(Private::PauliYMatrix, "Y");
+	const QOperator PauliZ(Private::PauliZMatrix, "Z");
+	const QOperator CX(Private::CXMatrix, "CX");
+	const QOperator CY(Private::CYMatrix, "CY");
+	const QOperator CZ(Private::CZMatrix, "CZ");
+	const QOperator Toffoli(Private::ToffoliMatrix, "CU");
 }

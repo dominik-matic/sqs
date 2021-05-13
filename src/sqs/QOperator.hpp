@@ -11,19 +11,19 @@ namespace sqs{
 
 		inline void checkDimension(const QOperator& qop) const {
 			if(qop.dimension() != dimension()) {
-				throw "Dimensions don't match srry";
+				throw "Dimensions don't match";
 			}
 		}
 
 		void checkDimension(const MX& m) const {
 			if(m.rows() != dimension()) {
-				throw "Dimensions don't match srry";
+				throw "Dimensions don't match";
 			}
 		}
 
 
 		public:
-		QOperator(): matrix(EyeMatrix), type("I") {}
+		QOperator(): matrix(Private::EyeMatrix), type("I") {}
 		QOperator(MX matrix): matrix(matrix), type("?") {}
 		QOperator(MX matrix, std::string type): matrix(matrix), type(type) {}
 		
@@ -124,5 +124,17 @@ namespace sqs{
 		}
 
 	};
+
+
+	QOperator CU(size_t controls, QOperator unitary) {
+		unsigned int unitary_qbits = std::log2(unitary.dimension());
+		unsigned int nqubits = controls + unitary_qbits;
+		unsigned int dim = std::pow(2, nqubits);
+		MX matrix;
+		matrix.setIdentity(dim, dim);
+		matrix.bottomRightCorner(unitary.dimension(), unitary.dimension()) = unitary.getMatrix();
+		QOperator qop(matrix, "CU");
+		return qop;
+	}
 
 }
