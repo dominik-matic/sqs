@@ -48,13 +48,13 @@ namespace sqs {
 			return returnMatrix;
 		}
 
-		inline std::string unsignedToBin(unsigned int num) {
+		inline std::string unsignedToBin(unsigned int num, unsigned int digits) {
 			std::string bin = "";
-			for(size_t i = 0; i < qubits; ++i) {
+			for(size_t i = 0; i < digits; ++i) {
 				if(num % 2 == 0) {
-					bin = bin + '0';
+					bin = '0' + bin;
 				} else {
-					bin = bin + '1';
+					bin = '1' + bin;
 				}
 				num /= 2;
 			}
@@ -145,16 +145,17 @@ namespace sqs {
 					currentLower = qcompIt->second.front();
 					if(currentLower != (prevUpper + 1)) {
 						difference = currentLower - prevUpper - 1;
-						tempMatrix = kroneckerProduct(tempMatrix, EyeToCrossedPower(difference)).eval();
+						tempMatrix = kroneckerProduct(EyeToCrossedPower(difference), tempMatrix).eval();
 					}
-					tempMatrix = kroneckerProduct(tempMatrix, qcompIt->first.calculateMatrix()).eval();
+					tempMatrix = kroneckerProduct(qcompIt->first.calculateMatrix(), tempMatrix).eval();
 					prevUpper = qcompIt->second.back();
 				}
 
 				if(prevUpper != (qubits - 1)) {
 					difference = (qubits - 1) - prevUpper;
-					tempMatrix = kroneckerProduct(tempMatrix, EyeToCrossedPower(difference)).eval();
+					tempMatrix = kroneckerProduct(EyeToCrossedPower(difference), tempMatrix).eval();
 				}
+				
 				resultingMatrix = tempMatrix * resultingMatrix;
 			}
 			qvector = resultingMatrix * qvector;
@@ -176,7 +177,7 @@ namespace sqs {
 			return probVect;
 		}
 
-		inline std::map<unsigned int, unsigned int> measure(unsigned int times) const {
+		inline std::map<unsigned int, unsigned int> measure(unsigned int times, unsigned int qbits) const {
 			auto probs = probabilityVector();
 			double sum = 0;
 			for(auto p = probs.begin(); p != probs.end(); ++p) {
@@ -192,7 +193,7 @@ namespace sqs {
 				double got = dist(e2);
 				unsigned int index = 0;
 				for(; probs[index] <= got; ++index);
-				++hist[index];
+				++hist[index % (int) std::pow(2, qbits)];
 			}
 			return hist;
 		}
@@ -202,9 +203,13 @@ namespace sqs {
 		}
 
 		inline void measureAndDisplay(unsigned int times) {
-			auto measurements = measure(times);
+			measureAndDisplay(times, qubits);
+		}
+
+		inline void measureAndDisplay(unsigned int times, unsigned int qubits) {
+			auto measurements = measure(times, qubits);
 			for(auto m : measurements) {
-				std::cout << "|" << unsignedToBin(m.first) << ">: " << m.second << "\n";
+				std::cout << "|" << unsignedToBin(m.first, qubits) << "(" << m.first << ")" << ">: " << m.second << "\n";
 			}
 		}
 

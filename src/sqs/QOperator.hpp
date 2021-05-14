@@ -32,6 +32,15 @@ namespace sqs{
 		inline unsigned int dimension() const { return matrix.rows(); }
 		inline std::string getType() const { return type; }
 
+		inline QOperator pow(unsigned int p) {
+			auto base = matrix;
+			auto result = matrix;
+			for(int i = 1; i < p; ++i) {
+				result = base * result;
+			}
+			return QOperator(result, type);
+		}
+
 		inline void operator=(const QOperator& qop) {
 			matrix = qop.matrix;
 		}

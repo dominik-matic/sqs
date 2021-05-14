@@ -45,6 +45,8 @@ namespace sqs {
 				matrix(i, j) = std::exp(2.0 * im * pi * (double) i * (double) j / (double) dim);
 			}
 		}
+
+		matrix = (1.0 / std::sqrt(dim)) * matrix;
 		
 		QOperator qop(matrix, "?");
 		return qop;

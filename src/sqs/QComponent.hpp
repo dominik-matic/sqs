@@ -274,6 +274,13 @@ namespace sqs {
 			 * uz uvjet da i dalje sadrzi ove prosle qubite
 			 * dakle stvorit ce listu [2, 3, 4, 5, 6, 8, 9]
 			*/
+			
+			
+			/////////////////////////////////////////////////////////////
+			//for(auto asd : sortedQubitPos) {std::cout << asd << " "; } cout << std::endl;
+			/////////////////////////////////////////////////////////////
+
+
 			unsigned int counter = qubitPos.size() - 1;
 			unsigned int prevQubit = sortedQubitPos.front();
 			for(auto it = ++(sortedQubitPos.begin()); it != sortedQubitPos.end(); ++it) {
@@ -323,7 +330,7 @@ namespace sqs {
 			*/
 			std::vector<unsigned int> sortedQubitPosVect;
 			for(auto sqp : sortedQubitPos) {sortedQubitPosVect.push_back(sqp); }
-			sortedQubitPos.clear();
+
 			std::vector<std::pair<unsigned int, unsigned int>> swaps;
 			unsigned int index = 0;
 			for(auto qPos : qubitPos) {
@@ -347,6 +354,10 @@ namespace sqs {
 				}
 				++index;
 			}
+
+			sortedQubitPosVect.clear();
+			for(auto sqp : sortedQubitPos) {sortedQubitPosVect.push_back(sqp); }
+			sortedQubitPos.clear();
 			
 			////////////////////////////////////////////////////////////////////
 			//for(auto sw : swaps) {std::cout << sw.first << " <-> " << sw.second << "\n"; }
@@ -360,7 +371,9 @@ namespace sqs {
 
 			QComponent qcomp;
 
-			for(auto swap : swaps) {
+			for(auto &swap : swaps) {
+				swap.first += sortedQubitPosVect[0];
+				swap.second += sortedQubitPosVect[0];
 				std::vector<unsigned int> qp {swap.first, swap.second};
 				qcomp.addSWAPToSegment(qp);
 			}
@@ -370,14 +383,29 @@ namespace sqs {
 			for(int i = 0; i < qubitPos.size(); ++i) {
 				qr.push_back(sortedQubitPosVect[i]);
 			}
+			
+			////////////////////////////////////////////////////////////////////
 			//std::cout << qoperator.getMatrix() << std::endl;
+			//for(auto abc : qr) {std::cout << abc << " ";} std::cout << "\n";
+			////////////////////////////////////////////////////////////////////
+
 			qcomp.add(qoperator, qr);
+
+			//std::cout << qoperator.getMatrix() << "\n";
+
 			for(auto it = swaps.rbegin(); it != swaps.rend(); ++it) {
 				std::vector<unsigned int> qp {it->first, it->second};
 				qcomp.addSWAPToSegment(qp);
 			}
+
 			qoperator = qcomp.calculateMatrix();
 			qr = qcomp.getQubitRange();
+			
+			////////////////////////////////////////////////////////////////////
+			//std::cout << qoperator.getMatrix() << std::endl;
+			//for(auto abc : qr) {std::cout << abc << " ";} std::cout << "\n";
+			////////////////////////////////////////////////////////////////////
+
 			addCustomToSegment(qoperator, qr, *compseg);
 		}
 		

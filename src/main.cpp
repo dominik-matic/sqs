@@ -134,7 +134,7 @@ int main() {
 }
 */
 
-int main() {
+void GroverSAT() {
 	QCircuit qc(9);
 	qc.add(Hadamard, {0, 1, 2, 3});
 	qc.add(PauliX, 8);
@@ -170,8 +170,57 @@ int main() {
 	qc.add(groverOperator);
 	qc.execute();
 
-	qc.measureAndDisplay(1000);
-		
+	qc.measureAndDisplay(1000, 4);
+}
 
+int QPE() {
+
+	QCircuit qc(4);
+	qc.add(PauliX, 3);
+	qc.add(Hadamard, 0, 1, 2);
+
+	QOperator ph = Phase(1.0); // theta =  1/2
+	auto cPh = CU(1, ph);
+
+	for(int i = 0; i < 3; ++i) {
+		for(int j = 0; j < pow(2, i); ++j) {
+			qc.add(cPh, i, 3);
+		}
+	}
+
+	qc.add(QFTDagger(3), {0, 1, 2});
+	qc.execute();
+	
+	///for(auto a : qc.probabilityVector()) {std::cout << a << " \\ "; }std::cout <<"\n";
+	
+	auto m = qc.measure(1000, 3);
+	for(auto a : m) {
+		std::cout << a.first << "/8" << "\tp: " << a.second / 10.0 << "%\n";  
+	}
+
+
+	return 0;
+}
+
+int phases() {
+	QCircuit qc(2);
+	qc.add(PauliX, 0, 1);
+	qc.execute();
+	std::cout << qc.getStateVector() << "\n";
+
+	qc.add(CU(1, Phase(1.0 / 2.0)), 0, 1);
+
+
+	qc.resetQubits();
+	qc.execute();
+	std::cout << "\n" <<qc.getStateVector() << "\n";
+
+
+
+	return 0;
+}
+
+int main() {
+	GroverSAT();
 	return 0;
 }
