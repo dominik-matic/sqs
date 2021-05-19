@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  12 MAY 2021 18:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.16)  19 MAY 2021 19:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -727,8 +727,32 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 142
 (/opt/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )))
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 9.
+(/opt/texlive/2020/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count311
+\lst@gtempboxa=\box68
+\lst@token=\toks45
+\lst@length=\count312
+\lst@currlwidth=\dimen309
+\lst@column=\count313
+\lst@pos=\count314
+\lst@lostspace=\dimen310
+\lst@width=\dimen311
+\lst@newlines=\count315
+\lst@lineno=\count316
+\lst@maxwidth=\dimen312
 
+(/opt/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count317
+\lst@skipnumbers=\count318
+\lst@framebox=\box69
+)
+(/opt/texlive/2020/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 10
+.
 
 (/opt/texlive/2020/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -737,20 +761,20 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 (./SimulacijaKvantnogRacunala.aux) (./Zakljucak.aux))
 \openout1 = `zavrsni.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -788,17 +812,17 @@ LaTeX Font Info:    ... okay on input line 9.
 
 (/opt/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count311
-\scratchdimen=\dimen309
-\scratchbox=\box68
-\nofMPsegments=\count312
-\nofMParguments=\count313
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count314
-\MPscratchDim=\dimen310
-\MPnumerator=\count315
-\makeMPintoPDFobject=\count316
-\everyMPtoPDFconversion=\toks46
+\scratchcounter=\count319
+\scratchdimen=\dimen313
+\scratchbox=\box70
+\nofMPsegments=\count320
+\nofMParguments=\count321
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count322
+\MPscratchDim=\dimen314
+\MPnumerator=\count323
+\makeMPintoPDFobject=\count324
+\everyMPtoPDFconversion=\toks47
 ) (/opt/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -810,8 +834,10 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 20
+\c@lstlisting=\count325
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 21
 .
 
 (/opt/texlive/2020/texmf-dist/tex/latex/psnfss/t1phv.fd
@@ -967,62 +993,105 @@ Overfull \hbox (34.20203pt too wide) detected at line 310
 
  (./SimulacijaKvantnogRacunala.tex
 Poglavlje 4.
-) [32
+[32
 
 
 
 
-]
+] (/opt/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+(/opt/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+(/opt/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+)
+Overfull \hbox (19.43942pt too wide) in paragraph at lines 38--39
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (48.23972pt too wide) in paragraph at lines 40--41
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (41.03964pt too wide) in paragraph at lines 41--42
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[33]
+Overfull \hbox (19.43942pt too wide) in paragraph at lines 61--62
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (48.23972pt too wide) in paragraph at lines 63--64
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (41.03964pt too wide) in paragraph at lines 64--65
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (55.43979pt too wide) in paragraph at lines 72--73
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[34]) [35]
 \openout2 = `Zakljucak.aux'.
 
  (./Zakljucak.tex
 Poglavlje 5.
-) [33
+) [36
 
 
 
 
 ] (./zavrsni.bbl
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 13
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 10
 .
  (/opt/texlive/2020/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 9--14
+Underfull \hbox (badness 10000) in paragraph at lines 17--22
 []\T1/ptm/m/n/12 Adrian Cho.  IBM pro-mi-ses 1000-qubit qu-an-tum com-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--14
+Underfull \hbox (badness 10000) in paragraph at lines 17--22
 \T1/ptm/m/n/12 pu-ter^^Va mi-les-tone^^Vby 2023, Sep-tem-ber 2020.  URL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--14
+Underfull \hbox (badness 10000) in paragraph at lines 17--22
 \T1/pcr/m/n/12 https : / / www . sciencemag . org / news / 2020 / 09 /
  []
 
 
-Overfull \hbox (9.80171pt too wide) in paragraph at lines 9--14
+Overfull \hbox (9.80171pt too wide) in paragraph at lines 17--22
 \T1/pcr/m/n/12 ibm-[]promises-[]1000-[]qubit-[]quantum-[]computer-[]milestone-[
 ]2023$\T1/ptm/m/n/12 . 
  []
 
-) [34
+) [37
 
 
 
-] [35] (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
+] [38] (./zavrsni.aux (./Uvod.aux) (./KvantnoRacunalo.aux)
 (./KvantniAlgoritmi.aux) (./SimulacijaKvantnogRacunala.aux) (./Zakljucak.aux)) 
 ) 
 Here is how much of TeX's memory you used:
- 24095 strings out of 479917
- 496423 string characters out of 5856971
- 810402 words of memory out of 5000000
- 40153 multiletter control sequences out of 15000+600000
+ 25933 strings out of 479917
+ 520653 string characters out of 5856971
+ 1021242 words of memory out of 5000000
+ 41971 multiletter control sequences out of 15000+600000
  605611 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,21n,126p,1176b,1607s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 85i,21n,126p,1197b,1607s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/opt/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</opt/texlive/2020/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texlive/2020/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/texlive/2020/texmf-dist/font
@@ -1043,10 +1112,10 @@ opt/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></opt/texlive/2
 020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/texlive/2020/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb></opt/texlive/2020/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on zavrsni.pdf (39 pages, 819412 bytes).
+Output written on zavrsni.pdf (42 pages, 830884 bytes).
 PDF statistics:
- 241 PDF objects out of 1000 (max. 8388607)
- 157 compressed objects within 2 object streams
+ 250 PDF objects out of 1000 (max. 8388607)
+ 163 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  88 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -45,7 +45,12 @@
 \contentsline {chapter}{\numberline {4}Simulacija kvantnog računala}{32}{}%
 \contentsline {section}{\numberline {4.1}Postojeći simulatori kvantnog računala}{32}{}%
 \contentsline {section}{\numberline {4.2}Izrada simulatora kvantnog računala}{32}{}%
-\contentsline {section}{\numberline {4.3}Primjeri simulacije kvantnih logičkih krugova}{32}{}%
-\contentsline {section}{\numberline {4.4}Prednosti i mane simulatora kvantnog računala}{32}{}%
-\contentsline {chapter}{\numberline {5}Zaključak}{33}{}%
-\contentsline {chapter}{Literatura}{34}{}%
+\contentsline {subsection}{\numberline {4.2.1}SQS}{32}{}%
+\contentsline {subsection}{\numberline {4.2.2}Struktura}{33}{}%
+\contentsline {subsubsection}{QOperator}{33}{}%
+\contentsline {subsubsection}{QComponent}{33}{}%
+\contentsline {subsubsection}{QCircuit}{34}{}%
+\contentsline {section}{\numberline {4.3}Primjeri simulacije kvantnih logičkih krugova}{35}{}%
+\contentsline {section}{\numberline {4.4}Prednosti i mane simulatora kvantnog računala}{35}{}%
+\contentsline {chapter}{\numberline {5}Zaključak}{36}{}%
+\contentsline {chapter}{Literatura}{37}{}%

@@ -1,6 +1,112 @@
 \chapter{Simulacija kvantnog računala}
 
 \section{Postojeći simulatori kvantnog računala}
+
+Danas postoje biblioteke i \emph{toolkits} za simulaciju kvantnih računala kao što su Qiskit, QuTiP, staq ili neki od brojnih drugih od kojih se veliki broj može pronaći na \citep{simulatori}.  Mnogi nude razne funkcionalnosti kao što su analiza tijeka izvođenja logičkog kruga ili razne načine vizualizacije stanja sustava, ali isto tako znaju imati zbunjujuću dokumentaciju i neintuitivan način korištenja.
+
+Qiskit, s druge strane, ima vrhunsku dokumentaciju i uglavnom vrlo praktično sučelje. Čak dopušta programiranje i izvršavanje kvantnih logičkih krugova na pravim IBM-ovim kvantnim računalima za koje je često potrebno čekati u redu za korištenje. Također nudi razne vizualizacije kvantnog logičkog kruga i stanja sustava, a uz korištenje nekih drugih Python biblioteka kao što je matplotlib, moguće je dodatno vizualizirati rezultate izvođenja.
+
+Samostalno izrađen simulator u sklopu ovoga rada ima sučelje slično Qiskitu, no napisan je u jeziku C++ te je dizajniran da što jednostavnije omogući demonstraciju nekih od prethodno opisanih pojava i algoritama u ovom radu.
+
 \section{Izrada simulatora kvantnog računala}
+
+\subsection{SQS}
+
+\textbf{Simple Quantum Simulator} ili \textbf{SQS}  osmišljen je kao \emph{header-only} biblioteka u jeziku C++. Kao takav je neovisan o platformi uz kompromis duljeg vremena prevođenja. Za operacije s vektorima i matricama SQS koristi biblioteku Eigen \citep{eigen} koja se također sastoji od isključivo \emph{header} datoteka što dodatno produljuje vrijeme prevođenja, ali je ono i dalje prihvatljivo. Za korištenje biblioteke potrebno je u zaglavlje programa staviti \emph{include} datoteke \emph{sqs.h}.
+
+\subsection{Struktura}
+
+SQS se temelji na tri glavne komponente koje se koriste za konstrukciju kvantnih logičkih krugova. To su \textbf{QOperator}, \textbf{QComponent} i \textbf{QCircuit}.
+
+\subsubsection{QOperator}
+Razred QOperator predstavlja kvantni operator nad jednim ili više kvantnih bitova. Enkapsulira matricu operatora i sadrži informaciju o tipu operatora koji pomaže objektu tipa QComponent integrirati ga u logički krug. Korisnik ne mora brinuti o tipu operatora. Za instanciranje QOperatora korisniku su na raspolaganju konstante i funkcije za konstruiranje često korištenih kvantnih operatora. Konstante su redom: \textit{Eye}, \textit{Hadamard}, \textit{PauliX}, \textit{PauliY}, \textit{PauliZ}, \textit{CX}, \textit{CY}, \textit{CZ}, \textit{Toffoli} i \textit{SWAP}. Od funkcija to su:
+\lstset{language=c++, tabsize=2}
+\begin{lstlisting}
+QOperator CU(size_t controls, QOperator unitary);
+QOperator Phase(double phase);
+QOperator QFT(unsigned int qubits);
+QOperator QFTDagger(unsigned int qubits);
+\end{lstlisting}
+Funkcija \textit{CU} prima dva argumenta: koliko ima upravljačkih bitova te unitarni operator kojim upravljaju. \textit{Phase} prima fazu operatora, a \textit{QFT} i \textit{QFTDagger} primaju nad koliko kvantnih bitova djeluju. Sve navedene konstante i funkcije nalaze se u datoteci \emph{ops.hpp} biblioteke. Matrice konstanti se nalaze u datoteci \emph{eigenconsts.hpp}, ali su donekle sakrivene od korisnika koristeći namespace \emph{sqs::Private}.
+
+Korisnik također može stvoriti vlastiti QOperator inicijalizirajući ga s Eigen matricom u konstruktoru ili koristeći linearnu kombinaciju postojećih i vlastitih QOperatora i Eigen matrica. QOperator ne brine o svojoj unitarnosti te tu odgovornost ostavlja korisniku.
+
+\subsubsection{QComponent}
+
+QComponent je odgovoran za prvi korak integracije kvantnih operatora u kvantni logički krug. Funkcionira na način da se u njega dodavaju objekti tipa QOperator ili QComponent uz navedene indekse kvantnih bitova nad kojim djeluju.
+\begin{lstlisting}
+void add(QOperator qop, std::vector<unsigned int> qubitPos);
+void add(QOperator qop, unsigned int qPos);
+void add(QOperator qop, unsigned int qPos1, unsigned int qPos2);
+void add(QOperator qop, unsigned int qPos1, unsigned int qPos2,
+	unsigned int qPos3);
+void add(QComponent qcomp);
+\end{lstlisting}
+Ukoliko se radi o operatoru s upravljačkim bitovima, potrebno je njih prve navesti, neovisno kojim redoslijedom.
+
+QComponent nastoji što više operatora staviti u paralelu što smanjuje količinu matrica kojih je kasnije potrebno izračunati u koracima simulacije. Od ostalih funkcionalnosti, QComponent nudi:
+\begin{lstlisting}
+void setIterations(unsigned int times);
+void reverse();
+std::vector<unsigned int> getQubitRange();
+const MX& calculateMatrix();
+\end{lstlisting}
+\emph{setIterations} postavlja koliko puta se komponenta treba ponoviti u logičkom krugu što je korisno za neke algoritme poput Groverovog. \emph{reverse} preokreće komponentu, \emph{getQubitRange} računa koje kvantne bitove komponenta koristi, a \emph{calculateMatrix} računa matrični prikaz komponente. Zadnje dvije funkcije koristi QCircuit kako bi uspješno simulirao logički krug. \emph{MX} i ostali nestandardni tipovi koji se koriste su definirani u datoteci \emph{eigenconsts.hpp} i predstavljaju samo kraći zapis tipova Eigen matrica.
+
+\subsubsection{QCircuit}
+
+QCircuit predstavlja kvantni logički krug u kojeg se ugrađuju komponente koje nastoji što je više moguće paralelizirati. Pri stvaranju objekta tipa QCircuit, u konstruktoru je potrebno navesti broj kvantnih bitova. Funkcionalnosti koje QCircuit nudi su:
+\begin{lstlisting}
+void add(QComponent qcomp);
+void add(QOperator qop, std::vector<unsigned int> qubitPos);
+void add(QOperator qop, unsigned int qPos1);
+void add(QOperator qop, unsigned int qPos1, unsigned int qPos2);
+void add(QOperator qop, unsigned int qPos1, unsigned int qPos2,
+	unsigned int qPos3);
+void reverse();
+void execute();
+void resetQubits();
+void clearCircuit();
+VX getStateVector();
+std:.vector<double> probabilityVector();
+std::map<unsigned int, unsigned int> measure(unsigned int times);
+void measureAndDisplay(unsigned int times);
+\end{lstlisting}
+\emph{execute} pokreće simulaciju kvantnog logičkog kruga, odnosno računa sve potrebne matrice te ih množi vektorom stanja koji je na početku inicijaliziran u $\ket{0}$. \emph{resetQubits} postavlja vektor stanja u početno stanje. \emph{clearCircuit} uklanja sve komponente iz logičkog kruga. \emph{getStateVector} vraća trenutni vektor stanja logičkog kruga, dok \emph{probabilityVector} vraća vektor vjerojatnosti. \emph{measure} vrši mjerenje onoliko puta koliko je navedeno argumentom te vraća rezultate mjerenja kao mapu. \emph{measureAndDisplay} radi isto što i \emph{measure}, samo što ne vraća mapu nego odmah prikazuje rezultate mjerenja na standardni izlaz.
+
+
 \section{Primjeri simulacije kvantnih logičkih krugova}
+
 \section{Prednosti i mane simulatora kvantnog računala}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

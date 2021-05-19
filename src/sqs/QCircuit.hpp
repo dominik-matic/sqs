@@ -52,13 +52,31 @@ namespace sqs {
 			std::string bin = "";
 			for(size_t i = 0; i < qubits; ++i) {
 				if(num % 2 == 0) {
-					bin = bin + '0';
+					bin = '0' + bin;
 				} else {
-					bin = bin + '1';
+					bin = '1' + bin;
 				}
 				num /= 2;
 			}
 			return bin;
+		}
+
+		int swapBits(unsigned int num, unsigned int i, unsigned int j) const {
+			unsigned int bit1 = (num >> i) & 1;
+			unsigned int bit2 = (num >> j) & 1;
+			unsigned int x = (bit1 ^ bit2);
+			x = (x << i) | (x << j);
+			return num ^ x;
+		}
+
+		int reverseBits(unsigned int num, unsigned int bits) const {
+			int i = 0;
+			int j = bits - 1;
+			for(; i < j; ++i, --j) {
+				num = swapBits(num, i, j);
+			}
+
+			return num;
 		}
 
 
@@ -169,8 +187,9 @@ namespace sqs {
 			unsigned int dimension = qvector.size();
 			std::vector<double> probVect(dimension);
 
+			auto svector = getStateVector();
 			for(unsigned int i = 0; i < dimension; ++i) {
-				auto abs = std::abs(qvector(i));
+				auto abs = std::abs(svector(i));
 				probVect[i] = double(abs * abs);
 			}
 			return probVect;
@@ -198,7 +217,13 @@ namespace sqs {
 		}
 
 		inline VX getStateVector() const {
-			return qvector;
+			int size = qvector.size();
+			VX retVect;
+			retVect.resize(size);
+			for(int i = 0; i < size; ++i) {
+				retVect(reverseBits(i, qubits)) = qvector(i);
+			}
+			return retVect;
 		}
 
 		inline void measureAndDisplay(unsigned int times) {

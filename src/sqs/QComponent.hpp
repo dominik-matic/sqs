@@ -144,14 +144,14 @@ namespace sqs {
 			return calculatedMatrix;
 		}
 
-		inline void printSegments() {
+		/*inline void printSegments() {
 			for (auto s : segmentList) {
 				std::cout << "segment:\n";
 				for(auto a : s.qops) {
 					std::cout << a.first.getType() << "\n";
 				}
 			}
-		}
+		}*/
 
 
 
