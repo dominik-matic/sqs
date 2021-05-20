@@ -50,7 +50,13 @@
 \contentsline {subsubsection}{QOperator}{33}{}%
 \contentsline {subsubsection}{QComponent}{33}{}%
 \contentsline {subsubsection}{QCircuit}{34}{}%
-\contentsline {section}{\numberline {4.3}Primjeri simulacije kvantnih logičkih krugova}{35}{}%
-\contentsline {section}{\numberline {4.4}Prednosti i mane simulatora kvantnog računala}{35}{}%
-\contentsline {chapter}{\numberline {5}Zaključak}{36}{}%
-\contentsline {chapter}{Literatura}{37}{}%
+\contentsline {subsection}{\numberline {4.2.3}Izazovi pri implementaciji}{35}{}%
+\contentsline {section}{\numberline {4.3}Primjeri simulacije kvantnih logičkih krugova}{37}{}%
+\contentsline {subsection}{\numberline {4.3.1}Superpozicija}{37}{}%
+\contentsline {subsection}{\numberline {4.3.2}Spregnutost}{38}{}%
+\contentsline {subsection}{\numberline {4.3.3}Deutschev algoritam}{40}{}%
+\contentsline {subsection}{\numberline {4.3.4}Groverov algoritam}{42}{}%
+\contentsline {subsection}{\numberline {4.3.5}Kvantna estimacija faze}{42}{}%
+\contentsline {section}{\numberline {4.4}Prednosti i mane simulatora kvantnog računala}{42}{}%
+\contentsline {chapter}{\numberline {5}Zaključak}{44}{}%
+\contentsline {chapter}{Literatura}{45}{}%

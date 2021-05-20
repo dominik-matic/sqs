@@ -224,20 +224,22 @@ Neka je $f$ kriptografska funkcija sažetka za koju vrijedi $f : \{0, 1\}^n \rig
 \begin{figure}[H]
 \centering
 \begin{quantikz}
-\lstick[wires=3]{n} & \gate[wires=6][2cm]{U_{hash}} & \qw & \qw & \gate[wires=6][2cm]{U_{hash}} & \qw \\
-\qw & \qw & \qw & \qw & \qw &\qw \\
-\qw & \qw & \qw & \qw & \qw & \qw \\
-\lstick[wires=3]{m} & & \qw & \ctrl{3} & \qw & \qw \\
-\qw &  & \gate{X} & \ctrl{2} & \qw & \qw \\
-\qw & & \qw & \ctrl{1} & \qw & \qw \\
-\lstick{$\ket{-}$} & \qw & \qw & \targ{} & \qw  & \qw
+\lstick[wires=3]{$n = 3$} & \gate[wires=6][2cm]{U_{hash}} & \qw & \qw & \qw & \gate[wires=6][2cm]{U_{hash}^\dagger} & \qw \\
+\qw & \qw & \qw & \qw & \qw & \qw &\qw \\
+\qw & \qw & \qw & \qw & \qw & \qw & \qw \\
+\lstick[wires=3]{$m = 3$} & & \qw & \ctrl{3} & \qw & \qw & \qw \\
+\qw &  & \gate{X} & \ctrl{2} & \gate{X} & \qw & \qw \\
+\qw & & \qw & \ctrl{1} & \qw & \qw & \qw \\
+\lstick{$\ket{-}$} & \qw & \qw & \targ{} & \qw & \qw  & \qw
 \end{quantikz}
-\caption{Kvantni prorok za pronalaženje inverza od $\ket{101}$}
+\caption{Primjer kvantnog proroka za pronalaženje inverza od $\ket{101}$}
 \end{figure}
 Za implementaciju kvantnog proroka potrebno je $n + m + 1$ kvantnih bitova od kojih su $m + 1$ pomoćni. Prvih $n$ bitova se očekuje da su u stanju superpozicije, idućih $m$ bitova se postavlja u stanje $\ket{0}$, dok se zadnji bit postavlja u stanje $\ket{-}$. Zatim je potrebno u kvantnom logičkom krugu implementirati samu funkciju $f$ na način da će joj ulaz biti prvih $n$ bitova, a izlaz idućih $m$ bitova. Koristeći Toffolijeva vrata sa $m$ upravljačkih bitova, može se odabrati izlaz funkcije kojemu je potrebno pronaći inverz (na slici je to $f(x) = 101$). Ciljni bit Toffolijevih vrata je poslijednji bit koji je u stanju $\ket{-}$. Svrha Toffolijevih vrata je svakoj komponenti stanja koja rezultira željenim izlazom promijeniti predznak. To radi koristeći phase kickback. Naime, vrijedi:
-\[CNOT\ket{0-} = \ket{0-}\]
-\[CNOT\ket{1-} = -\ket{1-}\]
-Pošto se prorok koristi iterativno u algoritmu, potrebno je vratiti svih $m$ izlaznih kvantnih bitova u stanje nule. Zbog reverzibilnosti svih operatora, potrebno je samo ponovno primijeniti funkciju $f$.
+\[
+CNOT\ket{0-} = \ket{0-} \qquad
+CNOT\ket{1-} = -\ket{1-}
+\]
+Pošto se prorok koristi iterativno u algoritmu, potrebno je vratiti svih $m$ izlaznih kvantnih bitova u stanje nule. To se može postići primjenom operatora $f^\dagger$, koji često zna biti jednak $f$.
 
 \section{Shorov algoritam}
 

@@ -74,13 +74,334 @@ void measureAndDisplay(unsigned int times);
 \end{lstlisting}
 \emph{execute} pokreće simulaciju kvantnog logičkog kruga, odnosno računa sve potrebne matrice te ih množi vektorom stanja koji je na početku inicijaliziran u $\ket{0}$. \emph{resetQubits} postavlja vektor stanja u početno stanje. \emph{clearCircuit} uklanja sve komponente iz logičkog kruga. \emph{getStateVector} vraća trenutni vektor stanja logičkog kruga, dok \emph{probabilityVector} vraća vektor vjerojatnosti. \emph{measure} vrši mjerenje onoliko puta koliko je navedeno argumentom te vraća rezultate mjerenja kao mapu. \emph{measureAndDisplay} radi isto što i \emph{measure}, samo što ne vraća mapu nego odmah prikazuje rezultate mjerenja na standardni izlaz.
 
+\subsection{Izazovi pri implementaciji}
+
+U suštini, simulator se može svesti na računanje tenzorskog produkta i matrično množenje, no situacija ipak nije toliko jednostavna. Sve matrične reprezentacije kvantnih operatora koji djeluju na dva ili više kvantnih bitova pretpostavljaju točno određen raspored bitova. Na primjer CNOT i Toffolijeva vrata pretpostavljaju da su svi bitovi jedan uz drugog i da su upravljački bitovi iznad ciljnog. To je vrlo ograničavajuće te je bilo potrebno pronaći način konstrukcije operatora koji djeluje na proizvoljno raspoređenim bitovima.
+
+Za CU operator sa jednim upravljačkim bitom i jednim ciljnim bitom, to je uvijek moguće postići jer se on može rastaviti na zbroj tenzorskih produkata. Na primjer, CNOT operatori:
+
+
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\qw & \ctrl{1} & \qw & & & \targ{} & \qw \\
+\qw & \targ{} & \qw & & &  \ctrl{-1} & \qw \\
+\end{quantikz}
+\caption{$CNOT_{1, 2}$ i $CNOT_{2,1}$ operatori}
+\end{figure}
+
+mogu se prikazati kao:
+\[
+CNOT_{1,2} = \ket{0}\bra{0}\otimes I_2 + \ket{1}\bra{1}\otimes \sigma_x \qquad
+CNOT_{2,1} = I_2 \otimes\ket{0}\bra{0} +  \sigma_x \otimes\ket{1}\bra{1}
+\]
+
+Općenito, ako se između upravljačkog i ciljnog bita nalazi $n$ drugih operatora koji ne utječu na upravljački ili ciljni bit, zajednička matrica se može dobiti na način:
+\[
+U = \ket{0}\bra{0}\otimes U_1 \otimes \ldots \otimes U_n \otimes I_2 + \ket{1}\bra{1}\otimes U_1 \otimes \ldots \otimes U_n \otimes \sigma_x
+\]
+ili
+\[
+U = I_2 \otimes U_1 \otimes \ldots \otimes U_n \otimes \ket{0}\bra{0} +  \sigma_x \otimes U_1 \otimes \ldots \otimes U_n \otimes \ket{1}\bra{1}
+\]
+gdje $U_i$ mogu biti bilo koji unitarni operatori, a $I_2$ ako nema operatora.
+
+Ovo naizgled rješava samo dio problema, ali je zapravo jedina stvar koja je potrebna za konstrukciju svih ostalih operatora koji djeluju na proizvoljno raspoređenim  bitovima.
+
+Razlog tome je što se SWAP vrata mogu konstruirati od CNOT vrata. Vrijedi 
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\qw & \gate[swap]{} & \qw \\
+\qw &  & \qw
+\end{quantikz} =
+\begin{quantikz}
+\qw & \ctrl{1} & \targ{} & \ctrl{1} & \qw \\
+\qw & \targ{} & \ctrl{-1} & \targ{} & \qw \\
+\end{quantikz}
+\caption{SWAP vrata prikazana pomoću CNOT vrata}
+\end{figure}
+Posljedica ove činjenice jest da je moguće zamijeniti bilo koja dva kvantna bita u logičkom krugu. Dakle, prije svake primjene višebitnog operatora, simulator napravi potrebne zamjene kako bi bitovi odgovarali ulazima operatora, bez da ikako mijenja matricu samog operatora. Takav način omogućuje korištenje logičkih vrata kao što su višeupravljačka Toffolijeva vrata:
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\qw & \ctrl{3} & \qw \\
+\qw & \qw & \qw \\
+\qw & \ctrl{1} & \qw \\
+\qw & \targ{} & \qw \\
+\qw & \ctrl{-1} & \qw
+\end{quantikz}
+\caption{Višeupravljačka Toffolijeva vrata}
+\label{multitoffoli}
+\end{figure}
+Općenito matricu višeupravljačkog operatora je lagano konstruirati: svi elementi na dijagonali se postave u jedinicu, a u donji desni kut se postavi na matricu ciljnog operatora. Dakle, simulator bi vrata \ref{multitoffoli} konstruirao na način:
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\qw &\qw & \ctrl{3} & \qw & \qw \\
+\qw & \swap{3} & \ctrl{2} & \swap{3} & \qw \\
+\qw & \qw  & \ctrl{1} & \qw & \qw\\
+\qw & \qw  & \targ{} & \qw & \qw \\
+\qw & \targX{} & \qw & \targX{} & \qw
+\end{quantikz}
+\caption{Realizacija vrata sa slike \ref{multitoffoli} u simulatoru}
+\end{figure}
 
 \section{Primjeri simulacije kvantnih logičkih krugova}
 
+\subsection{Superpozicija}
+
+Radi lakšeg upoznavanja sa simulatorom, prvih par primjera će biti jednostavni. Simulator započinje svoj rad u stanju $\ket{0}$, stoga za postavljanje bitova u superpoziciju potrebno je primijeniti Hadamardov operator na sve bitove. Mjerenje sustava trebalo bi rezultirati približno jednakom raspodjelom svih vrijednosti. Logički krug koji treba simulirati:
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\lstick{$\ket{0}$} & \qw & \gate{H} & \qw & \meter{} \\
+\lstick{$\ket{0}$} & \qw & \gate{H} & \qw & \meter{} \\
+\lstick{$\ket{0}$} & \qw & \gate{H} & \qw & \meter{} \\
+\lstick{$\ket{0}$} & \qw & \gate{H} & \qw & \meter{}
+\end{quantikz}
+\end{figure}
+
+i njemu odgovarajući kod:
+\begin{lstlisting}
+#include "sqs/sqs.h"
+
+using namespace sqs;
+
+int main() {
+	/* stvaranje kvantnog logickog kruga */
+	QCircuit qc(4);
+
+	/* dodavanje Hadamardovog operatora na sve bitove,
+		moguce napraviti i u for petlji */
+	qc.add(Hadamard, {0, 1, 2, 3});
+
+	/* pokretanje simulatora i mjerenje stanja na kraju 1000 puta */
+	qc.execute();
+	qc.measureAndDisplay(1000);
+	
+	return 0;
+}
+\end{lstlisting}
+
+Dobiveni ispis:
+\begin{lstlisting}
+|0000>: 63
+|0001>: 56
+|0010>: 64
+|0011>: 62
+|0100>: 61
+|0101>: 68
+|0110>: 59
+|0111>: 68
+|1000>: 55
+|1001>: 72
+|1010>: 50
+|1011>: 82
+|1100>: 59
+|1101>: 63
+|1110>: 62
+|1111>: 56
+\end{lstlisting}
+
+\subsection{Spregnutost}
+
+Spregnutost označava neseparabilno stanje kvantnih bitova te ga je iznenađujuće jednostavno dobiti; potrebna su samo dva operatora. Logički krug za dobivanje spregnutog sustava dva kvantna bita jest:
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\lstick{$\ket{0}$} & \qw & \gate{H} & \ctrl{1} & \meter{} \\
+\lstick{$\ket{0}$} & \qw & \qw & \targ{} & \meter{}
+\end{quantikz}
+\end{figure}
+
+\begin{lstlisting}
+#include "sqs/sqs.h"
+
+using namespace sqs;
+
+int main() {
+
+	QCircuit qc(2);
+
+	/* dodavanje Hadamardovog operatora na qubit 0 */
+	qc.add(Hadamard, 0);
+
+	/* dodavanje CNOT operatora gdje je qubit 0 upravljacki,
+		a 1 ciljni*/
+	qc.add(CX, 0, 1);
+
+	qc.execute();
+	qc.measureAndDisplay(1000);
+	
+	return 0;
+}
+\end{lstlisting}
+Dobiveni ispis:
+\begin{lstlisting}
+|00>: 498
+|11>: 502
+\end{lstlisting}
+
+Za tri kvantna bita, primjer je sličan:
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\lstick{$\ket{0}$} & \gate{H} 	& \ctrl{1} 	& \qw 		& \meter{} \\
+\lstick{$\ket{0}$} & \qw 			& \targ{} 	&  \ctrl{1}	& \meter{} \\
+\lstick{$\ket{0}$} & \qw 			& \qw 		&  \targ{}	& \meter{}
+\end{quantikz}
+\end{figure}
+uz odgovarajući kod
+\begin{lstlisting}
+QCircuit qc(3);
+
+qc.add(Hadamard, 0);
+
+qc.add(CX, 0, 1);
+qc.add(CX, 1, 2);
+
+qc.execute();
+qc.measureAndDisplay(1000);
+\end{lstlisting}
+Dobiveni ispis:
+\begin{lstlisting}
+|000>: 487
+|111>: 513
+\end{lstlisting}
+Nadalje, primjeri izvornog koda neće sadržavati elemente zaglavlja i funkcije main, nego samo relevantan dio koda.
+
+\subsection{Deutschev algoritam}
+
+Za Deutschev algoritam potrebno je implementirati funkciju oblika $f : \{0, 1\} \rightarrow \{0, 1\}$ te odrediti je li ona uravnotežena ili konstantna.
+
+Za konstante funkcije, implementacija je takva da postaje jasno zašto se uvijek dobiva $\ket{0}$ kada se izmjeri prvi bit, odnosno prvih $n$ bitova u Deutsch-Josza generalizaciji algoritma. Za funkciju $f(x) = 0$ implementacija se sastoji od praznih žica, odnosno jediničnih matrica, dok $f(x) = 1$ ima $\sigma_x$ operator na izlaznom bitu. Očigledno je da izlazni bit uopće ne interagira sa ulazom što rezultira da ulaz na kraju evaluacije crne kutije ostaje nepromijenjen.
+\begin{figure}[H]
+\centering
+\begin{minipage}{.5\textwidth}
+\centering
+\begin{quantikz}
+\qw  & \qw & \qw \\
+\qw & \qw & \qw
+\end{quantikz}
+\caption{$f(x) = 0$}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\centering
+\begin{quantikz}
+\qw  & \qw & \qw \\
+\qw & \gate{X} & \qw
+\end{quantikz}
+\caption{$f(x) = 1$}
+\end{minipage}
+\end{figure}
+
+Implementacije uravnoteženih funkcija također nisu komplicirane:
+\begin{figure}[H]
+\centering
+\begin{minipage}{.5\textwidth}
+\centering
+\begin{quantikz}
+\qw & \ctrl{1} & \qw \\
+\qw & \targ{} & \qw
+\end{quantikz}
+\caption{$f(x) = x$}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+\centering
+\begin{quantikz}
+\qw & \ctrl{1} & \qw & \qw \\
+\qw & \targ{} & \gate{X} & \qw 
+\end{quantikz}
+\caption{$f(x) = \neg x$}
+\end{minipage}
+\end{figure}
+Ovdje se vidi da će prevrtanje faze imati ključnu ulogu pošto je izlazni bit inicijaliziran u $\ket{-}$, a ulazni u $\ket{+}$. Primjenom CNOT operatora, izlazni bit će ulaznom bitu promijeniti fazu rezultirajući da će se ulazni bit pronaći u stanju $\ket{-}$ koje prolaskom kroz Hadamardov operator postaje stanjem $\ket{1}$.
+
+Kvantni logički krug Deutschevog algoritma:
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\lstick{$\ket{0}$} & \qw & \gate{H} & \gate[wires=2][2cm]{U_f} \gateinput{$x$} \gateoutput{$x$} & \gate{H} & \meter{} \\
+\lstick{$\ket{0}$} & \gate{X} & \gate{H} & \gateinput{$y$}\gateoutput{$y\oplus f(x)$} & \qw & \qw
+\end{quantikz}
+\end{figure}
+gdje $U_f$ odgovara jednoj od spomenutih implementacija. Sve funkcije možemo testirati na način:
+\begin{lstlisting}
+#include "sqs/sqs.h"
+
+using namespace sqs;
+
+void Deutsch(int i) {
+	QCircuit qc(2);
+
+	qc.add(PauliX, 1);
+	qc.add(Hadamard, 0, 1);
+
+	switch(i) {
+		case 0: // f(x) = 0
+			break;
+		case 1: // f(x) = 1
+			qc.add(PauliX, 1);
+			break;
+		case 2: // f(x) = x
+			qc.add(CX, 0, 1);
+			break;
+		case 3: // f(x) = ~x
+			qc.add(CX, 0, 1);
+			qc.add(PauliX, 1);
+			break;
+		default:
+			return;
+	}
+
+	qc.add(Hadamard, 0);
+
+	qc.execute();
+	qc.measureAndDisplay(1000);
+}
+
+int main() {
+
+	std::string funcs[] = {	"f(x) = 0", "f(x) = 1",
+												"f(x) = x", "f(x) = ~x"};
+
+	for(int i = 0; i < 4; ++i) {
+		std::cout << funcs[i] << std::endl;
+		Deutsch(i);
+	}
+
+	return 0;
+}
+\end{lstlisting}
+Dobije se očekivani rezultat:
+\begin{lstlisting}
+f(x) = 0
+|00>: 497
+|10>: 503
+f(x) = 1
+|00>: 487
+|10>: 513
+f(x) = x
+|01>: 508
+|11>: 492
+f(x) = ~x
+|01>: 482
+|11>: 518
+\end{lstlisting}
+Napomena: desni bit je rezultat algoritma; u skici kvantnog logičkog kruga, bit koji je najviši je u ispisu bit najmanje težine.
+
+\subsection{Groverov algoritam}
+
+\subsection{Kvantna estimacija faze}
+
 \section{Prednosti i mane simulatora kvantnog računala}
 
+Bilo koji simulator kvantnog računala nikada neće moći nadomjestiti pravo kvantno računalo što je posljedica same prirode takvog računala. Sustav od $n$ kvantnih bitova klasično računalo prikazuje vektorom dimenzije $2^n$, a svaki operator koji djeluje na taj vektor matricom dimenzije $2^n \times 2^n$. Uz problem pohrane takvih podataka, još je veći problem vrijeme izvršavanja operacija koje uključuju relativno velik broj kvantnih bitova za koje se nakon određene granice može reći da se neće nikada moći izvesti u razumnom vremenu na klasičnom računalu.
 
+No, simulatori su daleko od toga da su beskorisni. Sama činjenica što su simulatori, a ne kvantni sustavi može pomoći pri analizi određenih svojstava i aspekata kvantnih sustava. Simulator je u svakom trenutku moguće zaustaviti i analizirati stanje sustava bez da narušimo to stanje. Također je bitno spomenuti da u simulatorima ne postoji\footnote{Osim ako to namjerno nije simulirano} kvantna dekoherencija koja smanjuje preciznost računanja u pravim kvantnim računalima.
 
+U svakom slučaju, simulatori su odlični alati za eksperimentiranje, analizu i bolje shvaćanje kvantnih sustava, pogotovo ako pravo kvantno računalo nije lako dostupno.
 
 
 

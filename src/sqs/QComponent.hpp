@@ -70,6 +70,14 @@ namespace sqs {
 		}
 
 		inline std::vector<unsigned int> getQubitRange() const {
+			//unsigned max = *(usedQubits.begin());
+			//unsigned min = max;
+			//for(auto q : usedQubits) {
+			//	if(q > max) { max = q; }
+			//	if(q < min) { min = q; }
+			//	for(auto i = min; i <= max; ++i) {
+			//	} 
+			//}
 			std::vector<unsigned int> qubitRange;
 			for(auto it = usedQubits.begin(); it != usedQubits.end(); ++it) {
 				qubitRange.push_back(*it);
@@ -323,7 +331,7 @@ namespace sqs {
 			*/
 			std::vector<unsigned int> sortedQubitPosVect;
 			for(auto sqp : sortedQubitPos) {sortedQubitPosVect.push_back(sqp); }
-			sortedQubitPos.clear();
+			//sortedQubitPos.clear();
 			std::vector<std::pair<unsigned int, unsigned int>> swaps;
 			unsigned int index = 0;
 			for(auto qPos : qubitPos) {
@@ -348,6 +356,10 @@ namespace sqs {
 				++index;
 			}
 			
+			sortedQubitPosVect.clear();
+			for(auto sqp : sortedQubitPos) {sortedQubitPosVect.push_back(sqp); }
+			sortedQubitPos.clear();
+
 			////////////////////////////////////////////////////////////////////
 			//for(auto sw : swaps) {std::cout << sw.first << " <-> " << sw.second << "\n"; }
 			////////////////////////////////////////////////////////////////////
