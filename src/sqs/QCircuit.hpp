@@ -176,6 +176,8 @@ namespace sqs {
 				}
 				resultingMatrix = tempMatrix * resultingMatrix;
 			}
+			//std::cout << "RESULTING MATRIX:\n" << resultingMatrix << "\n";
+			//std::cout << "QVECTOR:\n" << qvector << "\n";
 			qvector = resultingMatrix * qvector;
 		}
 

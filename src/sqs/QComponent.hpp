@@ -40,7 +40,9 @@ namespace sqs {
 			if(!added) {
 				ComponentSegment cs;
 				addQOpToSegment(qop, qubitPos, cs);
-				segmentList.push_back(cs);
+				if(cs.usedQubits.size() != 0) {
+					segmentList.push_back(cs);
+				}
 			}
 			for(auto qPos : qubitPos) { usedQubits.insert(qPos); }
 			return true;
@@ -53,6 +55,11 @@ namespace sqs {
 		inline bool add(QComponent qcomp) {
 			auto m = qcomp.calculateMatrix();
 			auto qr = qcomp.getQubitRange();
+			std::vector<unsigned int> fullqr;
+			for(int i = qr.front(); i <= qr.back(); ++i) {
+				fullqr.push_back(i);
+			}
+			//std::cout << m.size() << "\n" << qr.size() << "\n" << fullqr.size() << "\n";
 			return add(QOperator(m, "?"), qr);
 		}
 
@@ -114,9 +121,11 @@ namespace sqs {
 				MX tempMatrix = (*it).first.getMatrix();
 				currentLower = (*it).second.front();
 				prevUpper = (*it).second.back();
+				
 				if(currentLower != lowerBound) {
 					difference = currentLower - lowerBound;
-					tempMatrix = kroneckerProduct(EyeToCrossedPower(difference), tempMatrix).eval();
+					tempMatrix = kroneckerProduct(tempMatrix, EyeToCrossedPower(difference)).eval();
+
 				}
 				++it;
 
@@ -136,7 +145,7 @@ namespace sqs {
 					tempMatrix = kroneckerProduct(tempMatrix, EyeToCrossedPower(difference)).eval();
 				}
 				
-
+				//std::cout << tempMatrix.size() << " " << result.size() << "\n";
 				result = tempMatrix * result;
 
 			}
@@ -196,6 +205,7 @@ namespace sqs {
 			if(qubitPos.size() != 2) {
 				throw "Invalid qubit inputs for control operator";
 			}
+			matrixCalculated = false;
 
 			MX cU = qop.getMatrix();
 			MX U = cU.block(cU.rows() - 2, cU.cols() - 2, 2, 2);
@@ -269,6 +279,7 @@ namespace sqs {
 		 * 4. addCustomSegment()
 		*/
 		inline void addCUnitaryToSegment(QOperator &qop, std::vector<unsigned int> &qubitPos, ComponentSegment &cs) {
+			matrixCalculated = false;
 			
 			std::list<unsigned int> sortedQubitPos;
 			for(auto i : qubitPos) { sortedQubitPos.push_back(i); };
@@ -360,6 +371,10 @@ namespace sqs {
 			for(auto sqp : sortedQubitPos) {sortedQubitPosVect.push_back(sqp); }
 			sortedQubitPos.clear();
 
+			for(auto& sw : swaps) {
+				sw.first += sortedQubitPosVect[0];
+				sw.second += sortedQubitPosVect[0];
+			}
 			////////////////////////////////////////////////////////////////////
 			//for(auto sw : swaps) {std::cout << sw.first << " <-> " << sw.second << "\n"; }
 			////////////////////////////////////////////////////////////////////
@@ -373,19 +388,22 @@ namespace sqs {
 			QComponent qcomp;
 
 			for(auto swap : swaps) {
+				std::cout << "Swapping: " << swap.first << " <--> " << swap.second << "\n";
 				std::vector<unsigned int> qp {swap.first, swap.second};
 				qcomp.addSWAPToSegment(qp);
 			}
 
+			std::cout << "Adding operator\n";
 			QOperator qoperator(qop.getMatrix(), "?");
 			std::vector<unsigned int> qr;
 			for(int i = 0; i < qubitPos.size(); ++i) {
 				qr.push_back(sortedQubitPosVect[i]);
 			}
-			//std::cout << qoperator.getMatrix() << std::endl;
 			qcomp.add(qoperator, qr);
+			
 			for(auto it = swaps.rbegin(); it != swaps.rend(); ++it) {
-				std::vector<unsigned int> qp {it->first, it->second};
+				std::cout << "Swapping: " << it->second << " <--> " << it->first << "\n";
+				std::vector<unsigned int> qp {it->second, it->first};
 				qcomp.addSWAPToSegment(qp);
 			}
 			qoperator = qcomp.calculateMatrix();
@@ -393,7 +411,8 @@ namespace sqs {
 			addCustomToSegment(qoperator, qr, *compseg);
 		}
 		
-		inline void addSWAPToSegment(std::vector<unsigned int> &qubitPos) {
+		inline void addSWAPToSegment(std::vector<unsigned int> qubitPos) {
+			matrixCalculated = false;
 			if(qubitPos.size() != 2) {
 				throw "Invalid operator size!";
 			}
@@ -414,6 +433,8 @@ namespace sqs {
 			if(qubitPos.size() <= 1) {
 				throw "Invalid operator size!";
 			}
+
+			matrixCalculated = false;
 			
 			std::sort(qubitPos.begin(), qubitPos.end());
 			unsigned int prev = qubitPos[0];
@@ -435,6 +456,7 @@ namespace sqs {
 
 		inline void addUnaryToSegment(QOperator &qop, std::vector<unsigned int> &qubitPos, ComponentSegment &cs) {
 			if(qop.getMatrix().rows() != 2) { throw "Not unary?!"; }
+			matrixCalculated = false;
 			for(auto qPos : qubitPos) {
 				cs.usedQubits.insert(qPos);
 				cs.lockedQubits.insert(qPos);
