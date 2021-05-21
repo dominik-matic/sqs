@@ -55,12 +55,12 @@ namespace sqs {
 		inline bool add(QComponent qcomp) {
 			auto m = qcomp.calculateMatrix();
 			auto qr = qcomp.getQubitRange();
+			if(qr.size() == 0) { return false; }
 			std::vector<unsigned int> fullqr;
 			for(int i = qr.front(); i <= qr.back(); ++i) {
 				fullqr.push_back(i);
 			}
-			//std::cout << m.size() << "\n" << qr.size() << "\n" << fullqr.size() << "\n";
-			return add(QOperator(m, "?"), qr);
+			return add(QOperator(m, "?"), fullqr);
 		}
 
 		inline void setIterations(unsigned int times) {
@@ -124,7 +124,7 @@ namespace sqs {
 				
 				if(currentLower != lowerBound) {
 					difference = currentLower - lowerBound;
-					tempMatrix = kroneckerProduct(tempMatrix, EyeToCrossedPower(difference)).eval();
+					tempMatrix = kroneckerProduct(EyeToCrossedPower(difference), tempMatrix).eval();
 
 				}
 				++it;
@@ -388,12 +388,12 @@ namespace sqs {
 			QComponent qcomp;
 
 			for(auto swap : swaps) {
-				std::cout << "Swapping: " << swap.first << " <--> " << swap.second << "\n";
+				//std::cout << "Swapping: " << swap.first << " <--> " << swap.second << "\n";
 				std::vector<unsigned int> qp {swap.first, swap.second};
 				qcomp.addSWAPToSegment(qp);
 			}
 
-			std::cout << "Adding operator\n";
+			//std::cout << "Adding operator\n";
 			QOperator qoperator(qop.getMatrix(), "?");
 			std::vector<unsigned int> qr;
 			for(int i = 0; i < qubitPos.size(); ++i) {
@@ -402,7 +402,7 @@ namespace sqs {
 			qcomp.add(qoperator, qr);
 			
 			for(auto it = swaps.rbegin(); it != swaps.rend(); ++it) {
-				std::cout << "Swapping: " << it->second << " <--> " << it->first << "\n";
+				//std::cout << "Swapping: " << it->second << " <--> " << it->first << "\n";
 				std::vector<unsigned int> qp {it->second, it->first};
 				qcomp.addSWAPToSegment(qp);
 			}
@@ -436,6 +436,7 @@ namespace sqs {
 
 			matrixCalculated = false;
 			
+
 			std::sort(qubitPos.begin(), qubitPos.end());
 			unsigned int prev = qubitPos[0];
 			unsigned int current;
