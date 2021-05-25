@@ -51,7 +51,7 @@ Dvolomac je vrsta polarizatora koji dijeli svjetlost na dva ortagonalno polarizi
 \end{figure}
 
 Nakon detekcije, foton je apsorbiran i ne može se više mjeriti. Takav kvantnomehanički sustav, koji je moguće samo jednom izmjeriti u samo jednom od dva moguća stanja nazivamo \textbf{kvantnim bitom} ili \textbf{qubitom}.
-Kvantni bit prije mjerenja može biti u beskonačno mnogo različitih stanja te općenito jedno takvo stanje zovemo \textbf{superpozicijom} dvaju stanja. Ta dva stanja se odnose na stanja baze mjerenja koja mogu biti proizvoljna, ali su uvijek međusobno ortogonalna. Pojam superpozicije se može primijeniti i u klasičnom smislu. U slučaju svjetlosti, uzimajući dva linearno polarizirana vala s okomitim smjerovima polarizacije kao bazu sustava, općenito stanje polarizacije vala možemo prikazati kao:
+Kvantni bit prije mjerenja može biti u beskonačno mnogo različitih stanja te se općenito jedno takvo stanje naziva \textbf{superpozicijom} dvaju stanja. Ta dva stanja se odnose na stanja baze mjerenja koja mogu biti proizvoljna, ali su uvijek međusobno ortogonalna. Pojam superpozicije se može primijeniti i u klasičnom smislu. U slučaju svjetlosti, uzimajući dva linearno polarizirana vala s okomitim smjerovima polarizacije kao bazu sustava, općenito stanje polarizacije vala može se prikazati kao:
 \begin{equation}
 E = E_x \hat{x}e^{i(\omega t + \phi_x)} + E_y \hat{y}e^{i(\omega t + \phi_y)} = E_0(\lambda \hat{x} + \mu \hat{y})e^{i\omega t}
 \end{equation}
@@ -139,7 +139,7 @@ Norma vektora se računa na analogan način.
 
 \subsection{Amplituda vjerojatnosti i vjerojatnost}
 
-Amplituda vjerojatnosti modelira prijelaz jednog kvantnog stanja u drugo kojeg računamo skalarnim umnoškom vektora stanja.
+Amplituda vjerojatnosti modelira prijelaz jednog kvantnog stanja u drugo koji se računa skalarnim umnoškom vektora stanja.
 \[
 a(\Phi \rightarrow \Psi) = \braket{\Psi|\Phi}
 \]
@@ -170,7 +170,7 @@ Ti vektori odgovaraju ujedno i vektorima stanja baze mjerenja nekog sustava koji
 \lambda \\ \mu
 \end{bmatrix}
 \]
-Bra dobivamo kompleksnim konjugiranjem i transponiranjem keta:
+Bra se dobiva kompleksnim konjugiranjem i transponiranjem keta:
 \[
 \bra{\Psi} = \begin{bmatrix}
 \nu \\ \sigma
@@ -300,7 +300,7 @@ Kako bi bilo kakav izračun s kvantnim bitovima bio moguć, potrebno je moći ma
 
 \subsection{Blochova sfera}
 
-Radi lakše interpretacije nekih od operatora, korisno je poznavati reprezentaciju kvantnog bita na Blochovoj sferi. Svako stanje\footnote{Odnosi se na čista stanja \engl{pure states}, ali postoje i takozvana mješovita stanja\engl{mixed states} koja se mogu prikazati kao točkama unutar sfere, ali takva stanja nisu bitna u sklopu ovog rada} kvantnog bita može se prikazati točkom na površini Blochove sfere.
+Radi lakše interpretacije nekih od operatora, korisno je poznavati reprezentaciju kvantnog bita na Blochovoj sferi. Svako stanje\footnote{Odnosi se na čista stanja \engl{pure states}, ali postoje i takozvana mješovita stanja\engl{mixed states} koja se mogu prikazati točkama unutar sfere, ali takva stanja nisu bitna u sklopu ovog rada} kvantnog bita može se prikazati točkom na površini Blochove sfere.
 
 Ta činjenica se čini zbunjujućom jer svaki kvantni bit u potpunosti određuju dva kompleksna broja što rezultira s četiri stupnja slobode, no uzimajući u obzir da kvantni bit mora biti normiran i da množenje kvantnog bita s faznim faktorom nema nikakvog fizičkog utjecaja na njegovo stanje, dobiju se samo dva stupnja slobode. Na temelju toga, općenito stanje kvantnog bita se može izraziti kao:
 \[
@@ -431,17 +431,17 @@ Naravno, zbog reverzibilnosti operatora, ponovnom primjenom Hadamardovog operato
 
 \subsection{Ostali unarni operatori}
 
-Svi do sada navedeni operatori djeluju nad samo jednim kvantnim bitom, pa se takvi operatori nazivaju unarnim. Postoje i drugi operatori kao što su $\sqrt{\text{NOT}}$ i operator faznog pomaka $R[\phi]$:
+Svi do sada navedeni operatori djeluju nad samo jednim kvantnim bitom, pa se takvi operatori nazivaju unarnim. Postoje i drugi operatori kao što su $\sqrt{\text{NOT}}$ i operator faznog pomaka $P[\phi]$:
 \[
 \sqrt{\text{NOT}} = \sqrt{\sigma_x} = \frac{1}{1+i}\begin{bmatrix}
 1 & i \\ i & 1
 \end{bmatrix}
 \qquad
-R[\phi] = \begin{bmatrix}
+P[\phi] = \begin{bmatrix}
 1 & 0 \\ 0 & e^{i\phi}
 \end{bmatrix}
 \]
-No, njih, kao i sve ostale unitarne Hermitske operatore koje je moguće dobiti na način dan jednadžbom \ref{eq:hermop}, nije toliko bitno razraditi u sklopu ovoga rada.
+No, njih kao i sve ostale unitarne Hermitske operatore koje je moguće dobiti na način dan jednadžbom \ref{eq:hermop}, nije potrebno posebno razraditi u sklopu ovoga rada. 
 
 \subsection{CU operatori}
 
@@ -581,7 +581,7 @@ Toffolijeva i Fredkinova vrata:
 \end{figure}
 
 \subsection{Matrični prikaz}
-Svaki kvantni logički krug može se prikazati jednom unitarnom transformacijom. U slučaju kvantnog logičkog kruga s jednim kvantnim bitom, matricu cijelog logičkog kruga dobivamo jednostavnim matričnim množenjem operatora.
+Svaki kvantni logički krug može se prikazati jednom unitarnom transformacijom. U slučaju kvantnog logičkog kruga s jednim kvantnim bitom, matrica cijelog logičkog kruga dobiva se jednostavnim matričnim množenjem operatora.
 \begin{figure}[H]
 \centering
 \begin{quantikz}
@@ -652,7 +652,7 @@ U\ket{000} = \frac{1}{2}
 \]
 Bitovi 0 i 2 su postavljeni u stanje superpozicije dok je bit 1 ostao u stanju $\ket{0}$ rezultirajući da se mjerenjem sustava uvijek dobije stanje koje na drugom bitu ima nulu. Iz vektora se vidi da se mjerenjem mogu dobiti samo stanja $\ket{000}$, $\ket{001}$, $\ket{100}$ i $\ket{101}$ što odgovara očekivanjima.
 
-Kombinirajući tenzorski produkt i matrično množenje može se izračunati matrična reprezentacija svakog kvantnog logičkog kruga što je u suštini točno ono što simulator kvantnog računala i radi.
+Kombinirajući tenzorski produkt i matrično množenje može se izračunati matrična reprezentacija svakog kvantnog logičkog kruga što je u suštini točno ono što izrađeni simulator kvantnog računala i radi.
 
 
 

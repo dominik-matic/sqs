@@ -170,7 +170,7 @@ int main() {
 	qc.add(groverOperator);
 	qc.execute();
 
-	qc.measureAndDisplay(1000);
+	qc.measureAndDisplay(1000, 4);
 		
 
 	return 0;

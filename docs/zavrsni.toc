@@ -29,34 +29,34 @@
 \contentsline {chapter}{\numberline {3}Kvantni algoritmi}{19}{}%
 \contentsline {section}{\numberline {3.1}Kvantni paralelizam}{19}{}%
 \contentsline {section}{\numberline {3.2}Prevrtanje faze}{19}{}%
-\contentsline {section}{\numberline {3.3}Deutschev algoritam}{20}{}%
-\contentsline {subsection}{\numberline {3.3.1}Opis}{20}{}%
+\contentsline {section}{\numberline {3.3}Deutschev algoritam}{21}{}%
+\contentsline {subsection}{\numberline {3.3.1}Opis}{21}{}%
 \contentsline {subsection}{\numberline {3.3.2}Analiza toka algoritma}{21}{}%
 \contentsline {subsection}{\numberline {3.3.3}Deutsch-Joszin algoritam}{22}{}%
 \contentsline {section}{\numberline {3.4}Groverov algoritam}{23}{}%
 \contentsline {subsection}{\numberline {3.4.1}Opis}{23}{}%
-\contentsline {subsection}{\numberline {3.4.2}Analiza toka algoritma}{23}{}%
-\contentsline {subsection}{\numberline {3.4.3}Kvantni prorok}{25}{}%
+\contentsline {subsection}{\numberline {3.4.2}Analiza toka algoritma}{24}{}%
+\contentsline {subsection}{\numberline {3.4.3}Kvantni prorok}{26}{}%
 \contentsline {section}{\numberline {3.5}Shorov algoritam}{27}{}%
 \contentsline {subsection}{\numberline {3.5.1}Opis problema}{27}{}%
 \contentsline {subsection}{\numberline {3.5.2}Kvantna Fourierova transformacija}{28}{}%
-\contentsline {subsection}{\numberline {3.5.3}Kvantna procjena faze}{29}{}%
-\contentsline {subsection}{\numberline {3.5.4}Opis algoritma}{30}{}%
-\contentsline {chapter}{\numberline {4}Simulacija kvantnog računala}{32}{}%
-\contentsline {section}{\numberline {4.1}Postojeći simulatori kvantnog računala}{32}{}%
-\contentsline {section}{\numberline {4.2}Izrada simulatora kvantnog računala}{32}{}%
-\contentsline {subsection}{\numberline {4.2.1}SQS}{32}{}%
-\contentsline {subsection}{\numberline {4.2.2}Struktura}{33}{}%
-\contentsline {subsubsection}{QOperator}{33}{}%
-\contentsline {subsubsection}{QComponent}{33}{}%
-\contentsline {subsubsection}{QCircuit}{34}{}%
-\contentsline {subsection}{\numberline {4.2.3}Izazovi pri implementaciji}{35}{}%
-\contentsline {section}{\numberline {4.3}Primjeri simulacije kvantnih logičkih krugova}{37}{}%
-\contentsline {subsection}{\numberline {4.3.1}Superpozicija}{37}{}%
-\contentsline {subsection}{\numberline {4.3.2}Spregnutost}{38}{}%
-\contentsline {subsection}{\numberline {4.3.3}Deutschev algoritam}{40}{}%
-\contentsline {subsection}{\numberline {4.3.4}Groverov algoritam}{42}{}%
-\contentsline {subsection}{\numberline {4.3.5}Kvantna estimacija faze}{42}{}%
-\contentsline {section}{\numberline {4.4}Prednosti i mane simulatora kvantnog računala}{42}{}%
-\contentsline {chapter}{\numberline {5}Zaključak}{44}{}%
-\contentsline {chapter}{Literatura}{45}{}%
+\contentsline {subsection}{\numberline {3.5.3}Kvantna procjena faze}{30}{}%
+\contentsline {subsection}{\numberline {3.5.4}Opis algoritma}{31}{}%
+\contentsline {chapter}{\numberline {4}Simulacija kvantnog računala}{33}{}%
+\contentsline {section}{\numberline {4.1}Postojeći simulatori kvantnog računala}{33}{}%
+\contentsline {section}{\numberline {4.2}Izrada simulatora kvantnog računala}{33}{}%
+\contentsline {subsection}{\numberline {4.2.1}SQS}{33}{}%
+\contentsline {subsection}{\numberline {4.2.2}Struktura}{34}{}%
+\contentsline {subsubsection}{QOperator}{34}{}%
+\contentsline {subsubsection}{QComponent}{34}{}%
+\contentsline {subsubsection}{QCircuit}{35}{}%
+\contentsline {subsection}{\numberline {4.2.3}Izazovi pri implementaciji}{36}{}%
+\contentsline {section}{\numberline {4.3}Primjeri simulacije kvantnih logičkih krugova}{38}{}%
+\contentsline {subsection}{\numberline {4.3.1}Superpozicija}{38}{}%
+\contentsline {subsection}{\numberline {4.3.2}Spregnutost}{39}{}%
+\contentsline {subsection}{\numberline {4.3.3}Deutschev algoritam}{41}{}%
+\contentsline {subsection}{\numberline {4.3.4}Groverov algoritam}{43}{}%
+\contentsline {subsection}{\numberline {4.3.5}Kvantna estimacija faze}{46}{}%
+\contentsline {section}{\numberline {4.4}Prednosti i mane simulatora kvantnog računala}{48}{}%
+\contentsline {chapter}{\numberline {5}Zaključak}{49}{}%
+\contentsline {chapter}{Literatura}{50}{}%

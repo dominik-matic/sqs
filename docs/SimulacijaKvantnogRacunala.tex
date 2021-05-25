@@ -20,7 +20,7 @@ SQS se temelji na tri glavne komponente koje se koriste za konstrukciju kvantnih
 
 \subsubsection{QOperator}
 Razred QOperator predstavlja kvantni operator nad jednim ili više kvantnih bitova. Enkapsulira matricu operatora i sadrži informaciju o tipu operatora koji pomaže objektu tipa QComponent integrirati ga u logički krug. Korisnik ne mora brinuti o tipu operatora. Za instanciranje QOperatora korisniku su na raspolaganju konstante i funkcije za konstruiranje često korištenih kvantnih operatora. Konstante su redom: \textit{Eye}, \textit{Hadamard}, \textit{PauliX}, \textit{PauliY}, \textit{PauliZ}, \textit{CX}, \textit{CY}, \textit{CZ}, \textit{Toffoli} i \textit{SWAP}. Od funkcija to su:
-\lstset{language=c++, tabsize=2}
+\lstset{language=c++, tabsize=4}
 \begin{lstlisting}
 QOperator CU(size_t controls, QOperator unitary);
 QOperator Phase(double phase);
@@ -44,14 +44,13 @@ void add(QComponent qcomp);
 \end{lstlisting}
 Ukoliko se radi o operatoru s upravljačkim bitovima, potrebno je njih prve navesti, neovisno kojim redoslijedom.
 
-QComponent nastoji što više operatora staviti u paralelu što smanjuje količinu matrica kojih je kasnije potrebno izračunati u koracima simulacije. Od ostalih funkcionalnosti, QComponent nudi:
+QComponent nastoji što više operatora staviti u paralelu što smanjuje količinu matrica koje je kasnije potrebno izračunati u koracima simulacije. Od ostalih funkcionalnosti, QComponent nudi:
 \begin{lstlisting}
 void setIterations(unsigned int times);
-void reverse();
 std::vector<unsigned int> getQubitRange();
 const MX& calculateMatrix();
 \end{lstlisting}
-\emph{setIterations} postavlja koliko puta se komponenta treba ponoviti u logičkom krugu što je korisno za neke algoritme poput Groverovog. \emph{reverse} preokreće komponentu, \emph{getQubitRange} računa koje kvantne bitove komponenta koristi, a \emph{calculateMatrix} računa matrični prikaz komponente. Zadnje dvije funkcije koristi QCircuit kako bi uspješno simulirao logički krug. \emph{MX} i ostali nestandardni tipovi koji se koriste su definirani u datoteci \emph{eigenconsts.hpp} i predstavljaju samo kraći zapis tipova Eigen matrica.
+\emph{setIterations} postavlja koliko puta se komponenta treba ponoviti u logičkom krugu što je korisno za neke algoritme poput Groverovog, \emph{getQubitRange} računa koje kvantne bitove komponenta koristi, a \emph{calculateMatrix} računa matrični prikaz komponente. Zadnje dvije funkcije koristi QCircuit kako bi uspješno simulirao logički krug. \emph{MX} i ostali nestandardni tipovi koji se koriste su definirani u datoteci \emph{eigenconsts.hpp} i predstavljaju samo kraći zapis tipova Eigen matrica.
 
 \subsubsection{QCircuit}
 
@@ -63,16 +62,20 @@ void add(QOperator qop, unsigned int qPos1);
 void add(QOperator qop, unsigned int qPos1, unsigned int qPos2);
 void add(QOperator qop, unsigned int qPos1, unsigned int qPos2,
 	unsigned int qPos3);
-void reverse();
 void execute();
 void resetQubits();
 void clearCircuit();
 VX getStateVector();
 std:.vector<double> probabilityVector();
+std::map<unsigned int, unsigned int> measure(unsigned int times,
+	unsigned int bits);
 std::map<unsigned int, unsigned int> measure(unsigned int times);
+void measureAndDisplay(unsigned int times, unsigned int bits);
 void measureAndDisplay(unsigned int times);
+
+
 \end{lstlisting}
-\emph{execute} pokreće simulaciju kvantnog logičkog kruga, odnosno računa sve potrebne matrice te ih množi vektorom stanja koji je na početku inicijaliziran u $\ket{0}$. \emph{resetQubits} postavlja vektor stanja u početno stanje. \emph{clearCircuit} uklanja sve komponente iz logičkog kruga. \emph{getStateVector} vraća trenutni vektor stanja logičkog kruga, dok \emph{probabilityVector} vraća vektor vjerojatnosti. \emph{measure} vrši mjerenje onoliko puta koliko je navedeno argumentom te vraća rezultate mjerenja kao mapu. \emph{measureAndDisplay} radi isto što i \emph{measure}, samo što ne vraća mapu nego odmah prikazuje rezultate mjerenja na standardni izlaz.
+\emph{execute} pokreće simulaciju kvantnog logičkog kruga, odnosno računa sve potrebne matrice te ih množi vektorom stanja koji je na početku inicijaliziran u $\ket{0}$. \emph{resetQubits} postavlja vektor stanja u početno stanje. \emph{clearCircuit} uklanja sve komponente iz logičkog kruga. \emph{getStateVector} vraća trenutni vektor stanja logičkog kruga, dok \emph{probabilityVector} vraća vektor vjerojatnosti. \emph{measure} vrši mjerenje onoliko puta koliko je navedeno prvim argumentom nad svim bitovima ili nad prvih onoliko bitova koliko je navedeno u drugom argumentu te vraća rezultate mjerenja kao mapu. \emph{measureAndDisplay} radi isto što i \emph{measure}, samo što ne vraća mapu nego odmah prikazuje rezultate mjerenja na standardnom izlazu.
 
 \subsection{Izazovi pri implementaciji}
 
@@ -186,22 +189,22 @@ int main() {
 
 Dobiveni ispis:
 \begin{lstlisting}
-|0000>: 63
-|0001>: 56
-|0010>: 64
-|0011>: 62
-|0100>: 61
-|0101>: 68
-|0110>: 59
-|0111>: 68
-|1000>: 55
-|1001>: 72
-|1010>: 50
-|1011>: 82
-|1100>: 59
-|1101>: 63
-|1110>: 62
-|1111>: 56
+	|0000>: 63
+	|0001>: 56
+	|0010>: 64
+	|0011>: 62
+	|0100>: 61
+	|0101>: 68
+	|0110>: 59
+	|0111>: 68
+	|1000>: 55
+	|1001>: 72
+	|1010>: 50
+	|1011>: 82
+	|1100>: 59
+	|1101>: 63
+	|1110>: 62
+	|1111>: 56
 \end{lstlisting}
 
 \subsection{Spregnutost}
@@ -254,22 +257,22 @@ Za tri kvantna bita, primjer je sličan:
 \end{figure}
 uz odgovarajući kod
 \begin{lstlisting}
-QCircuit qc(3);
+	QCircuit qc(3);
 
-qc.add(Hadamard, 0);
+	qc.add(Hadamard, 0);
 
-qc.add(CX, 0, 1);
-qc.add(CX, 1, 2);
+	qc.add(CX, 0, 1);
+	qc.add(CX, 1, 2);
 
-qc.execute();
-qc.measureAndDisplay(1000);
+	qc.execute();
+	qc.measureAndDisplay(1000);
 \end{lstlisting}
 Dobiveni ispis:
 \begin{lstlisting}
-|000>: 487
-|111>: 513
+	|000>: 487
+	|111>: 513
 \end{lstlisting}
-Nadalje, primjeri izvornog koda neće sadržavati elemente zaglavlja i funkcije main, nego samo relevantan dio koda.
+Idući primjeri izvornog koda uglavnom neće sadržavati elemente zaglavlja i funkcije main, nego samo relevantne dijelove.
 
 \subsection{Deutschev algoritam}
 
@@ -364,7 +367,7 @@ void Deutsch(int i) {
 int main() {
 
 	std::string funcs[] = {	"f(x) = 0", "f(x) = 1",
-												"f(x) = x", "f(x) = ~x"};
+					"f(x) = x", "f(x) = ~x"};
 
 	for(int i = 0; i < 4; ++i) {
 		std::cout << funcs[i] << std::endl;
@@ -376,52 +379,188 @@ int main() {
 \end{lstlisting}
 Dobije se očekivani rezultat:
 \begin{lstlisting}
-f(x) = 0
-|00>: 497
-|10>: 503
-f(x) = 1
-|00>: 487
-|10>: 513
-f(x) = x
-|01>: 508
-|11>: 492
-f(x) = ~x
-|01>: 482
-|11>: 518
+	f(x) = 0
+	|00>: 497
+	|10>: 503
+	f(x) = 1
+	|00>: 487
+	|10>: 513
+	f(x) = x
+	|01>: 508
+	|11>: 492
+	f(x) = ~x
+	|01>: 482
+	|11>: 518
 \end{lstlisting}
 Napomena: desni bit je rezultat algoritma; u skici kvantnog logičkog kruga, bit koji je najviši je u ispisu bit najmanje težine.
 
 \subsection{Groverov algoritam}
 
+Groverovim algoritmom moguće je rješavati SAT probleme. Problem koji je potrebno riješiti programira se unutar kvantnog proroka algoritma.
+
+Neka je taj problem dan kao:
+\[
+(A\lor\neg B)\land (B\lor C)\land (\neg A)
+\]
+Korisno je da se taj izraz negira dva puta kako bi se dobio oblik sa isključivo operatorima logičkog I. Na taj način prorok je moguće izgraditi pomoću Toffolijevih vrata.
+\[
+\neg(\neg A \land B) \land\neg(\neg B \land C) \land \neg(A)
+\]
+Jedna ovakva klauzula može se prikazati kao:
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\lstick{$A$} &\gate{X} & \ctrl{3} & \gate{X} & \qw\\
+\lstick{$B$} & \qw & \ctrl{2} & \qw & \qw\\
+\lstick{$C$} & \qw & \qw & \qw & \qw \\
+\lstick{$C_1$} & \qw & \targ{} & \qw & \ldots & \qw & \gate{X} & \qw \\
+\end{quantikz}
+\end{figure}
+Dakle, za svaku klauzulu potrebno je imati jedan dodatni kvantni bit kao i još jedan koji će provjeravati jesu li sve klauzule zadovoljene. Ta provjera služi kako bi se pomoću prevrtanja faze negirala sva ona stanja koja su rezultirala rješenjem. Nakon provjere potrebno je vratiti sve dodatne kvantne bitove u početno stanje, odnosno treba ponoviti sve klauzule obrnutim redoslijedom. Cijeli kvantni logički krug izgleda ovako:
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\node[scale=0.55]{
+\begin{quantikz}
+\lstick{$A$ $\ket{0}$} & \qw & \gate{H} & \gate{X}\gategroup[wires=7, steps=17,style={dashed}]{Kvantni prorok} & \ctrl{3} & \gate{X} & \qw & \qw & \qw & \ctrl{5} & \qw & \qw & \qw & \ctrl{5} & \qw & \qw & \qw & \gate{X} & \ctrl{3} & \gate{X} & \gate{H}\gategroup[wires=7, steps=5,style={dashed}]{Difuzer} & \gate{X} & \ctrl{6} & \gate{X} & \gate{H} & \meter{} \\
+\lstick{$B$ $\ket{0}$} & \qw & \gate{H} &\qw & \ctrl{2} & \qw & \gate{X} & \ctrl{3} & \gate{X} & \qw & \qw & \qw & \qw & \qw & \gate{X} & \ctrl{3} & \gate{X} & \qw & \ctrl{2} &\qw & \gate{H} & \gate{X} & \ctrl{5} & \gate{X} & \gate{H} & \meter{}\\
+\lstick{$C$ $\ket{0}$} & \qw & \gate{H} &\qw & \qw &\qw & \gate{X} & \ctrl{2} & \gate{X} & \qw & \qw & \qw & \qw & \qw & \gate{X} & \ctrl{2} &\gate{X} & \qw & \qw & \qw &\gate{H} & \gate{X} & \ctrl{4} & \gate{X} & \gate{H} & \meter{}\\
+\lstick{$C_1$ $\ket{0}$} & \qw & \qw &\qw & \targ{} &\qw & \qw & \qw & \qw & \qw & \gate{X} & \ctrl{3} &\gate{X} & \qw & \qw & \qw &\qw & \qw & \targ{} & \qw & \qw & \qw &\qw & \qw & \qw & \qw \\
+\lstick{$C_2$ $\ket{0}$} &\qw & \qw &\qw & \qw & \qw & \qw & \targ{} & \qw & \qw & \gate{X} & \ctrl{2}& \gate{X} &\qw & \qw & \targ{} &\qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw \\
+\lstick{$C_3$ $\ket{0}$} &\qw & \qw &\qw & \qw & \qw & \qw & \qw & \qw & \targ{} & \gate{X} & \ctrl{1}& \gate{X} & \targ{} & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw \\
+\lstick{$out$ $\ket{0}$} &\gate{X} & \gate{H} &\qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \targ{} & \qw & \qw & \qw &\qw & \qw &\qw & \qw & \qw & \qw & \qw & \targ{} & \qw & \qw & \qw
+\end{quantikz}
+};
+\end{tikzpicture}
+\end{figure}
+
+Difuzer neće biti objašnjen, ali kao što je prethodno spomenuto, on izvodi operaciju $2\ket{s}\bra{s} - I_{2^n}$ koja je zapravo samo refleksija vektora stanja oko uravnotežene superpozicije svih stanja $\ket{s}$.
+Izvedba kvantnog logičkog kruga u simulatoru:
+\begin{lstlisting}
+	QCircuit qc(7);
+
+	qc.add(PauliX, 6);
+	qc.add(Hadamard, {0, 1, 2, 6});
+
+	QComponent groverOperator;
+	QComponent oracle;
+	QComponent diffuser;
+
+	/* A or ~B */
+	oracle.add(PauliX, 0);
+	oracle.add(Toffoli, 0, 1, 3);
+	oracle.add(PauliX, 0);
+	
+	/* B or C*/
+	oracle.add(PauliX, 1, 2);
+	oracle.add(Toffoli, 1, 2, 4);
+	oracle.add(PauliX, 1, 2);
+
+	/* ~A */
+	oracle.add(CX, 0, 5);
+
+	oracle.add(PauliX, 3, 4, 5);
+	oracle.add(CU(3, PauliX), {3, 4, 5, 6});
+	oracle.add(PauliX, 3, 4, 5);
+
+	/* obrnuti smjer */
+	oracle.add(CX, 0, 5);
+	oracle.add(PauliX, 1, 2);
+	oracle.add(Toffoli, 1, 2, 4);
+	oracle.add(PauliX, 1, 2);
+	oracle.add(PauliX, 0);
+	oracle.add(Toffoli, 0, 1, 3);
+	oracle.add(PauliX, 0);
+	
+
+	/* difuzer */
+	diffuser.add(Hadamard, 0, 1, 2);
+	diffuser.add(PauliX, 0, 1, 2);
+	diffuser.add(CU(3, PauliX), {0, 1, 2, 6});
+	diffuser.add(PauliX, 0, 1, 2);
+	diffuser.add(Hadamard, 0, 1, 2);
+	
+	groverOperator.add(oracle);
+	groverOperator.add(diffuser);
+
+	qc.add(groverOperator);
+	qc.execute();
+	qc.measureAndDisplay(1000, 3);
+\end{lstlisting}
+
+Groverov operator se u ovom primjeru primijenio samo jednom te je dobiveni rezultat:
+\begin{lstlisting}
+	|000>: 71
+	|001>: 81
+	|010>: 73
+	|011>: 68
+	|100>: 486
+	|101>: 68
+	|110>: 74
+	|111>: 79
+\end{lstlisting}
+Vidi se da rezultat $\ket{100}$ ima najveću vjerojatnost mjerenja, te odgovara rješenju
+\[
+A = False \qquad B = False \qquad C = True
+\]
+Komponentu groverOperator moguće je primijeniti više puta pozivom funkcije \emph{QComponent::setIterations(unsigned int times)} te bi se tada dobila veća vjerojatnost mjerenja točnog rezultata.
+
 \subsection{Kvantna estimacija faze}
 
+Ključan dio Shorovog algoritma je algoritam kvantne estimacije faze. U ovom konkretnom primjeru, estimirati će se faza samog operatora faze $P$. Operator faze ima oblik:
+\[
+\begin{bmatrix}
+1 & 0 \\ 0 & e^{i\varphi}
+\end{bmatrix}
+\]
+stoga će kvantna estimacija faze izračunati $\frac{\varphi}{2}$. Za primjer, uzeti će se $\varphi = \frac{1}{2}$. Kvantni logički krug:
+\begin{figure}[H]
+\centering
+\begin{quantikz}
+\lstick{$\ket{0}$} & \gate{H} & \qw & \qw & \qw & \ctrl{3} & \ctrl{3} & \ctrl{3} & \ctrl{3} & \gate[wires=3]{QFT^{\dagger}} & \meter{} \\
+\lstick{$\ket{0}$} & \gate{H} & \qw & \ctrl{2} & \ctrl{2} & \qw & \qw & \qw & \qw & \qw & \meter{}\\
+\lstick{$\ket{0}$} & \gate{H} & \ctrl{1} & \qw & \qw &\qw & \qw & \qw & \qw & \qw & \meter{} \\
+\lstick{$\ket{0}$} & \gate{X} & \gate{P(\frac{1}{2}} & \gate{P(\frac{1}{2}} & \gate{P(\frac{1}{2})} & \gate{P(\frac{1}{2})} & \gate{P(\frac{1}{2})} & \gate{P(\frac{1}{2})} & \gate{P(\frac{1}{2})} & \qw & \qw
+\end{quantikz}
+\end{figure}
+Odgovarajući kod:
+\begin{lstlisting}
+	QCircuit qc(4);
+	qc.add(PauliX, 3);
+	qc.add(Hadamard, {0, 1, 2});
+
+	QOperator ph = Phase(1.0 / 2.0); /* pi/2 = 2pi * (1/4) */
+	QOperator cPh = CU(1, ph);
+
+	qc.add(cPh, 0, 3);
+	qc.add(cPh, 0, 3);
+	qc.add(cPh, 0, 3);
+	qc.add(cPh, 0, 3);
+	qc.add(cPh, 1, 3);
+	qc.add(cPh, 1, 3);
+	qc.add(cPh, 2, 3);
+
+	qc.add(QFTDagger(3), {0, 1, 2});
+	qc.execute();
+
+	auto m = qc.measure(1000, 3);
+	for(auto a : m) {
+		std::cout << a.first << "/8"
+			<< "\tp: " << a.second / 10.0 << "%\n";  
+	}
+\end{lstlisting}
+Dobiveni rezultat:
+\begin{lstlisting}
+	2/8     p: 100%
+\end{lstlisting}
+odgovara očekivanjima, naime $\frac{2}{8} = \frac{1}{4} = \frac{1/2}{2} = \frac{\varphi}{2}$.
 \section{Prednosti i mane simulatora kvantnog računala}
 
-Bilo koji simulator kvantnog računala nikada neće moći nadomjestiti pravo kvantno računalo što je posljedica same prirode takvog računala. Sustav od $n$ kvantnih bitova klasično računalo prikazuje vektorom dimenzije $2^n$, a svaki operator koji djeluje na taj vektor matricom dimenzije $2^n \times 2^n$. Uz problem pohrane takvih podataka, još je veći problem vrijeme izvršavanja operacija koje uključuju relativno velik broj kvantnih bitova za koje se nakon određene granice može reći da se neće nikada moći izvesti u razumnom vremenu na klasičnom računalu.
+Bilo koji simulator kvantnog računala nikada neće moći nadomjestiti pravo kvantno računalo što je posljedica same njegove prirode. Sustav od $n$ kvantnih bitova klasično računalo prikazuje vektorom dimenzije $2^n$, a svaki operator koji djeluje na taj vektor matricom dimenzije $2^n \times 2^n$. Uz problem pohrane takvih podataka za veliki broj kvantnih bitova, još je veći problem vrijeme izvršavanja operacija koje uključuju takve operande. Postoji fizička granica kada klasična računala više ne mogu u razumnom vremenu računati što se odvija u nekom kvantnom sustavu\footnote{Pojam kvantna nadmoć \engl{quantum supremacy} se odnosi točno na ovu granicu.}.
 
-No, simulatori su daleko od toga da su beskorisni. Sama činjenica što su simulatori, a ne kvantni sustavi može pomoći pri analizi određenih svojstava i aspekata kvantnih sustava. Simulator je u svakom trenutku moguće zaustaviti i analizirati stanje sustava bez da narušimo to stanje. Također je bitno spomenuti da u simulatorima ne postoji\footnote{Osim ako to namjerno nije simulirano} kvantna dekoherencija koja smanjuje preciznost računanja u pravim kvantnim računalima.
+No, simulatori su daleko od toga da su beskorisni. Sama činjenica što su simulatori, a ne kvantni sustavi može pomoći pri analizi određenih svojstava kvantnih sustava. Simulator je u svakom trenutku moguće zaustaviti i analizirati stanje sustava bez da se naruši to stanje. Postoje neka ograničenja kvantnih računala koja ne postoji na klasičnim, kao što je na primjer nemogućnost kloniranja kvantnog bita ili nemogućnost višestrukog mjerenja sustava. Također je bitno spomenuti da u simulatorima ne postoji\footnote{Osim ako to namjerno nije simulirano} pojava dekoherencije koja smanjuje preciznost računanja u pravim kvantnim računalima.
 
 U svakom slučaju, simulatori su odlični alati za eksperimentiranje, analizu i bolje shvaćanje kvantnih sustava, pogotovo ako pravo kvantno računalo nije lako dostupno.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

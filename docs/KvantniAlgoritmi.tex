@@ -12,6 +12,7 @@ Kvantni paralelizam je svojstvo kvantnih računala da izvrše neku operaciju nad
 \ldots \\
 \lstick{$\ket{0}$} & \gate{H} & \qw \\
 \end{quantikz}
+\caption{Postavljanje bitova u stanje superpozicije}
 \end{figure}
 
 Iz tog razloga, veliki broj kvantnih algoritama kao prvi korak ima postavljanje svih kvantnih bitova u stanje superpozicije korištenjem Hadamardovih operatora što se često označava operatorom $H^{\otimes N}$ gdje je $N$ broj kvantnih bitova.
@@ -152,7 +153,7 @@ Deutschev i Deutsch-Joszin algoritam dobro demonstriraju situaciju gdje je kvant
 \subsection{Opis}
 Groverov algoritam\citep{grover} jedan je od algoritama koji je definirao principe kvantnih algoritama pretraživanja. U načelu, problem koji rješava jest pretraživanje nestrukturirane baze podataka. Klasično računalo taj problem rješava u prosječno $N/2$ koraka, dok kvantno računalo implementirajući Groverov algoritam pronađe rješenje s visokom vjerojatnošću u samo $\sqrt{N}$ koraka.
 
-Definirati Groverov algoritam kao algoritam pretraživanja nestrukturirane baze podataka malo je zavaravajuće jer se u praktičnom smislu nikada ne bi mogao koristiti za točno to. Prikladnija primjena Groverovog algoritma bila bi pronalaženje inverza funkcije što čak i zvuči puno zanimljivijim i korisnijim. Jedna takva funkcija jest kriptografska funkcija sažetka. Groverov algoritam može pronaći kolizije takve funkcije u $\sqrt{N}$ koraka gdje je $N$ veličina domene funkcije, što klasično računalo u načelu može izračunati samo grubom silom.
+Definirati Groverov algoritam kao algoritam pretraživanja nestrukturirane baze podataka malo je zavaravajuće jer se u praktičnom smislu nikada ne bi mogao koristiti za točno to. Prikladnija primjena Groverovog algoritma bila bi pronalaženje inverza funkcije što čak i zvuči puno zanimljivijim i korisnijim. Jedna takva funkcija jest kriptografska funkcija sažetka. Groverov algoritam može pronaći kolizije takve funkcije u $\sqrt{N}$ koraka gdje je $N$ veličina domene funkcije, što klasično računalo u načelu može izračunati samo grubom silom\footnote{Groverov algoritam se na neki način može interpretirati kao algoritam grube sile kvantnog računala, ali je kao takav i dalje eksponencionalno brži od klasičnog}.
 
 Kvantni logički krug Groverovog algoritma može se prikazati kao: 
 \begin{figure}[H]
@@ -218,7 +219,7 @@ U_f = \begin{bmatrix}
 \end{bmatrix}
 \]
 
-Čini se kao da je za samu izgradnju logičkog kruga odnosno proroka potrebno poznavati rješenje koje tražimo što poništava cijeli smisao Groverovog algoritma. To je donekle i istina; poznavanjem matrične reprezentacije proroka, moguće je odrediti ciljna stanja, ili obratno, za konstrukciju proroka na ovakav način, potrebno je poznavati ciljna stanja. Iz toga slijedi da je Groverov algoritam koristan jedino kada se prorok tretira kao crna kutija ili ako se prorok konstruira na način gdje njegova vrijednost nije očita, ali da i dalje daje ispravan rezultat. Takva konstrukcija proroka postiže se koristeći kvantni paralelizam i phase kickback.
+Čini se kao da je za samu izgradnju logičkog kruga odnosno proroka potrebno poznavati rješenje koje tražimo što poništava cijeli smisao Groverovog algoritma. To je donekle i istina; poznavanjem matrične reprezentacije proroka, moguće je odrediti ciljna stanja, ili obratno, za konstrukciju proroka na ovakav način, potrebno je poznavati ciljna stanja. Iz toga slijedi da je Groverov algoritam koristan jedino kada se prorok tretira kao crna kutija ili ako se prorok konstruira na način gdje njegova vrijednost nije očita, ali da i dalje daje ispravan rezultat. Takva konstrukcija proroka postiže se koristeći prevrtanje faze.
 
 Neka je $f$ kriptografska funkcija sažetka za koju vrijedi $f : \{0, 1\}^n \rightarrow \{0, 1\}^m$ te neka je njoj potrebno pronaći inverz.
 \begin{figure}[H]
@@ -234,7 +235,7 @@ Neka je $f$ kriptografska funkcija sažetka za koju vrijedi $f : \{0, 1\}^n \rig
 \end{quantikz}
 \caption{Primjer kvantnog proroka za pronalaženje inverza od $\ket{101}$}
 \end{figure}
-Za implementaciju kvantnog proroka potrebno je $n + m + 1$ kvantnih bitova od kojih su $m + 1$ pomoćni. Prvih $n$ bitova se očekuje da su u stanju superpozicije, idućih $m$ bitova se postavlja u stanje $\ket{0}$, dok se zadnji bit postavlja u stanje $\ket{-}$. Zatim je potrebno u kvantnom logičkom krugu implementirati samu funkciju $f$ na način da će joj ulaz biti prvih $n$ bitova, a izlaz idućih $m$ bitova. Koristeći Toffolijeva vrata sa $m$ upravljačkih bitova, može se odabrati izlaz funkcije kojemu je potrebno pronaći inverz (na slici je to $f(x) = 101$). Ciljni bit Toffolijevih vrata je poslijednji bit koji je u stanju $\ket{-}$. Svrha Toffolijevih vrata je svakoj komponenti stanja koja rezultira željenim izlazom promijeniti predznak. To radi koristeći phase kickback. Naime, vrijedi:
+Za implementaciju kvantnog proroka potrebno je $n + m + 1$ kvantnih bitova od kojih su $m + 1$ pomoćni. Prvih $n$ bitova se očekuje da su u stanju superpozicije, idućih $m$ bitova se postavlja u stanje $\ket{0}$, dok se zadnji bit postavlja u stanje $\ket{-}$. Zatim je potrebno u kvantnom logičkom krugu implementirati samu funkciju $f$ na način da joj je ulazni registar prvih $n$ bitova, a izlazni idućih $m$ bitova. Koristeći Toffolijeva vrata sa $m$ upravljačkih bitova, može se odabrati izlaz funkcije kojemu je potrebno pronaći inverz (na slici je to $f(x) = 101$). Ciljni bit Toffolijevih vrata je poslijednji bit koji je u stanju $\ket{-}$. Svrha Toffolijevih vrata je svakoj komponenti stanja koja rezultira željenim izlazom promijeniti predznak. To radi pomoću prevrtanja faze. Naime, vrijedi:
 \[
 CNOT\ket{0-} = \ket{0-} \qquad
 CNOT\ket{1-} = -\ket{1-}

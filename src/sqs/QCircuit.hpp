@@ -49,9 +49,9 @@ namespace sqs {
 			return returnMatrix;
 		}
 
-		inline std::string unsignedToBin(unsigned int num) {
+		inline std::string unsignedToBin(unsigned int num, unsigned int bits) {
 			std::string bin = "";
-			for(size_t i = 0; i < qubits; ++i) {
+			for(size_t i = 0; i < bits; ++i) {
 				if(num % 2 == 0) {
 					bin = '0' + bin;
 				} else {
@@ -143,7 +143,7 @@ namespace sqs {
 				unsigned int stageLowestQubit = stageRange.front();
 				unsigned int stageHighestQubit = stageRange.back();
 				stageIt->qcomps.sort([](auto const& a, auto const& b){
-					return a.second[0] < b.second[0];
+					return a.second < b.second;
 				});
 
 				MX tempMatrix;
@@ -199,6 +199,10 @@ namespace sqs {
 		}
 
 		inline std::map<unsigned int, unsigned int> measure(unsigned int times) const {
+			return measure(times, qubits);
+		}
+
+		inline std::map<unsigned int, unsigned int> measure(unsigned int times, unsigned int bits) const {
 			auto probs = probabilityVector();
 			double sum = 0;
 			for(auto p = probs.begin(); p != probs.end(); ++p) {
@@ -214,7 +218,7 @@ namespace sqs {
 				double got = dist(e2);
 				unsigned int index = 0;
 				for(; probs[index] <= got; ++index);
-				++hist[index];
+				++hist[index % (int) std::pow(2, bits)];
 			}
 			return hist;
 		}
@@ -230,9 +234,13 @@ namespace sqs {
 		}
 
 		inline void measureAndDisplay(unsigned int times) {
-			auto measurements = measure(times);
+			measureAndDisplay(times, qubits);
+		}
+
+		inline void measureAndDisplay(unsigned int times, unsigned int bits) {
+			auto measurements = measure(times, bits);
 			for(auto m : measurements) {
-				std::cout << "|" << unsignedToBin(m.first) << ">: " << m.second << "\n";
+				std::cout << "|" << unsignedToBin(m.first, bits) << ">: " << m.second << "\n";
 			}
 		}
 

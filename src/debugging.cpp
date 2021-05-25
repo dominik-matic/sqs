@@ -39,7 +39,6 @@ int main() {
 	function.add(Toffoli, 3, 4, 5);
 	function.add(PauliX, 3, 4);
 
-
 	function.add(CX, 1, 4);
 
 	function.add(PauliX, 0, 1);
@@ -58,7 +57,7 @@ int main() {
 
 	qc.add(groverOperator);
 	qc.execute();
-	qc.measureAndDisplay(1000);
+	qc.measureAndDisplay(1000, 3);
 	
 	return 0;
 }

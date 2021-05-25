@@ -133,7 +133,6 @@ namespace sqs {
 					currentLower = (*it).second.front();
 					if(currentLower != (prevUpper + 1)) {
 						difference = currentLower - prevUpper - 1;
-						//std::cout << currentLower << " " << prevUpper << " " << difference << "\n";
 						tempMatrix = kroneckerProduct(tempMatrix, EyeToCrossedPower(difference)).eval();
 					}
 					tempMatrix = kroneckerProduct(tempMatrix, (*it).first.getMatrix()).eval();
