@@ -1,4 +1,4 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{7}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -12,6 +12,23 @@
 \bibitem[sim()]{simulatori}
 {List of QC simulators | Quantiki}.
 \newblock URL \url{https://quantiki.org/wiki/list-qc-simulators}.
+
+\bibitem[Asfaw et~al.(2020)Asfaw, Corcoles, Bello, Ben-Haim, Bozzo-Rey, Bravyi,
+  Bronn, Capelluto, Vazquez, Ceroni, Chen, Frisch, Gambetta, Garion, Gil,
+  Gonzalez, Harkins, Imamichi, Kang, h.~Karamlou, Loredo, McKay, Mezzacapo,
+  Minev, Movassagh, Nannicini, Nation, Phan, Pistoia, Rattew, Schaefer,
+  Shabani, Smolin, Stenger, Temme, Tod, Wood, i Wootton.]{Qiskit-Textbook}
+Abraham Asfaw, Antonio Corcoles, Luciano Bello, Yael Ben-Haim, Mehdi Bozzo-Rey,
+  Sergey Bravyi, Nicholas Bronn, Lauren Capelluto, Almudena~Carrera Vazquez,
+  Jack Ceroni, Richard Chen, Albert Frisch, Jay Gambetta, Shelly Garion, Leron
+  Gil, Salvador De La~Puente Gonzalez, Francis Harkins, Takashi Imamichi,
+  Hwajung Kang, Amir h.~Karamlou, Robert Loredo, David McKay, Antonio
+  Mezzacapo, Zlatko Minev, Ramis Movassagh, Giacomo Nannicini, Paul Nation,
+  Anna Phan, Marco Pistoia, Arthur Rattew, Joachim Schaefer, Javad Shabani,
+  John Smolin, John Stenger, Kristan Temme, Madeleine Tod, Stephen Wood, i
+  James Wootton.
+\newblock Learn quantum computation using qiskit, 2020.
+\newblock URL \url{http://community.qiskit.org/textbook}.
 
 \bibitem[Cho(2020)]{ibm:quantum}
 Adrian Cho.

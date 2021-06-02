@@ -4,13 +4,41 @@
 \usepackage{braket}
 \usepackage{tikz}
 \usepackage{quantikz}
-\usepackage{listings}
+
 %\ignorecitefornumbering
+% za kod
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{codeblue}{rgb}{0.23,0.22,0.97} % 60, 57, 247
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codeblue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+
 
 \begin{document}
 
 % TODO: Navedite broj rada.
-\thesisnumber{69420}
+\thesisnumber{228}
 
 % TODO: Navedite naslov rada.
 \title{Simulacija kvantnog računala}
@@ -45,17 +73,17 @@
 \bibliographystyle{fer}
 
 \begin{sazetak}
-Sažetak na hrvatskom jeziku.
+Kvantna računala uvode novi način računanja koji znatno proširuje mogućnosti klasičnih računala i kao takva sadrže veliki potencijal koji se tek nedavno počeo ostvarivati. Ovaj rad se bavi osnovnim principima rada kvantnog računala kao i nekim bitnim konceptima koji se javljaju u kvantni logičkim krugovima kao što su spregnutost, kvantni paralelizam i prevrtanje faze. Nadalje, rad opisuje Deutschev, Groverov i Shorov algoritam te na kraju na samostalno izgrađenom simulatoru demonstrira neke od spomenutih pojava i algoritama.
 
-\kljucnerijeci{Ključne riječi, odvojene zarezima.}
+\kljucnerijeci{simulator kvantnog računala, kvantno računalo, simulator, kvantni bit, qubit, kvantni algoritam. kvantni paralelizam, prevrtanje faze}
 \end{sazetak}
 
 % TODO: Navedite naslov na engleskom jeziku.
 \engtitle{Quantum computer simulation}
 \begin{abstract}
-Abstract.
+Quantum computers introduce a new way of computing that significantly expands the capabilities of classical computers and as such contain great potential that has only recently begun to be realized. This paper deals with the basic principles of quantum computing as well as some of the important concepts that occur in quantum logic circuits such as quantum entanglement, quantum parallelism, and phase kickback. Furthermore, the paper describes famous algorithms devised by D. Deutsch, L. K. Grover and P. W. Shor and finally demonstrates some of the mentioned phenomena and algorithms on a self-built simulator.
 
-\keywords{Keywords.}
+\keywords{quantum computer simulator, quantum computer, simulator, quantum bit, qubit, quantum algorithm, quantum parallelism, phase kickback}
 \end{abstract}
 
 \end{document}

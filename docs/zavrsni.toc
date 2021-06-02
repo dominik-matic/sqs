@@ -45,18 +45,18 @@
 \contentsline {chapter}{\numberline {4}Simulacija kvantnog računala}{33}{}%
 \contentsline {section}{\numberline {4.1}Postojeći simulatori kvantnog računala}{33}{}%
 \contentsline {section}{\numberline {4.2}Izrada simulatora kvantnog računala}{33}{}%
-\contentsline {subsection}{\numberline {4.2.1}SQS}{33}{}%
+\contentsline {subsection}{\numberline {4.2.1}Jednostavan simulator kvantnog računala SQS}{33}{}%
 \contentsline {subsection}{\numberline {4.2.2}Struktura}{34}{}%
-\contentsline {subsubsection}{QOperator}{34}{}%
-\contentsline {subsubsection}{QComponent}{34}{}%
-\contentsline {subsubsection}{QCircuit}{35}{}%
+\contentsline {subsubsection}{Razred QOperator}{34}{}%
+\contentsline {subsubsection}{Razred QComponent}{34}{}%
+\contentsline {subsubsection}{Razred QCircuit}{35}{}%
 \contentsline {subsection}{\numberline {4.2.3}Izazovi pri implementaciji}{36}{}%
 \contentsline {section}{\numberline {4.3}Primjeri simulacije kvantnih logičkih krugova}{38}{}%
 \contentsline {subsection}{\numberline {4.3.1}Superpozicija}{38}{}%
 \contentsline {subsection}{\numberline {4.3.2}Spregnutost}{39}{}%
-\contentsline {subsection}{\numberline {4.3.3}Deutschev algoritam}{41}{}%
+\contentsline {subsection}{\numberline {4.3.3}Deutschev algoritam}{40}{}%
 \contentsline {subsection}{\numberline {4.3.4}Groverov algoritam}{43}{}%
-\contentsline {subsection}{\numberline {4.3.5}Kvantna estimacija faze}{46}{}%
-\contentsline {section}{\numberline {4.4}Prednosti i mane simulatora kvantnog računala}{48}{}%
-\contentsline {chapter}{\numberline {5}Zaključak}{49}{}%
-\contentsline {chapter}{Literatura}{50}{}%
+\contentsline {subsection}{\numberline {4.3.5}Kvantna estimacija faze}{45}{}%
+\contentsline {section}{\numberline {4.4}Prednosti i mane simulatora kvantnog računala}{47}{}%
+\contentsline {chapter}{\numberline {5}Zaključak}{48}{}%
+\contentsline {chapter}{Literatura}{49}{}%
