@@ -156,7 +156,7 @@ Deutschev i Deutsch-Joszin algoritam dobro demonstriraju situaciju gdje je kvant
 \section{Groverov algoritam}
 
 \subsection{Opis}
-Groverov algoritam\citep{grover} jedan je od algoritama koji je definirao principe kvantnih algoritama pretraživanja. U načelu, problem koji rješava jest pretraživanje nestrukturirane baze podataka. Klasično računalo taj problem rješava u prosječno $N/2$ koraka, dok kvantno računalo implementirajući Groverov algoritam pronađe rješenje s visokom vjerojatnošću u samo $\sqrt{N}$ koraka.
+Groverov algoritam \citep{grover} jedan je od algoritama koji je definirao principe kvantnih algoritama pretraživanja. U načelu, problem koji rješava jest pretraživanje nestrukturirane baze podataka. Klasično računalo taj problem rješava u prosječno $N/2$ koraka, dok kvantno računalo implementirajući Groverov algoritam pronađe rješenje s visokom vjerojatnošću u samo $\sqrt{N}$ koraka.
 
 Definirati Groverov algoritam kao algoritam pretraživanja nestrukturirane baze podataka malo je zavaravajuće jer se u praktičnom smislu nikada ne bi mogao koristiti za točno to. Prikladnija primjena Groverovog algoritma bila bi pronalaženje inverza funkcije što čak i zvuči puno zanimljivijim i korisnijim. Jedna takva funkcija jest kriptografska funkcija sažetka. Groverov algoritam može pronaći kolizije takve funkcije u $\sqrt{N}$ koraka gdje je $N$ veličina domene funkcije, što klasično računalo u načelu može izračunati samo grubom silom. Groverov algoritam se na neki način može interpretirati kao algoritam grube sile kvantnog računala, ali je kao takav i dalje eksponencionalno brži od klasičnog.
 
@@ -288,13 +288,13 @@ Broj 0 u Fourierovoj bazi ima sve kvantne bitove postavljene u $\ket{+}$. Za sva
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.65]{img/Fourier9.png}
-\caption{Broj 9 u Fourierovoj bazi s 4 kvantna bita, izvor: Qiskit Textbook\citep{Qiskit-Textbook}}
+\caption{Broj 9 u Fourierovoj bazi s 4 kvantna bita, izvor: Qiskit Textbook \citep{Qiskit-Textbook}}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.65]{img/Zbase9.png}
-\caption{Broj 9 u Z-bazi s 4 kvantna bita, izvor: Qiskit Textbook\citep{Qiskit-Textbook}}
+\caption{Broj 9 u Z-bazi s 4 kvantna bita, izvor: Qiskit Textbook \citep{Qiskit-Textbook}}
 \end{figure}
 
 Vidi se da je najniži kvantni bit (qubit 0) zaokrenut oko osi Z za $\frac{9}{16}\cdot 2\pi$ radijana, drugi najniži (qubit 1) za $\frac{18}{16}\cdot 2\pi = \frac{2}{16}\cdot 2\pi$ radijana, treći za $\frac{36}{16}\cdot 2\pi = \frac{4}{16}\cdot 2\pi$ radijana i poslijednji za $\frac{72}{16}\cdot 2\pi = \frac{8}{16}\cdot 2\pi$ radijana.
